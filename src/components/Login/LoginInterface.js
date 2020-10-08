@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+import Test from '../Test/Test';
 import { Container,Icon, Header,Item,Thumbnail, Content, Footer, FooterTab, Button, Text } from 'native-base';
 export default class LoginInterface extends Component {
     _onPressButton(){
@@ -32,7 +33,7 @@ _onPressButton3(){
         <Item style={{paddingTop:20,paddingBottom:20}}>
         <Thumbnail onPress={()=>{}} style={{width:100, height:100}} source={{uri: uria}} />  
         <Text style={{marginLeft:10,fontWeight:'bold'}}>Cỏ đắng</Text>
-        <Icon onPress={this._onPressButton3} style={{marginLeft:'40%'}} type="Entypo" name='dots-three-vertical'/>
+        <Test />
         </Item>
         <Item onPress={this._onPressButton1} style={{paddingBottom:10}} >
           <Icon style={{color:'blue'}} type="Ionicons" name="md-add-circle-outline"/>
