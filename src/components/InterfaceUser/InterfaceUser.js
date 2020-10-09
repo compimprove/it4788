@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 
-import {Avatar} from 'react-native-paper';
+import {Avatar,Appbar} from 'react-native-paper';
 import { Container,Item,List, ListItem,FooterTab,Title, Thumbnail, Text,Button,Left, Right, Header,Body,Icon,Content} from 'native-base';
 
 export default class InterfaceUser extends Component {
@@ -32,30 +32,14 @@ _onPressButton6(){
     return (
       <Container>
         <Header style={{ backgroundColor:'white'}}>
-       
-       <Body>
-           <Title>
-       <Button transparent>
-       <Icon onPress={this._onPressButton1} style={{marginRight:'5%',color:'black'}} name='home' />
-            </Button>
-            <Button transparent>
-            <Icon onPress={this._onPressButton3} type="MaterialCommunityIcons" style={{marginRight:'5%',color:'black'}} name='television-play' />
-            </Button>
-            <Button transparent>
-            <Icon onPress={this._onPressButton2} type="FontAwesome" style={{marginRight:'5%',color:'black'}} name='users' />
-            </Button>
-            <Button transparent>
-            <Icon onPress={this._onPressButton4} type="FontAwesome" style={{marginRight:'5%',color:'black'}} name='heart-o' />
-            </Button>
-            <Button transparent>
-            <Icon onPress={this._onPressButton5} type="SimpleLineIcons" style={{marginRight:'5%',color:'black'}} name='bell' />
-            </Button>
-            <Button transparent>
-            <Icon onPress={this._onPressButton6} style={{color:'black'}} name='menu' />
-            </Button>
-            </Title>
-       </Body>
-              
+        <Appbar style={styles.appbarBelow}>
+        <Appbar.Action icon="home" size={29} onPress={this._onPressButton1}/>
+        <Appbar.Action icon="youtube-tv" size={29} onPress={this._onPressButton2}/>
+        <Appbar.Action icon="account-multiple" size={29} onPress={this._onPressButton3}/>
+        <Appbar.Action icon="account-group" size={29} onPress={this._onPressButton4}/>
+        <Appbar.Action icon="bell-outline" size={29} onPress={this._onPressButton5}/>
+        <Appbar.Action icon="menu" size={29} onPress={this._onPressButton6}/>
+        </Appbar>
         </Header>
        <Content style={{margin:10}}>
                   <Image style={styles.image1}
@@ -179,6 +163,15 @@ _onPressButton6(){
   }
 }
 const styles = StyleSheet.create({
+  appbarBelow:{
+    elevation: 0,
+    backgroundColor: '#ffffff',
+    marginTop:'0.7%',
+    left: 0,
+    right: 0,
+    justifyContent: 'space-between',
+  
+  },
   icon1: {
     color:'grey',
     fontSize:20
