@@ -52,7 +52,7 @@ export default class Login extends Component {
 }
 const styles = StyleSheet.create({
   image: {
-    maxHeight: 200,
+    maxHeight: '40%',
     width: '100%',
     marginBottom: 20,
     borderRadius: 5
