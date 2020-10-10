@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import { Avatar } from 'react-native-paper';
+import { Avatar,Appbar } from 'react-native-paper';
 import {StyleSheet} from 'react-native';
 import { Container, Header,Left,Icon,Title,Right,Body,Item,Thumbnail, Content, Footer, FooterTab, Button, Text } from 'native-base';
 export default class SaveInfo extends Component {
@@ -10,21 +10,17 @@ export default class SaveInfo extends Component {
     _onPressButton1(){
         alert("Lúc khác")
     }
+    _onPressButton2(){
+      alert("Back")
+  }
     render(){ 
       const uri = "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png";  
        return (
       <Container>
-        <Header>
-                  <Left>
-                      <Button transparent>
-                      <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                      </Button>
-                    </Left>
-                    <Body>
-                      <Title>Lưu thông tin</Title>
-                    </Body>
-                    <Right />
-      </Header>
+          <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton2} />
+      <Appbar.Content title="Lưu thông tin"/>
+      </Appbar.Header>
         <Content style={{margin:10,
                          paddingTop:'40%',}}>
         <Thumbnail

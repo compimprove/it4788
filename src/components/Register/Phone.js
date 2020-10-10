@@ -1,7 +1,9 @@
 
 import React, {Component} from 'react';
 import {StyleSheet,TextInput} from 'react-native';
-import { Container,Body,Icon,Title,Footer,FooterTab, Header,Button, Content, Text, Right, Left } from 'native-base';
+import {Appbar} from 'react-native-paper';
+import Footer from '../Footer/Footer';
+import { Container,Button, Content, Text } from 'native-base';
 export default class Phone extends Component{
   _onPressButton(){
     alert("Đi tới nhập email")
@@ -15,17 +17,11 @@ _onPressButton2(){
     render(){      
   return(
     <Container>
-                <Header>
-                      <Left>
-                      <Button transparent>
-                      <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                      </Button>
-                    </Left>
-                    <Body>
-                      <Title>Nhập số điện thoại</Title>
-                    </Body>
-                    <Right />
-                </Header>
+                <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
+      <Appbar.Content title="Nhập số điện thoại" />
+     
+    </Appbar.Header>
           <Content style={{margin:10}}>
                       <Text style={styles.text}>Số di động của bạn là gì ?</Text>
                       <TextInput 
@@ -38,13 +34,7 @@ _onPressButton2(){
                                   <Text>Dùng địa chỉ email của bạn</Text>
                     </Button>
           </Content>
-          <Footer>
-                          <FooterTab>
-                            <Button full>
-                              <Text onPress={this._onPressButton2}>Bạn đã có tài khoản?</Text>
-                            </Button>
-                          </FooterTab>
-            </Footer>
+        <Footer />
   </Container>
   );
 
@@ -63,7 +53,7 @@ const styles = StyleSheet.create({
     height:40
   },
   text: {
-    color:'blue',
+    color:'#1877F2',
     fontWeight:'bold',
     fontSize:20,
     paddingTop:150,

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
-import { Container, Header, Content,Footer,FooterTab, DatePicker,Left,Right,Icon,Button,Body,Title, Text } from 'native-base';
+import {Appbar} from 'react-native-paper';
+import Footer from '../Footer/Footer';
+import { Container, Content, DatePicker,Text } from 'native-base';
 export default class ChoseDate extends Component {
   _onPressButton1(){
     alert("Back");
@@ -19,17 +21,10 @@ export default class ChoseDate extends Component {
   render() {
     return (
       <Container>
-        <Header>
-              <Left>
-                <Button transparent>
-                <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                </Button>
-              </Left>
-              <Body>
-                <Title>Ngày sinh</Title>
-              </Body>
-              <Right />
-      </Header>
+          <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
+      <Appbar.Content title="Chọn ngày sinh"/>
+      </Appbar.Header>
         <Content>
         <Text 
         style={styles.text}
@@ -67,13 +62,7 @@ export default class ChoseDate extends Component {
            
         
         </Content>
-        <Footer>
-            <FooterTab>
-              <Button full>
-                <Text onPress={this._onPressButton2}>Bạn đã có tài khoản?</Text>
-              </Button>
-            </FooterTab>
-    </Footer>
+        <Footer />
       </Container>
     );
   }
@@ -85,7 +74,7 @@ const styles = StyleSheet.create({
     color:'black'
   },
  text: {
-  color:'blue',
+  color:'#1877F2',
   fontWeight:'bold',
   fontSize:20,
   paddingTop:150,

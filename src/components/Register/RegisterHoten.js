@@ -1,7 +1,9 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, View,TextInput,} from 'react-native';
-import {Header,Left,Button,Text,Content,Icon,Body,Container,Footer, FooterTab,Title,Right} from 'native-base';
+import {Appbar} from 'react-native-paper';
+import Footer from '../Footer/Footer';
+import {Text,Content,Container} from 'native-base';
 export default class RegisterHoten extends Component{  
   _onPressButton2(){
     alert("Bạn đã có tài khoản");
@@ -9,20 +11,17 @@ export default class RegisterHoten extends Component{
 _onPressButton1(){
   alert("Back");
 }
+_onPressButton3(){
+  alert("Back");
+}
     render(){      
   return(
 <Container>
-      <Header>
-              <Left>
-                <Button transparent>
-                <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                </Button>
-              </Left>
-              <Body>
-                <Title>Tham gia</Title>
-              </Body>
-              <Right />
-      </Header>
+<Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
+      <Appbar.Content title="Tham gia" />
+     
+    </Appbar.Header>
       <Content style={{margin:10,}}>
               <Text style={styles.name}>Bạn tên gì?</Text>
               <View 
@@ -37,13 +36,7 @@ _onPressButton1(){
               <Text style={styles.text}>
                   Dùng tên thật giúp bạn bè dễ dàng nhận ra bạn hơn</Text>
     </Content>
-    <Footer>
-            <FooterTab>
-              <Button full>
-                <Text onPress={this._onPressButton2}>Bạn đã có tài khoản?</Text>
-              </Button>
-            </FooterTab>
-    </Footer>
+   <Footer />
 </Container>
   );
 }}
@@ -79,7 +72,7 @@ const styles = StyleSheet.create({
             height:40
   },
   name: {
-            color:'blue',
+            color:'#1877F2',
             fontWeight:'bold',
             fontSize:20,
             paddingTop:200,

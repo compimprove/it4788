@@ -1,7 +1,9 @@
 
 import React, {Component} from 'react';
 import {StyleSheet,TextInput} from 'react-native';
-import { Container,Body,Icon,Title, Header,Button, Content, Text, Right, Left } from 'native-base';
+import {Appbar} from 'react-native-paper';
+
+import { Container,Button, Content, Text} from 'native-base';
 
 import {Item} from 'native-base';
 export default class XacnhanTK extends Component{
@@ -11,20 +13,16 @@ export default class XacnhanTK extends Component{
     _onPressButton1(){
         alert("Tôi không nhận được mã")
     }
+    _onPressButton2(){
+      alert("Back")
+  }
     render(){      
   return(
     <Container>
-      <Header>
-                  <Left>
-                      <Button transparent>
-                      <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                      </Button>
-                    </Left>
-                    <Body>
-                      <Title>Xác nhận tài khoản</Title>
-                    </Body>
-                    <Right />
-      </Header>
+      <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton2} />
+      <Appbar.Content title="Xác nhận tài khoản"/>
+      </Appbar.Header>
       <Content style={{margin:10}}>
                 <Text style={styles.text1}> Chúng tôi đã gửi SMS kèm mã tới xxxx
               </Text>

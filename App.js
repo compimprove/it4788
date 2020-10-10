@@ -1,12 +1,46 @@
-import * as React from 'react';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-import FooterLog from './src/components/Logout/FooterLog';
+import React from 'react';
+import { AppLoading } from 'expo';
+import { Container} from 'native-base';
+import * as Font from 'expo-font';
+
+import { Ionicons } from '@expo/vector-icons';
+import CreatePost from './CreatePost';
+
+import Setting from './src/components/InterfaceUser/Setting';
+import Login from './src/components/Login/Login';
+import Login_Pass from './src/components/Login/Login_Pass';
 import Logout from './src/components/Logout/Logout';
+import Phone from './src/components/Register/Phone';
+import Pass from './src/components/Register/Pass';
 
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
-const MyComponent = () => (
-  <Logout />
-);
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isReady: false,
+    };
+  }
 
-export default MyComponent;
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+    this.setState({ isReady: true });
+  }
+
+  render() {
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+    else {
+      return (
+        <Container>
+          <Pass />
+        </Container>
+      );
+    }
+  }
+}
