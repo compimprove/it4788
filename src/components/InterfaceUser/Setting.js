@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import {StyleSheet,View} from 'react-native';
-import { Container, Header,List,ListItem,Item, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import {Appbar} from 'react-native-paper';
+import { Container,List,ListItem,Item, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 
 export default class Setting extends Component {
- 
+ _onPressButton1(){
+   alert("Back");
+ }
+ _onPressButton2(){
+  alert("Sao chép liên kết");
+}
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon type="Ionicons" name='md-arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Cài đặt</Title>
-         </Body>
-          <Right />
-        </Header>
+        <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
+      <Appbar.Content title="Cài đặt" />
+      
+    </Appbar.Header>
+        
         <Content>
         <List>
             <ListItem itemDivider>
@@ -58,7 +59,7 @@ export default class Setting extends Component {
                     <Item style={{paddingBottom:10,paddingTop:10}}><Text>Liên kết của riêng bạn trên facebook</Text></Item>
                     <Text style={{paddingTop:10, fontWeight:'bold'}}>Link face</Text>
 
-                    <Button onPress={()=>{}} style={{marginTop:10,height:35,backgroundColor:'grey'}}><Text> Sao chép liên kết </Text></Button>
+                    <Button onPress={this._onPressButton2} style={{marginTop:10,height:35,backgroundColor:'grey'}}><Text> Sao chép liên kết </Text></Button>
             </View>
           </List>
 

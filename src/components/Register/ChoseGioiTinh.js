@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
-import { Container,View,Body,Icon,Title,Footer,FooterTab, Header,Button, Content, ListItem, Text, Radio, Right, Left } from 'native-base';
+import {Appbar} from 'react-native-paper';
+import Footer from '../Footer/Footer';
+import { Container,View,Button, Content, ListItem, Text, Radio, Right, Left } from 'native-base';
 export default class ChoseGioiTinh extends Component {
   _onPressButton(){
     alert("Tiếp")
@@ -14,17 +16,10 @@ _onPressButton2(){
   render() {
     return (
       <Container>
-        <Header>
-              <Left>
-                <Button transparent>
-                <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                </Button>
-              </Left>
-              <Body>
-                <Title>Giới tính</Title>
-              </Body>
-              <Right />
-      </Header>
+        <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
+      <Appbar.Content title="Chọn giới tính"/>
+      </Appbar.Header>
         <Content style={{margin:10}}>
                   <Text style={styles.text1}>Giới tính của bạn là gì ?</Text>
                   <Text style={{
@@ -65,13 +60,7 @@ _onPressButton2(){
                                   <Text>Tiếp</Text>
                     </Button>
         </Content>
-        <Footer>
-                <FooterTab>
-                  <Button full>
-                    <Text onPress={this._onPressButton2}>Bạn đã có tài khoản?</Text>
-                  </Button>
-                </FooterTab>
-        </Footer>
+       <Footer />
       </Container>
     );
   }
@@ -86,7 +75,7 @@ const styles = StyleSheet.create({
    borderRadius:5
   },
   text1: {
-    color:'blue',
+    color:'#1877F2',
     fontWeight:'bold',
     fontSize:20,
     paddingTop:50,

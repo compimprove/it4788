@@ -1,7 +1,9 @@
 
 import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
-import { Container,Body,Icon,Title,Footer,FooterTab, Header,Button, Content, Text, Right, Left } from 'native-base';
+import {Appbar} from 'react-native-paper';
+import Footer from '../Footer/Footer';
+import { Container,Button, Content, Text} from 'native-base';
 
 export default class InterfaceLogin extends Component{
     _onPressButton(){
@@ -16,17 +18,10 @@ export default class InterfaceLogin extends Component{
     render(){      
   return(
     <Container>
-      <Header>
-      <Left>
-                      <Button transparent>
-                      <Icon type="Ionicons" name='md-arrow-back'style={styles.iconHeader} onPress={()=>{}} />
-                      </Button>
-                    </Left>
-                    <Body>
-                      <Title>Back</Title>
-                    </Body>
-                    <Right />
-      </Header>
+       <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
+      <Appbar.Content title="Hoàn thành đăng ký"/>
+      </Appbar.Header>
       <Content style={{margin:10}}>
                       <Text 
                     style={styles.text}
@@ -49,13 +44,7 @@ export default class InterfaceLogin extends Component{
                                   <Text>Đăng ký</Text>
                        </Button>
       </Content>
-      <Footer>
-                          <FooterTab>
-                            <Button full>
-                              <Text onPress={this._onPressButton2}>Bạn đã có tài khoản?</Text>
-                            </Button>
-                          </FooterTab>
-      </Footer>
+      <Footer />
     </Container>
 
   );
@@ -77,7 +66,7 @@ button: {
   borderRadius:5
 },
   text: {
-    color:'blue',
+    color:'#1877F2',
     fontWeight:'bold',
     fontSize:20,
     paddingTop:150,

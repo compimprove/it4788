@@ -2,11 +2,17 @@ import React from 'react';
 import { AppLoading } from 'expo';
 import { Container} from 'native-base';
 import * as Font from 'expo-font';
-import Logout from './src/components/Logout/Logout';
-import Login from './src/components/Login/Login';
+
 import { Ionicons } from '@expo/vector-icons';
 import CreatePost from './CreatePost';
-import InterfaceUser from './src/components/InterfaceUser/InterfaceUser';
+
+import Setting from './src/components/InterfaceUser/Setting';
+import Login from './src/components/Login/Login';
+import Login_Pass from './src/components/Login/Login_Pass';
+import Logout from './src/components/Logout/Logout';
+import Phone from './src/components/Register/Phone';
+import Pass from './src/components/Register/Pass';
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,7 +38,7 @@ export default class App extends React.Component {
     else {
       return (
         <Container>
-          <InterfaceUser />
+          <Pass />
         </Container>
       );
     }

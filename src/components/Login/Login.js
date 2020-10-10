@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, Image, View } from 'react-native';
-import { Container, Footer, FooterTab, Button, Content, Text } from 'native-base';
+import Footer from '../Footer/Footer';
+import { Container, Button, Content, Text } from 'native-base';
 
 export default class Login extends Component {
   _onPressButton() {
@@ -37,14 +38,7 @@ export default class Login extends Component {
             style={styles.text}
           >Quay lại</Text>
         </Content>
-
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text onPress={this._onPressButton1}>Bạn đã có tài khoản?</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+<Footer />
       </Container>
     );
 
@@ -58,7 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   text: {
-    color: 'blue',
+    color: '#1877F2',
     fontWeight: 'bold',
     fontSize: 20,
     paddingTop: 15,

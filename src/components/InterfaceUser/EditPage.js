@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import {StyleSheet,Image,View} from 'react-native';
-import {Avatar} from 'react-native-paper';
-import { Container, Header, List,Item, ListItem, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
-import Header1 from '../Header/Header1';
+import {Avatar,Appbar} from 'react-native-paper';
+import { Container, List,Item, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+
+
 export default class EditPage extends Component {
- 
+    _onPressButton1(){
+        alert("Back")
+      }
   render() {
     return (
       <Container>
-        <Header1 />
+        <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
+      <Appbar.Content title="Chỉnh sửa thông tin cá nhân" />
+     
+    </Appbar.Header>
+        
         <Content style={{margin:10}}>
         <List>
           <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:10
-                          }}>
+                <View style={styles.headerText}>
                               <Text style={styles.main_Text}>Ảnh đại diện</Text>
                               <Text style={styles.edit_text}>Chỉnh sửa</Text>
                  </View>
@@ -27,12 +30,7 @@ export default class EditPage extends Component {
             <Item style={{paddingTop:20}}></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                               <Text style={styles.main_Text}>Ảnh bìa</Text>
                               <Text style={styles.edit_text}>Chỉnh sửa</Text>
                  </View>
@@ -42,12 +40,7 @@ export default class EditPage extends Component {
             <Item style={{paddingTop:20}}></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                               <Text style={styles.main_Text}>Tiểu sử</Text>
                               <Text style={styles.edit_text}>Tìm hiểu thêm</Text>
                  </View>
@@ -57,12 +50,7 @@ export default class EditPage extends Component {
                 <Item style={{paddingTop:20}}></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                               <Text style={styles.main_Text}>Chi tiết</Text>
                               <Text style={styles.edit_text}>Chỉnh sửa</Text>
                  </View>
@@ -78,12 +66,7 @@ export default class EditPage extends Component {
            <Item style={{paddingTop:20}}></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                               <Text style={styles.main_Text}>Sở thích</Text>
                               <Text style={styles.edit_text}>Thêm</Text>
                  </View>
@@ -91,12 +74,7 @@ export default class EditPage extends Component {
             <Item></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                           <Text style={styles.main_Text}>Đáng chú ý</Text>
                 </View>
     
@@ -112,19 +90,17 @@ export default class EditPage extends Component {
             <Item></Item>
             <View>
           
-                <View style={{
-                              flexDirection:'row',
-                              justifyContent: 'space-between',
-                              paddingTop:20,
-                              paddingBottom:20
-                          }}>
+                <View style={styles.headerText}>
                           <Text style={styles.main_Text}>Liên kết</Text>
                           <Text style={styles.edit_text}>Thêm</Text>
                 </View>
                 </View>
             <Item></Item>
             <Button style={styles.editIntroduce} block onPress={() => {}}>
-                <Text style={styles.textIntroduce}><Icon style={styles.iconIntroduce} type="FontAwesome5" name='user-edit' /> Chỉnh sửa thông tin giới thiệu</Text>
+                <Text style={styles.textIntroduce}>
+                    <Icon style={styles.iconIntroduce} type="FontAwesome5" name='user-edit' /> 
+                    Chỉnh sửa thông tin giới thiệu
+                    </Text>
             </Button>
            </List>
         </Content>
@@ -138,12 +114,18 @@ export default class EditPage extends Component {
   }
 }
 const styles = StyleSheet.create({
+    headerText: {
+        flexDirection:'row',
+        justifyContent: 'space-between',
+        paddingTop:20,
+        paddingBottom:10
+    },
     iconIntroduce: {
         color:'blue',
         fontSize:20
     },
     textIntroduce: {
-        color:'blue',
+        color:'#1877F2',
         fontWeight:'bold'
     },
     iconHeader: {
@@ -154,7 +136,7 @@ const styles = StyleSheet.create({
         borderRadius:5,
         margin:10,
         height:50,
-        backgroundColor:'lightblue'
+        backgroundColor:'#83E0D3'
     },
     image_trial: {
         height:100,
