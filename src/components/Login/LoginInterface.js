@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import Footer from '../Footer/Footer';
 import { Container,Icon,Item,Thumbnail, Content, Text } from 'native-base';
+
+
 export default class LoginInterface extends Component {
     _onPressButton(){
         alert("Tạo tài khoản mới")
@@ -32,6 +34,8 @@ _onPressButton3(){
         <Thumbnail onPress={()=>{}} style={{width:100, height:100}} source={require('../Login/image/dog.jpg')} />  
         <Text style={{marginLeft:10,fontWeight:'bold'}}>Cỏ đắng</Text>
        <Icon type="Entypo" style={{marginLeft:'40%'}} name='dots-three-vertical'/>
+       
+      
         </Item>
         <Item onPress={this._onPressButton1} style={{paddingBottom:10,paddingTop:10}} >
           <Icon style={{color:'#1877F2'}} type="Ionicons" name="md-add-circle-outline"/>
