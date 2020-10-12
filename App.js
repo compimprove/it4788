@@ -5,6 +5,8 @@ import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import CreatePost from './CreatePost';
 import MainPage from './mainPage';
+import CommentOffline from './CommentOffline';
+import Comment from './Comment';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,7 +34,7 @@ export default class App extends React.Component {
         <Container>
 
 
-          <MainPage></MainPage>
+          <Comment></Comment>
         </Container>
       );
     }
