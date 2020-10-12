@@ -7,6 +7,7 @@ import CreatePost from './CreatePost';
 import MainPage from './mainPage';
 import CommentOffline from './CommentOffline';
 import Comment from './Comment';
+import MainPost from './MainPost';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class App extends React.Component {
         <Container>
 
 
-          <Comment></Comment>
+          <MainPost></MainPost>
         </Container>
       );
     }
