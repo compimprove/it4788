@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
+import SkeletonContent from 'react-native-skeleton-content';
 
 
 const MyTextInput = () => {
@@ -19,10 +20,16 @@ const MyTextInput = () => {
 export default class Loader extends React.Component{
   constructor(props) {
     super(props);
-
+    this.state = {isLoading: true};
   }
 
-
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        isLoading: false
+      });
+    }, 5000);
+  }
 
   render() {
     return (
@@ -39,96 +46,120 @@ export default class Loader extends React.Component{
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
+          <SkeletonContent
+            containerStyle={{ flex: 1, width: 300 }}
+            isLoading={this.state.isLoading}
+            layout={[
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 250, height: 50, borderRadius: 20, marginLeft:20 },
+              ]},
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 150, height: 100, borderRadius: 20, marginLeft:20 },
+              ]},
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 170, height: 70, borderRadius: 20, marginLeft:20 },
+              ]},
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 170, height: 70, borderRadius: 20, marginLeft:20 },
+              ]},
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 150, height: 70, borderRadius: 20, marginLeft:20 },
+              ]},
+              { flexDirection: "row", marginTop: 20, children:[
+                { width: 50, height: 50, borderRadius: 50 },
+                { width: 150, height: 70, borderRadius: 20, marginLeft:20 },
+              ]}
+            ]}
+          >
+            <View>
+              <Button style={{marginTop: 10, alignSelf: 'flex-start'}} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
+                Xem các bình luận trước...
+              </Button>
 
-          <View>
-            <Button style={{marginTop: 10, alignSelf: 'flex-start'}} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
-              Xem các bình luận trước...
-            </Button>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van B</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderum</Text>
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van B</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderum</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
                 </View>
+              </View>
 
-                <Text style={styles.timeComment}>1 day</Text>
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
+              </View>
+
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
+              </View>
+
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
+              </View>
+
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
+              </View>
+
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
+              </View>
+
+              <View style={styles.comment}>
+                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+                <View style={styles.commentBody}>
+                  <View style={styles.commentBackground}>
+                    <Text style={styles.userName}>Van C</Text>
+                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                  </View>
+                  <Text style={styles.timeComment}>1 day</Text>
+                </View>
               </View>
             </View>
+          </SkeletonContent>
 
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-          </View>
 
 
         </ScrollView>
