@@ -8,6 +8,7 @@ import MainPage from './mainPage';
 import CommentOffline from './CommentOffline';
 import Comment from './Comment';
 import MainPost from './MainPost';
+import SearchPage from './SearchPage';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export default class App extends React.Component {
         <Container>
 
 
-          <MainPost></MainPost>
+          <SearchPage></SearchPage>
         </Container>
       );
     }
