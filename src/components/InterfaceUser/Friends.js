@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
 import {Avatar,Appbar} from 'react-native-paper';
-import { Container, Header,Form,Item,Input, Label,List,ListItem, Thumbnail, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import Infor_Fri from '../Actionsheet/Infor_Fri';
+import { Container,Form,Item,Input, Label,List,ListItem, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 
 export default class Setting extends Component {
   _onPressButton1(){
@@ -31,7 +32,7 @@ export default class Setting extends Component {
          <Appbar.Header style={{backgroundColor:'white'}}>
       <Appbar.BackAction icon="back" onPress={this._onPressButton1} />
       <Appbar.Content title="Cỏ đắng" />
-      <Appbar.Action icon="magnify" onPress={this._onPressButton2} />
+     
     </Appbar.Header>
         
         <Content>
@@ -61,7 +62,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Icon type="Entypo" name="dots-three-horizontal"  onPress={this._onPressButton4}></Icon>
+              <Infor_Fri />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -72,7 +73,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Icon type="Entypo" name="dots-three-horizontal" onPress={()=>{}}></Icon>
+              <Infor_Fri />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -83,7 +84,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-             <Icon type="Entypo" name="dots-three-horizontal" onPress={()=>{}}></Icon>
+              <Infor_Fri />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -94,7 +95,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Icon type="Entypo" name="dots-three-horizontal"  onPress={()=>{}}></Icon>
+              <Infor_Fri />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -105,7 +106,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Icon type="Entypo" name="dots-three-horizontal" onPress={()=>{}}></Icon>
+              <Infor_Fri />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -116,7 +117,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-             <Icon type="Entypo" name="dots-three-horizontal" onPress={()=>{}}></Icon>
+              <Infor_Fri />
             </ListItem>
             
           </List>

@@ -7,6 +7,9 @@ import {
 
 import {Avatar,Appbar} from 'react-native-paper';
 import { Container,Item,List, ListItem,FooterTab, Thumbnail, Text,Button, Header,Icon,Content} from 'native-base';
+import Cover_image from '../Actionsheet/Cover_image';
+import Infor_Fri from '../Actionsheet/Infor_Fri';
+
 
 export default class InterfaceUser extends Component {
   _onPressButton1(){
@@ -50,7 +53,7 @@ _onPressButton8(){
        <Content style={{margin:10}}>
                   <Image style={styles.image1}
                             source={require('../Login/image/face.jpg')} onPress={() => {}} />
-                            <Avatar.Icon style={styles.camera1} size={50} icon="camera" onPress={this._onPressButton7} />
+                            <Icon style={styles.camera1} ><Cover_image /></Icon>
                   <Avatar.Image style={styles.avatar} size={200} source={require('../Login/image/dog.jpg')} onPress={() => {}} />
                   <Avatar.Icon style={styles.camera2} size={35} icon="camera" onPress={this._onPressButton8} />  
                   <Text 
@@ -248,7 +251,7 @@ const styles = StyleSheet.create({
     
  },
  camera1: {
-  marginTop:190,
+  marginTop:'45%',
   position: 'absolute',
   marginLeft:'80%',
   marginRight:'5%',
@@ -256,15 +259,15 @@ const styles = StyleSheet.create({
   color:'black'
 },
 camera2: {
-  marginTop:300,
+  marginTop:'78%',
   position: 'absolute',
   marginLeft:'62%',
-  marginRight:'29%',
+  marginRight:'27%',
   backgroundColor:'white',
   color:'black'
 },
   avatar: {
-    marginTop:130,
+    marginTop:'37%',
     marginLeft:'20%',
     marginRight:'24%',
     position: 'absolute',
@@ -272,7 +275,7 @@ camera2: {
   },
   
   image1: {
-    maxHeight:230,
+    maxHeight:'40%',
     width:'100%',
     marginBottom:20,
     marginTop:20,
