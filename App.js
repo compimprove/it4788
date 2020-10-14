@@ -9,6 +9,7 @@ import CommentOffline from './CommentOffline';
 import Comment from './Comment';
 import MainPost from './MainPost';
 import SearchPage from './SearchPage';
+import SearchHistory from './SearchHistory';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class App extends React.Component {
         <Container>
 
 
-          <SearchPage></SearchPage>
+          <SearchHistory></SearchHistory>
         </Container>
       );
     }

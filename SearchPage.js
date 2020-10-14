@@ -185,6 +185,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     borderRadius: 25,
     elevation: 0,
-    backgroundColor: '#dddddd',
+    backgroundColor: '#F0F2F5',
   }
 });
