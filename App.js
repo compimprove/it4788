@@ -10,6 +10,9 @@ import Comment from './Comment';
 import MainPost from './MainPost';
 import SearchPage from './SearchPage';
 import SearchHistory from './SearchHistory';
+import SearchResult from './SearchResult';
+import EmptySearchKey from './EmptySearchKey';
+import EmptySearchResult from './EmptySearchResult';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -37,7 +40,7 @@ export default class App extends React.Component {
         <Container>
 
 
-          <SearchHistory></SearchHistory>
+          <EmptySearchResult/>
         </Container>
       );
     }

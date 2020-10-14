@@ -1,36 +1,41 @@
 import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
-import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Searchbar } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
+
+const MySearchBar = () => {
+  const [searchQuery, setSearchQuery] = React.useState('Sửa chữa nhà');
+
+  const onChangeSearch = query => setSearchQuery(query);
+
+  return (
+    <Searchbar
+      placeholder="Search"
+      onChangeText={onChangeSearch}
+      value={searchQuery}
+      clearIcon='close'
+      style={styles.searchbar}
+    />
+  );
+};
 
 const MyComponent = () => (
 
   <View style={styles.container}>
-    <View style={styles.appbar}>
-      <Appbar style={styles.appbarHead}>
-        <Appbar.Content title="facebook" titleStyle={styles.appbarTitle} color={'#007AFF'}/>
-        <Appbar.Action
-           icon="magnify"
-           size={28}
-           style={styles.setBackgroundGray}
-           onPress={() => {}}
-         />
-        <Appbar.Action icon="facebook-messenger" size={28} style={styles.setBackgroundGray} onPress={() => {}} />
-      </Appbar>
-
-      <Appbar style={styles.appbarBelow}>
-        <Appbar.Action color="#555555" icon="home" size={29} onPress={() => {}}/>
-        <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => {}}/>
-        <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => {}}/>
-        <Appbar.Action color="#555555" icon="bell-outline" size={29} onPress={() => {}}/>
-        <Appbar.Action color="#555555" icon="menu" size={29} onPress={() => {}}/>
-      </Appbar>
-      <View style={styles.separator}/>
+  <View style={styles.appbar}>
+    <Appbar style={styles.appbarHead}>
+      <Appbar.BackAction onPress={() => {}} />
+        <MySearchBar/>
+    </Appbar>
+    <View>
+      <Text style={styles.headerSearch}>Kết quả tìm kiếm</Text>
     </View>
 
-    <ScrollView showsVerticalScrollIndicator={false}>
+  </View>
 
-      <Card>
+    <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: "#F0F2F5"}}>
+
+      <Card style={styles.cardSearch}>
           <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} /> } />
           <Card.Content>
               <Paragraph selectable>Card content</Paragraph>
@@ -57,9 +62,7 @@ const MyComponent = () => (
           </Card.Actions>
         </Card>
 
-      <View style={styles.dividerPost}></View>
-
-      <Card>
+      <Card style={styles.cardSearch}>
           <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} /> } />
           <Card.Content>
             <ViewMoreText numberOfLines={10}>
@@ -136,7 +139,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   separator:{
-    borderBottomColor: '#000000',
+    borderBottomColor: '#555555',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
@@ -146,11 +149,30 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   dividerPost:{
-    borderBottomColor: '#a9a9a9',
+    borderBottomColor: '#F0F2F5',
     borderBottomWidth: 10,
     elevation: 0,
   },
   appbar:{
 
-  }
+  },
+  searchbar: {
+    flex: 1,
+    marginRight: 15,
+    borderRadius: 25,
+    elevation: 0,
+    backgroundColor: '#F0F2F5',
+  },
+  cardSearch: {
+    margin: 15,
+    elevation: 0,
+  },
+  headerSearch: {
+    fontWeight: 'normal',
+    marginLeft: 15,
+    paddingBottom: 10,
+    alignSelf: 'center',
+    fontSize:16,
+    color:"#555555"
+  },
 });
