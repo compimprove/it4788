@@ -4,7 +4,32 @@ import { StyleSheet, View, TextInput, } from 'react-native';
 import { Appbar } from 'react-native-paper';
 import Footer from '../Footer/Footer';
 import { Text, Content, Container } from 'native-base';
+import UserRegisterData from '../../models/UserRegisterData';
 export default class RegisterHoten extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: ''
+    }
+  }
+
+  setFirstName(firstName) {
+    this.setState({ firstName });
+  }
+
+  setLastName(lastName) {
+    this.setState({ lastName });
+  }
+
+  onSubmit() {
+    console.log("Submit FN " + this.state.firstName + " LS " + this.state.lastName);
+    let userData = UserRegisterData.getInstance();
+    userData.firstName = this.state.firstName;
+    userData.lastName = this.state.lastName;
+    userData.log();
+  }
+
   _onPressButton2() {
     alert("Bạn đã có tài khoản");
   }
@@ -15,6 +40,7 @@ export default class RegisterHoten extends Component {
     alert("Back");
   }
   render() {
+    let _this = this;
     return (
       <Container>
         <Appbar.Header style={{ backgroundColor: 'white' }}>
@@ -28,15 +54,21 @@ export default class RegisterHoten extends Component {
             <TextInput
               style={styles.input1}
               placeholder="Họ"
+              value={this.state.lastName}
+              onChangeText={this.setLastName.bind(this)}
             />
             <TextInput style={styles.input2}
-              placeholder="Tên" />
+              placeholder="Tên"
+              value={this.state.firstName}
+              onChangeText={this.setFirstName.bind(this)}
+            />
+
           </View>
           <Text style={styles.text}>
             Dùng tên thật giúp bạn bè dễ dàng nhận ra bạn hơn</Text>
         </Content>
         <Footer
-          onClick={() => alert("hello")} />
+          onClick={this.onSubmit.bind(this)} />
       </Container>
     );
   }

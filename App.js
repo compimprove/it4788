@@ -2,10 +2,8 @@ import React from 'react';
 import { AppLoading } from 'expo';
 import { Container } from 'native-base';
 import * as Font from 'expo-font';
-
 import { Ionicons } from '@expo/vector-icons';
 import CreatePost from './CreatePost';
-
 import Setting from './src/components/InterfaceUser/Setting';
 import Login from './src/components/Login/Login';
 import Login_Pass from './src/components/Login/Login_Pass';
@@ -41,7 +39,7 @@ export default class App extends React.Component {
     else {
       return (
         <Container>
-          <RegisterHoten />
+          <Phone />
         </Container>
       );
     }
