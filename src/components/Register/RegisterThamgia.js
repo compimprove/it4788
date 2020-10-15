@@ -5,6 +5,9 @@ import Footer from '../Footer/Footer';
 import { Appbar } from 'react-native-paper';
 import { Button, Text, Content, Container } from 'native-base';
 export default class RegisterThamgia extends Component {
+  constructor(props) {
+    super(props);
+  }
   _onPressButton1() {
     alert("Bắt đầu");
   }
@@ -18,7 +21,9 @@ export default class RegisterThamgia extends Component {
     return (
       <Container>
         <Appbar.Header style={{ backgroundColor: 'white' }}>
-          <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
+          <Appbar.BackAction icon="back" onPress={() => {
+            this.props.navigation.goBack()
+          }} />
           <Appbar.Content title="Tạo tài khoản" />
         </Appbar.Header>
         <Content style={{ margin: 10, }}>
@@ -29,11 +34,12 @@ export default class RegisterThamgia extends Component {
           <Text
             style={styles.text}>
             Chúng tôi giúp bạn tạo tài khoản sau vài bước dễ dàng
-                              </Text>
-          <Button onPress={this._onPressButton1} block primary>
+          </Text>
+          <Button onPress={() => {
+            this.props.navigation.navigate("RegisterHoten")
+          }} block primary>
             <Text>Bắt đầu</Text>
           </Button>
-
         </Content>
         <Footer />
       </Container>

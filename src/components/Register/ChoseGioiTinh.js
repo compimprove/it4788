@@ -22,6 +22,7 @@ export default class ChoseGioiTinh extends Component {
     } else {
       UserRegisterData.getInstance().sex = this.state.sex;
       UserRegisterData.getInstance().log();
+      this.props.navigation.navigate("ChoseDate");
     }
   }
 
@@ -83,7 +84,7 @@ export default class ChoseGioiTinh extends Component {
               />
             </Right>
           </ListItem>
-          <Button style={styles.button} onPress={this._onPressButton} block primary>
+          <Button style={styles.button} onPress={this.onSubmit.bind(this)} block primary>
             <Text>Tiếp</Text>
           </Button>
         </Content>

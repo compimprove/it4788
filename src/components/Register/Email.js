@@ -12,8 +12,8 @@ export default class Email extends Component {
       email: -1
     }
   }
-  _onPressButton() {
-    alert("Đi tới nhập số điện thoại")
+  goUsePhone() {
+    this.props.navigation.navigate("Phone");
   }
   _onPressButton1() {
     alert("Email")
@@ -35,6 +35,7 @@ export default class Email extends Component {
       console.log("Submit email " + this.state.email);
       UserRegisterData.getInstance().email = this.state.email;
       UserRegisterData.getInstance().log();
+      this.props.navigation.navigate("Phone");
     }
   }
 
@@ -58,7 +59,7 @@ export default class Email extends Component {
           />
           <Text style={styles.text1}
           >Bạn sẽ dùng email này khi đăng nhập và khi cần đặt lại mật khẩu</Text>
-          <Button style={styles.button} onPress={this._onPressButton} block primary>
+          <Button style={styles.button} onPress={this.goUsePhone.bind(this)} block primary>
             <Text>Dùng số điện thoại</Text>
           </Button>
         </Content>

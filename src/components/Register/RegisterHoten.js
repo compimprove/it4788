@@ -23,11 +23,14 @@ export default class RegisterHoten extends Component {
   }
 
   onSubmit() {
-    console.log("Submit FN " + this.state.firstName + " LS " + this.state.lastName);
-    let userData = UserRegisterData.getInstance();
-    userData.firstName = this.state.firstName;
-    userData.lastName = this.state.lastName;
-    userData.log();
+    if (this.state.firstName != '' && this.state.lastName != '') {
+      console.log("Submit FN " + this.state.firstName + " LS " + this.state.lastName);
+      let userData = UserRegisterData.getInstance();
+      userData.firstName = this.state.firstName;
+      userData.lastName = this.state.lastName;
+      userData.log();
+      this.props.navigation.navigate("Email");
+    }
   }
 
   _onPressButton2() {

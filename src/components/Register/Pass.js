@@ -24,6 +24,7 @@ export default class Pass extends Component {
       console.log("Submit password " + this.state.password);
       UserRegisterData.getInstance().password = this.state.password;
       UserRegisterData.getInstance().log();
+      this.props.navigation.navigate("XacnhanTK");
     }
   }
 
@@ -58,7 +59,7 @@ export default class Pass extends Component {
           />
           <Text style={styles.text1}
           >Nhập mật khẩu có tối thiểu 6 ký tự bao gồm số, chữ cái và dấu chấm câu (như! và &)</Text>
-          <Button style={styles.button} onPress={this._onPressButton} block primary>
+          <Button style={styles.button} onPress={this.onSubmit.bind(this)} block primary>
             <Text>Tiếp</Text>
           </Button>
         </Content>

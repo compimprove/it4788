@@ -22,13 +22,14 @@ export default class Phone extends Component {
       return;
     } else {
       console.log("Submit phone " + this.state.phone);
-      UserRegisterData.getInstance().phone = this.state.phone;
+      UserRegisterData.getInstance().phoneNumber = this.state.phone;
       UserRegisterData.getInstance().log();
+      this.props.navigation.navigate("ChoseGioiTinh");
     }
   }
 
-  _onPressButton() {
-    alert("Đi tới nhập email")
+  goUseEmail() {
+    this.props.navigation.navigate("Email");
   }
   _onPressButton1() {
     alert("Back")
@@ -55,7 +56,7 @@ export default class Phone extends Component {
           />
           <Text style={styles.text1}
           >Bạn sẽ dùng số này khi đăng nhập và khi cần đặt lại mật khẩu</Text>
-          <Button style={styles.button} onPress={this._onPressButton} block primary>
+          <Button style={styles.button} onPress={this.goUseEmail.bind(this)} block primary>
             <Text>Dùng địa chỉ email của bạn</Text>
           </Button>
         </Content>

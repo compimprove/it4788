@@ -38,7 +38,10 @@ export default class Login extends Component {
             style={styles.text}
           >Quay lại</Text>
         </Content>
-<Footer />
+        <Footer
+          onClick={() => {
+            this.props.navigation.navigate("Register")
+          }} />
       </Container>
     );
 

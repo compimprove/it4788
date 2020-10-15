@@ -26,6 +26,7 @@ export default class ChoseDate extends Component {
     } else {
       UserRegisterData.getInstance().birthDay = this.state.chosenDate;
       UserRegisterData.getInstance().log();
+      this.props.navigation.navigate("Pass");
     }
   }
 

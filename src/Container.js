@@ -3,6 +3,7 @@ import Login from './components/Login/Login';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import RegisterThamgia from './components/Register/RegisterThamgia';
+import Register from './components/Register/Register';
 const Stack = createStackNavigator();
 
 export default class AppContainer extends React.Component {
@@ -16,7 +17,7 @@ export default class AppContainer extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="RegisterThamGia" component={RegisterThamgia} />
+          <Stack.Screen name="Register" component={Register} />
         </Stack.Navigator>
       </NavigationContainer>
     );
