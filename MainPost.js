@@ -37,7 +37,6 @@ export default class MainPost extends React.Component {
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.dividerPost} />
-
           <Card>
             <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
             <Card.Content>
@@ -66,7 +65,6 @@ export default class MainPost extends React.Component {
               <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
                 <Button uppercase={false} icon="share-outline" >Share</Button>
               </TouchableHighlight>
-
             </Card.Actions>
           </Card>
           <View style={styles.comment}>

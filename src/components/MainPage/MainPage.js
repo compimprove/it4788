@@ -18,7 +18,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={SearchResult} />
+        <Tab.Screen name="mainPage" component={mainPage} />
         <Tab.Screen name="SearchPage" component={SearchPage} />
         <Tab.Screen name="MainPost" component={MainPost} />
         <Tab.Screen name="SearchResult" component={SearchResult} />

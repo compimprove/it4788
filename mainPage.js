@@ -2,6 +2,7 @@ import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
+import Article from './src/components/MainPage/Article';
 
 export default class MainPage extends React.Component {
   constructor(props) {
@@ -39,8 +40,16 @@ export default class MainPage extends React.Component {
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
-
-          <Card>
+          <Article
+            selfLoading={false}
+            data={{
+              userName: "NTD",
+              content: "Article Content",
+              timePosted: 60,
+              likes: 5,
+              comments: 15
+            }} />
+          {/* <Card>
             <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
             <Card.Content>
               <Paragraph selectable>Card content</Paragraph>
@@ -65,7 +74,7 @@ export default class MainPage extends React.Component {
               </TouchableHighlight>
 
             </Card.Actions>
-          </Card>
+          </Card> */}
 
           <View style={styles.dividerPost}></View>
 
