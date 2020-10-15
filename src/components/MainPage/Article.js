@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
+import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
 
 
 class Article extends React.Component {
+  NUMBER_OF_LINE = 10;
 
   constructor(props) {
     super(props);
@@ -23,9 +25,11 @@ class Article extends React.Component {
       <Card>
         <Card.Title title={this.state.userName} subtitle={this.state.timePosted / 60 + 'm'} left={(props) => <Avatar.Image size={50} source={require('../../../assets/favicon.png')} />} />
         <Card.Content>
-          <Paragraph selectable>{this.state.content}</Paragraph>
+          <ViewMoreText numberOfLines={this.NUMBER_OF_LINE}>
+            <Paragraph selectable>{this.state.content}</Paragraph>
+          </ViewMoreText>
         </Card.Content>
-        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+        <Card.Cover source={{ uri: this.state.image_url }} />
         <Card.Actions style={styles.justifySpaceBetween}>
           <Text>
             <Button icon="thumb-up" color="#1877F2">{this.state.likes}</Button>
