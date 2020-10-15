@@ -4,6 +4,7 @@ import { StyleSheet, TextInput } from 'react-native';
 import { Appbar } from 'react-native-paper';
 import Footer from '../Footer/Footer';
 import { Container, Button, Content, Text } from 'native-base';
+import UserRegisterData from '../../models/UserRegisterData';
 export default class Phone extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,19 @@ export default class Phone extends Component {
     }
   }
 
+  setPhone(phone) {
+    this.setState({ phone });
+  }
 
+  onSubmit() {
+    if (this.state.phone == '') {
+      return;
+    } else {
+      console.log("Submit phone " + this.state.phone);
+      UserRegisterData.getInstance().phone = this.state.phone;
+      UserRegisterData.getInstance().log();
+    }
+  }
 
   _onPressButton() {
     alert("Đi tới nhập email")
@@ -33,8 +46,12 @@ export default class Phone extends Component {
         <Content style={{ margin: 10 }}>
           <Text style={styles.text}>Số di động của bạn là gì ?</Text>
           <TextInput
+            autoFocus={true}
+            keyboardType="number-pad"
             style={styles.input}
             placeholder="Nhập số di động của bạn"
+            value={this.state.phone}
+            onChangeText={this.setPhone.bind(this)}
           />
           <Text style={styles.text1}
           >Bạn sẽ dùng số này khi đăng nhập và khi cần đặt lại mật khẩu</Text>
@@ -42,7 +59,8 @@ export default class Phone extends Component {
             <Text>Dùng địa chỉ email của bạn</Text>
           </Button>
         </Content>
-        <Footer />
+        <Footer
+          onClick={this.onSubmit.bind(this)} />
       </Container>
     );
 

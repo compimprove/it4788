@@ -1,18 +1,8 @@
 import React from 'react';
 import { AppLoading } from 'expo';
-import { Container } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import CreatePost from './CreatePost';
-import Setting from './src/components/InterfaceUser/Setting';
-import Login from './src/components/Login/Login';
-import Login_Pass from './src/components/Login/Login_Pass';
-import Logout from './src/components/Logout/Logout';
-import Phone from './src/components/Register/Phone';
-import Pass from './src/components/Register/Pass';
-import RegisterThamgia from './src/components/Register/RegisterThamgia';
-import RegisterHoten from './src/components/Register/RegisterHoten';
-import ChoseDate from './src/components/Register/ChoseDate';
+import AppContainer from './src/Container';
 
 
 export default class App extends React.Component {
@@ -38,9 +28,7 @@ export default class App extends React.Component {
     }
     else {
       return (
-        <Container>
-          <Phone />
-        </Container>
+        <AppContainer />
       );
     }
   }

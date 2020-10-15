@@ -13,7 +13,7 @@ export default class UserRegisterData {
     set lastName(value) {
         this._lastName = value;
     };
-    _birthDay = new Date().getTime();
+    _birthDay = new Date(1990, 1, 1);
     get birthDay() {
         return this._birthDay;
     };
@@ -42,6 +42,14 @@ export default class UserRegisterData {
     set passWord(value) {
         this._passWord = value;
     };
+    _sex = -1;
+    get sex() {
+        return this._sex;
+    };
+    set sex(value) {
+        this._sex = value;
+    };
+
     log() {
         console.log(JSON.stringify(this));
     }
