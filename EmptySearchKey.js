@@ -24,27 +24,24 @@ const MyComponent = () => (
   <View style={styles.container}>
     <View style={styles.appbar}>
       <Appbar style={styles.appbarHead}>
-        <Appbar.BackAction onPress={() => {}} />
-          <MySearchBar/>
+        <Appbar.BackAction onPress={() => { }} />
+        <MySearchBar />
       </Appbar>
-      <View style={styles.separator}/>
+      <View style={styles.separator} />
     </View>
 
-    <View style={styles.separator}/>
-
-
-
+    <View style={styles.separator} />
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollViewContent}>
       <Image
-        style={{height: 120, width: 120, marginBottom: 20}}
+        style={{ height: 120, width: 120, marginBottom: 20 }}
         source={require('./assets/icon-view-5.jpg')}
       />
-      <Text style={{fontSize: 16, justifyContent: 'center', textAlign: 'center'}}>Hãy nhập vài từ để tìm kiếm trong facebook</Text>
+      <Text style={{ fontSize: 16, justifyContent: 'center', textAlign: 'center' }}>Hãy nhập vài từ để tìm kiếm trong facebook</Text>
     </ScrollView>
   </View>
 
 
- );
+);
 
 export default MyComponent
 
@@ -55,10 +52,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
 
-  appbarTitle:{
+  appbarTitle: {
     fontSize: 24,
   },
-  appbarHead:{
+  appbarHead: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 70,
@@ -69,17 +66,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  separator:{
+  separator: {
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  postSeparator:{
+  postSeparator: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  dividerPost:{
+  dividerPost: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 10,
     elevation: 0,
@@ -105,7 +102,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#e6e6fa',
     borderRadius: 20,
-    alignSelf:'baseline'
+    alignSelf: 'baseline'
   },
   avatarComment: {
     marginLeft: 10,
@@ -116,7 +113,7 @@ const styles = StyleSheet.create({
   myTextInput: {
     paddingLeft: 15,
     flex: 1,
-    fontSize:16,
+    fontSize: 16,
     height: 45,
     margin: 10,
     backgroundColor: '#e6e6fa',
@@ -141,7 +138,7 @@ const styles = StyleSheet.create({
   },
   scrollViewContent: {
     flexGrow: 1,
-    alignItems:'center',
+    alignItems: 'center',
     paddingTop: 50,
   }
 });

@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import mainPage from '../../../mainPage';
 import SearchPage from '../../../SearchPage';
 import MainPost from '../../../MainPost';
 import SearchResult from '../../../SearchResult';
 import SearchHistory from '../../../SearchHistory';
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 
 class MainPage extends React.Component {
@@ -16,13 +17,13 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen name="mainPage" component={mainPage} />
-        <Stack.Screen name="SearchPage" component={SearchPage} />
-        <Stack.Screen name="MainPost" component={MainPost} />
-        <Stack.Screen name="SearchResult" component={SearchResult} />
-        <Stack.Screen name="SearchHistory" component={SearchHistory} />
-      </Stack.Navigator>
+      <Tab.Navigator tabBar={props => (<></>)}>
+        <Tab.Screen name="mainPage" component={SearchResult} />
+        <Tab.Screen name="SearchPage" component={SearchPage} />
+        <Tab.Screen name="MainPost" component={MainPost} />
+        <Tab.Screen name="SearchResult" component={SearchResult} />
+        <Tab.Screen name="SearchHistory" component={SearchHistory} />
+      </Tab.Navigator>
     );
   }
 }
