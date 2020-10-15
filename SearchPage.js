@@ -32,69 +32,78 @@ const MyTextInput = () => {
   );
 };
 
-const MyComponent = () => (
+class SearchPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
 
-  <View style={styles.container}>
-    <View style={styles.appbar}>
-      <Appbar style={styles.appbarHead}>
-        <Appbar.BackAction onPress={() => {}} />
-          <MySearchBar/>
-      </Appbar>
-      <View style={styles.separator}/>
-    </View>
+      <View style={styles.container}>
+        <View style={styles.appbar}>
+          <Appbar style={styles.appbarHead}>
+            <Appbar.BackAction onPress={() => { }} />
+            <MySearchBar />
+          </Appbar>
+          <View style={styles.separator} />
+        </View>
 
-    <View style={styles.recentFind}>
-      <Text style={{fontWeight: 'bold'}}>Tìm kiếm gần đây</Text>
-      <Text>CHỈNH SỬA</Text>
-    </View>
-    <View style={styles.separator}/>
+        <View style={styles.recentFind}>
+          <Text style={{ fontWeight: 'bold' }}>Tìm kiếm gần đây</Text>
+          <Text>CHỈNH SỬA</Text>
+        </View>
+        <View style={styles.separator} />
 
 
 
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.searchsContent}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.searchsContent}>
 
+          </View>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            sửa chữa nhà
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            Mỹ Tâm
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            soict
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            k60 đại học Bách Khoa Hà Nội
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            Hust
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            sis
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            Đội bóng Việt Nam
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            Đội bóng Thái Lan
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            sửa chữa nhà ở
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            sửa chữa nhà kho
+          </Button>
+          <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
+            sửa chữa đồng hồ
+          </Button>
+        </ScrollView>
       </View>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        sửa chữa nhà
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        Mỹ Tâm
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        soict
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        k60 đại học Bách Khoa Hà Nội
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        Hust
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        sis
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        Đội bóng Việt Nam
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        Đội bóng Thái Lan
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        sửa chữa nhà ở
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        sửa chữa nhà kho
-      </Button>
-      <Button style={styles.searchKey} icon='magnify' uppercase={false} color='#000000'>
-        sửa chữa đồng hồ
-      </Button>
-    </ScrollView>
-  </View>
 
 
- );
+    );
+    ;
+  }
+}
 
-export default MyComponent
+export default SearchPage;
 
 const styles = StyleSheet.create({
   container: {
@@ -103,10 +112,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
 
-  appbarTitle:{
+  appbarTitle: {
     fontSize: 24,
   },
-  appbarHead:{
+  appbarHead: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 70,
@@ -117,17 +126,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  separator:{
+  separator: {
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  postSeparator:{
+  postSeparator: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  dividerPost:{
+  dividerPost: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 10,
     elevation: 0,
@@ -153,7 +162,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#e6e6fa',
     borderRadius: 20,
-    alignSelf:'baseline'
+    alignSelf: 'baseline'
   },
   avatarComment: {
     marginLeft: 10,
@@ -164,7 +173,7 @@ const styles = StyleSheet.create({
   myTextInput: {
     paddingLeft: 15,
     flex: 1,
-    fontSize:16,
+    fontSize: 16,
     height: 45,
     margin: 10,
     backgroundColor: '#e6e6fa',

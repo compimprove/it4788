@@ -32,92 +32,102 @@ const MyTextInput = () => {
   );
 };
 
-const MyComponent = () => (
+class SearchHistory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
 
-  <View style={styles.container}>
-    <View style={styles.appbar}>
-      <Appbar style={styles.appbarHead}>
-        <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title='Nhật ký hoạt động' />
-      </Appbar>
-      <View style={styles.separator}/>
-    </View>
-
-    <View style={styles.recentFind}>
-    <Button style={styles.searchKey} uppercase={false} color='#216fdb'>
-      Xóa các tìm kiếm
-    </Button>
-    </View>
-    <View style={styles.separator}/>
-
-
-
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.searchsContent}>
-        <Text style={styles.time}>7 tháng 8 2020</Text>
-        <View style={styles.comment}>
-          <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-          <View style={styles.commentBody}>
-            <View>
-              <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-              <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-            </View>
-          </View>
-          <Button icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}></Button>
+      <View style={styles.container}>
+        <View style={styles.appbar}>
+          <Appbar style={styles.appbarHead}>
+            <Appbar.BackAction onPress={() => { }} />
+            <Appbar.Content title='Nhật ký hoạt động' />
+          </Appbar>
+          <View style={styles.separator} />
         </View>
 
-        <View style={styles.comment}>
-          <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-          <View style={styles.commentBody}>
-            <View>
-              <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-              <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-            </View>
-          </View>
-          <Button icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}></Button>
+        <View style={styles.recentFind}>
+          <Button style={styles.searchKey} uppercase={false} color='#216fdb'>
+            Xóa các tìm kiếm
+        </Button>
         </View>
+        <View style={styles.separator} />
 
-        <View style={styles.comment}>
-          <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-          <View style={styles.commentBody}>
-            <View>
-              <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-              <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-            </View>
-          </View>
-          <Button icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}></Button>
-        </View>
 
-        <Text style={styles.time}>6 tháng 8 2020</Text>
-          <View style={styles.comment}>
-            <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-            <View style={styles.commentBody}>
-              <View>
-                <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.searchsContent}>
+            <Text style={styles.time}>7 tháng 8 2020</Text>
+            <View style={styles.comment}>
+              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View>
+                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
+                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+                </View>
               </View>
+              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
             </View>
-            <Button icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}></Button>
-          </View>
 
-          <View style={styles.comment}>
-            <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-            <View style={styles.commentBody}>
-              <View>
-                <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+            <View style={styles.comment}>
+              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View>
+                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
+                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+                </View>
               </View>
+              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
             </View>
-            <Button icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}></Button>
+
+            <View style={styles.comment}>
+              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View>
+                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
+                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+                </View>
+              </View>
+              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
+            </View>
+
+            <Text style={styles.time}>6 tháng 8 2020</Text>
+            <View style={styles.comment}>
+              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View>
+                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
+                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+                </View>
+              </View>
+              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View>
+                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
+                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
+                </View>
+              </View>
+              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
+            </View>
           </View>
+        </ScrollView>
       </View>
-    </ScrollView>
-  </View>
 
 
- );
+    );
+    ;
+  }
+}
 
-export default MyComponent
+export default SearchHistory;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -126,10 +136,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
 
-  appbarTitle:{
+  appbarTitle: {
     fontSize: 24,
   },
-  appbarHead:{
+  appbarHead: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 70,
@@ -140,17 +150,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  separator:{
+  separator: {
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  postSeparator:{
+  postSeparator: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  dividerPost:{
+  dividerPost: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 10,
     elevation: 0,
@@ -177,7 +187,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#e6e6fa',
     borderRadius: 20,
-    alignSelf:'baseline'
+    alignSelf: 'baseline'
   },
   avatarComment: {
     marginLeft: 10,
@@ -189,7 +199,7 @@ const styles = StyleSheet.create({
   myTextInput: {
     paddingLeft: 15,
     flex: 1,
-    fontSize:16,
+    fontSize: 16,
     height: 45,
     margin: 10,
     backgroundColor: '#e6e6fa',

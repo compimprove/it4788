@@ -16,92 +16,95 @@ const MyTextInput = () => {
   );
 };
 
-const MyComponent = () => (
+export default class MainPost extends React.Component {
+  render() {
+    return (
 
-  <View style={styles.container}>
-    <View style={styles.appbar}>
-      <Appbar style={styles.appbarHead}>
-        <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Văn A" titleStyle={styles.appbarTitle} />
-        <Appbar.Action
-           icon="magnify"
-           size={28}
-           onPress={() => {}}
-         />
-      </Appbar>
+      <View style={styles.container}>
+        <View style={styles.appbar}>
+          <Appbar style={styles.appbarHead}>
+            <Appbar.BackAction onPress={() => { }} />
+            <Appbar.Content title="Văn A" titleStyle={styles.appbarTitle} />
+            <Appbar.Action
+              icon="magnify"
+              size={28}
+              onPress={() => { }}
+            />
+          </Appbar>
 
-      <View style={styles.separator}/>
-    </View>
+          <View style={styles.separator} />
+        </View>
 
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.dividerPost}/>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.dividerPost} />
 
-      <Card>
-          <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} /> } />
-          <Card.Content>
-            <Paragraph selectable>
-              Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-              Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-              Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-              Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-            </Paragraph>
-          </Card.Content>
-          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-          <Card.Actions style={styles.justifySpaceBetween}>
+          <Card>
+            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
+            <Card.Content>
+              <Paragraph selectable>
+                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                </Paragraph>
+            </Card.Content>
+            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+            <Card.Actions style={styles.justifySpaceBetween}>
               <Text>
                 <Button icon="thumb-up">2</Button>
               </Text>
               <Text>23 Comments</Text>
-          </Card.Actions>
-          <View style={styles.postSeparator}></View>
-          <Card.Actions style={styles.justifySpaceBetween}>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="thumb-up-outline" >Like</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="comment-outline" >Comment</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="share-outline" >Share</Button>
-            </TouchableHighlight>
+            </Card.Actions>
+            <View style={styles.postSeparator}></View>
+            <Card.Actions style={styles.justifySpaceBetween}>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="thumb-up-outline" >Like</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="comment-outline" >Comment</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="share-outline" >Share</Button>
+              </TouchableHighlight>
 
-          </Card.Actions>
-        </Card>
-        <View style={styles.comment}>
-          <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-          <View style={styles.commentBody}>
-            <View style={styles.commentBackground}>
-              <Text style={styles.userName}>Van B</Text>
-              <Text style={styles.commentContent}>Lorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderum</Text>
+            </Card.Actions>
+          </Card>
+          <View style={styles.comment}>
+            <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+            <View style={styles.commentBody}>
+              <View style={styles.commentBackground}>
+                <Text style={styles.userName}>Van B</Text>
+                <Text style={styles.commentContent}>Lorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderum</Text>
+              </View>
+
+              <Text style={styles.timeComment}>1 day</Text>
             </View>
-
-            <Text style={styles.timeComment}>1 day</Text>
           </View>
-        </View>
 
-        <View style={styles.comment}>
-          <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-          <View style={styles.commentBody}>
-            <View style={styles.commentBackground}>
-              <Text style={styles.userName}>Van C</Text>
-              <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+          <View style={styles.comment}>
+            <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+            <View style={styles.commentBody}>
+              <View style={styles.commentBackground}>
+                <Text style={styles.userName}>Van C</Text>
+                <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+              </View>
+
+              <Text style={styles.timeComment}>1 day</Text>
             </View>
-
-            <Text style={styles.timeComment}>1 day</Text>
           </View>
+
+        </ScrollView>
+        <View style={styles.separator}></View>
+        <View>
+          <MyTextInput></MyTextInput>
         </View>
-
-    </ScrollView>
-    <View style={styles.separator}></View>
-    <View>
-      <MyTextInput></MyTextInput>
-    </View>
-  </View>
+      </View>
 
 
- );
+    );
+  }
+}
 
-export default MyComponent
 
 const styles = StyleSheet.create({
   container: {
@@ -109,10 +112,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
 
-  appbarTitle:{
+  appbarTitle: {
     fontSize: 24,
   },
-  appbarHead:{
+  appbarHead: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 70,
@@ -123,17 +126,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  separator:{
+  separator: {
     borderBottomColor: '#000000',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  postSeparator:{
+  postSeparator: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  dividerPost:{
+  dividerPost: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 10,
     elevation: 0,
@@ -159,7 +162,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#e6e6fa',
     borderRadius: 20,
-    alignSelf:'baseline'
+    alignSelf: 'baseline'
   },
   avatarComment: {
     marginLeft: 10,
@@ -168,7 +171,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   myTextInput: {
-    fontSize:16,
+    fontSize: 16,
     height: 45,
     margin: 10,
     backgroundColor: '#e6e6fa',

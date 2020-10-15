@@ -19,92 +19,102 @@ const MySearchBar = () => {
   );
 };
 
-const MyComponent = () => (
+class SearchResult extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
 
-  <View style={styles.container}>
-  <View style={styles.appbar}>
-    <Appbar style={styles.appbarHead}>
-      <Appbar.BackAction onPress={() => {}} />
-        <MySearchBar/>
-    </Appbar>
-    <View>
-      <Text style={styles.headerSearch}>Kết quả tìm kiếm</Text>
-    </View>
+      <View style={styles.container}>
+        <View style={styles.appbar}>
+          <Appbar style={styles.appbarHead}>
+            <Appbar.BackAction onPress={() => { }} />
+            <MySearchBar />
+          </Appbar>
+          <View>
+            <Text style={styles.headerSearch}>Kết quả tìm kiếm</Text>
+          </View>
 
-  </View>
+        </View>
 
-    <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: "#F0F2F5"}}>
+        <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: "#F0F2F5" }}>
 
-      <Card style={styles.cardSearch}>
-          <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} /> } />
-          <Card.Content>
+          <Card style={styles.cardSearch}>
+            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
+            <Card.Content>
               <Paragraph selectable>Card content</Paragraph>
-          </Card.Content>
-          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-          <Card.Actions style={styles.justifySpaceBetween}>
+            </Card.Content>
+            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+            <Card.Actions style={styles.justifySpaceBetween}>
               <Text>
                 <Button icon="thumb-up" color="#1877F2">2</Button>
               </Text>
               <Text>23 Comments</Text>
-          </Card.Actions>
-          <View style={styles.postSeparator}></View>
-          <Card.Actions style={styles.justifySpaceBetween}>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="thumb-up-outline" color="#444444">Like</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
-            </TouchableHighlight>
+            </Card.Actions>
+            <View style={styles.postSeparator}></View>
+            <Card.Actions style={styles.justifySpaceBetween}>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="thumb-up-outline" color="#444444">Like</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
+              </TouchableHighlight>
 
-          </Card.Actions>
-        </Card>
+            </Card.Actions>
+          </Card>
 
-      <Card style={styles.cardSearch}>
-          <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} /> } />
-          <Card.Content>
-            <ViewMoreText numberOfLines={10}>
-              <Paragraph selectable>
-                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-              </Paragraph>
-            </ViewMoreText>
+          <Card style={styles.cardSearch}>
+            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
+            <Card.Content>
+              <ViewMoreText numberOfLines={10}>
+                <Paragraph selectable>
+                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
+                  </Paragraph>
+              </ViewMoreText>
 
-          </Card.Content>
-          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-          <Card.Actions style={styles.justifySpaceBetween}>
+            </Card.Content>
+            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+            <Card.Actions style={styles.justifySpaceBetween}>
               <Text>
                 <Button icon="thumb-up" color="#1877F2">2</Button>
               </Text>
               <Text>23 Comments</Text>
-          </Card.Actions>
-          <View style={styles.postSeparator}></View>
-          <Card.Actions style={styles.justifySpaceBetween}>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="thumb-up-outline" color="#444444" >Like</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="#dddddd" onPress={() => {}}>
-              <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
-            </TouchableHighlight>
+            </Card.Actions>
+            <View style={styles.postSeparator}></View>
+            <Card.Actions style={styles.justifySpaceBetween}>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="thumb-up-outline" color="#444444" >Like</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
+              </TouchableHighlight>
+              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+                <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
+              </TouchableHighlight>
 
-          </Card.Actions>
-        </Card>
-    </ScrollView>
-
-
-  </View>
+            </Card.Actions>
+          </Card>
+        </ScrollView>
 
 
- );
+      </View>
 
-export default MyComponent
+
+    );
+
+    ;
+  }
+}
+
+export default SearchResult;
 
 const styles = StyleSheet.create({
   container: {
@@ -113,13 +123,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
 
-  appbarTitle:{
+  appbarTitle: {
     fontSize: 30,
   },
-  setBackgroundGray:{
+  setBackgroundGray: {
     backgroundColor: '#E4E6EB'
   },
-  appbarHead:{
+  appbarHead: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 70,
@@ -129,7 +139,7 @@ const styles = StyleSheet.create({
   justifySpaceBetween: {
     justifyContent: 'space-between',
   },
-  appbarBelow:{
+  appbarBelow: {
     elevation: 0,
     backgroundColor: '#ffffff',
     height: 30,
@@ -138,22 +148,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 15,
   },
-  separator:{
+  separator: {
     borderBottomColor: '#555555',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  postSeparator:{
+  postSeparator: {
     borderBottomColor: '#a9a9a9',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
-  dividerPost:{
+  dividerPost: {
     borderBottomColor: '#F0F2F5',
     borderBottomWidth: 10,
     elevation: 0,
   },
-  appbar:{
+  appbar: {
 
   },
   searchbar: {
@@ -172,7 +182,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     paddingBottom: 10,
     alignSelf: 'center',
-    fontSize:16,
-    color:"#555555"
+    fontSize: 16,
+    color: "#555555"
   },
 });
