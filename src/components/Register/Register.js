@@ -15,26 +15,29 @@ import SaveInfo from './SaveInfo';
 const Stack = createStackNavigator();
 
 class Register extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-	}
-	render() {
-		return (
-			<Stack.Navigator headerMode="none">
-				<Stack.Screen name="RegisterThamGia" component={RegisterThamgia} />
-				<Stack.Screen name="RegisterHoten" component={RegisterHoten} />
-				<Stack.Screen name="Email" component={Email} />
-				<Stack.Screen name="Phone" component={Phone} />
-				<Stack.Screen name="ChoseDate" component={ChoseDate} />
-				<Stack.Screen name="ChoseGioiTinh" component={ChoseGioiTinh} />
-				<Stack.Screen name="Pass" component={Pass} />
-				<Stack.Screen name="XacnhanTK" component={XacnhanTK} />
-				<Stack.Screen name="DoneRegister" component={DoneRegister} />
-				<Stack.Screen name="SaveInfo" component={SaveInfo} />
-			</Stack.Navigator>
-		);
-	}
+  }
+  render() {
+    return (
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="RegisterThamGia" component={RegisterThamgia} />
+        <Stack.Screen name="RegisterHoten" component={RegisterHoten} />
+        <Stack.Screen name="Email" component={Email} />
+        <Stack.Screen name="Phone" component={Phone} />
+        <Stack.Screen name="ChoseDate" component={ChoseDate} />
+        <Stack.Screen name="ChoseGioiTinh" component={ChoseGioiTinh} />
+        <Stack.Screen name="Pass" component={Pass} />
+        <Stack.Screen name="XacnhanTK" component={XacnhanTK} />
+        <Stack.Screen name="DoneRegister" component={DoneRegister} />
+        <Stack.Screen
+          name="SaveInfo"
+          component={SaveInfo}
+          initialParams={{ register: this.props.route.params.register }} />
+      </Stack.Navigator>
+    );
+  }
 }
 
 export default Register;

@@ -5,6 +5,33 @@ import Footer from '../Footer/Footer';
 import { Container, Button, Content, Text } from 'native-base';
 
 export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userIdentity: '',
+      password: ''
+    }
+  }
+
+  onUserIdentityChange(value) {
+    this.setState({
+      userIdentity: value
+    })
+  }
+
+  onPasswordChange(value) {
+    this.setState({
+      password: value
+    })
+  }
+
+  login() {
+    this.props.route.params.login({
+      userIdentity: this.state.userIdentity,
+      password: this.state.password
+    })
+  }
+
   _onPressButton() {
     alert("Đăng nhập")
   }
@@ -20,21 +47,30 @@ export default class Login extends Component {
             source={require('./image/face.jpg')} />
           <View>
             <TextInput
+              keyboardType="numeric"
               style={styles.textinput}
               placeholder="Nhập số điện thoại hoặc email"
+              value={this.state.userIdentity}
+              onChangeText={this.onUserIdentityChange.bind(this)}
             />
             <TextInput
+              secureTextEntry={true}
               style={styles.textinput}
               placeholder="Mật khẩu"
+              value={this.state.password}
+              onChangeText={this.onPasswordChange.bind(this)}
             />
           </View>
-          <Button style={styles.button} onPress={this._onPressButton} block light>
+          <Button style={styles.button} block light
+            onPress={this.login.bind(this)}>
             <Text>Đăng nhập</Text>
           </Button>
-          <Text onPress={() => { }}
+          <Text
+            onPress={() => { }}
             style={styles.text}
           >Quên mật khẩu ?</Text>
-          <Text onPress={() => { }}
+          <Text
+            onPress={() => { }}
             style={styles.text}
           >Quay lại</Text>
         </Content>

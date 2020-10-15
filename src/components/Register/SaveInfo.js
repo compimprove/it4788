@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Avatar, Appbar } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Left, Icon, Title, Right, Body, Item, Thumbnail, Content, Footer, FooterTab, Button, Text } from 'native-base';
+import UserRegisterData from '../../models/UserRegisterData';
 export default class SaveInfo extends Component {
   constructor(props) {
     super(props);
@@ -11,21 +12,24 @@ export default class SaveInfo extends Component {
     }
   }
 
-  _onPressButton() {
-    alert("OK")
-  }
   onOtherPressed() {
-    alert("Lúc khác")
+    this.register();
   }
   onSavePressed() {
-    alert("Back")
+    this.register();
   }
+
+  register() {
+    this.props.route.params.register(UserRegisterData.getInstance())
+  }
+
+
   render() {
     const uri = "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png";
     return (
       <Container>
         <Appbar.Header style={{ backgroundColor: 'white' }}>
-          <Appbar.BackAction icon="back" onPress={this.onSavePressed} />
+          <Appbar.BackAction icon="back" onPress={this.props.navigation.goBack} />
           <Appbar.Content title="Lưu thông tin" />
         </Appbar.Header>
         <Content style={{
@@ -45,10 +49,10 @@ export default class SaveInfo extends Component {
         </Content>
         <Footer>
           <FooterTab>
-            <Button onPress={this.onOtherPressed}>
+            <Button onPress={this.onOtherPressed.bind(this)}>
               <Text>Lúc khác</Text>
             </Button>
-            <Button onPress={this._onPressButton}>
+            <Button onPress={this.onSavePressed.bind(this)}>
               <Text>Lưu</Text>
             </Button>
           </FooterTab>

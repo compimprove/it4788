@@ -22,7 +22,7 @@ export default class Pass extends Component {
       return;
     } else {
       console.log("Submit password " + this.state.password);
-      UserRegisterData.getInstance().password = this.state.password;
+      UserRegisterData.getInstance().passWord = this.state.password;
       UserRegisterData.getInstance().log();
       this.props.navigation.navigate("XacnhanTK");
     }
