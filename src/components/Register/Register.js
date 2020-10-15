@@ -21,7 +21,7 @@ class Register extends React.Component {
 	}
 	render() {
 		return (
-			<Stack.Navigator>
+			<Stack.Navigator headerMode="none">
 				<Stack.Screen name="RegisterThamGia" component={RegisterThamgia} />
 				<Stack.Screen name="RegisterHoten" component={RegisterHoten} />
 				<Stack.Screen name="Email" component={Email} />

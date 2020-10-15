@@ -3,6 +3,8 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import AppContainer from './src/Container';
+import CommentOffline from './CommentOffline';
+import MainPage from './mainPage';
 
 export default class App extends React.Component {
   constructor(props) {

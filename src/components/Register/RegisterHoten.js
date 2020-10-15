@@ -47,7 +47,9 @@ export default class RegisterHoten extends Component {
     return (
       <Container>
         <Appbar.Header style={{ backgroundColor: 'white' }}>
-          <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
+          <Appbar.BackAction icon="back" onPress={() => {
+            this.props.navigation.back();
+          }} />
           <Appbar.Content title="Tham gia" />
         </Appbar.Header>
         <Content style={{ margin: 10, }}>
