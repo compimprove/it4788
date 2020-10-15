@@ -5,6 +5,8 @@ import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import CreatePost from './CreatePost';
 import MainPage from './mainPage';
+import NoteTab from './NotificationTab'
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,9 +32,8 @@ export default class App extends React.Component {
     else {
       return (
         <Container>
-
-
-          <MainPage></MainPage>
+          <Header/>
+          <NoteTab/>
         </Container>
       );
     }
