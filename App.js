@@ -3,6 +3,11 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import AppContainer from './src/AppContainer';
+import Comment  from './Comment';
+import CommentOffline from './CommentOffline';
+import EmptySearchKey from './EmptySearchKey';
+import EmptySearchResult from './EmptySearchResult';
+import MainPage from './mainPage';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +32,7 @@ export default class App extends React.Component {
     }
     else {
       return (
-        <AppContainer />
+        <MainPage />
       );
     }
   }
