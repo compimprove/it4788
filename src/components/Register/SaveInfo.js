@@ -34,13 +34,13 @@ export default class SaveInfo extends Component {
                   
         </Item>
         </Content>
-        <Footer>
-          <FooterTab>
+        <Footer >
+          <FooterTab style={{backgroundColor:'#FFFFFF'}}>
           <Button onPress={this._onPressButton1}>
-              <Text>Lúc khác</Text>
+              <Text style={{color:"#1877F2" }}>Lúc khác</Text>
             </Button>
             <Button onPress={this._onPressButton}>
-              <Text>Lưu</Text>
+              <Text  style={{color:"#1877F2" }}>Lưu</Text>
             </Button>
           </FooterTab>
         </Footer>

@@ -19,8 +19,15 @@ import RegisterThamgia from './src/components/Register/RegisterThamgia';
 import RegisterHoten from './src/components/Register/RegisterHoten';
 import Login_Pass from './src/components/Login/Login_Pass';
 import Phone from './src/components/Register/Phone';
-
-
+import LoginInterface from './src/components/Login/LoginInterface';
+import AddFriend from './src/components/InterfaceUser/AddFriend';
+import Friends from './src/components/InterfaceUser/Friends';
+import Setting from './src/components/InterfaceUser/Setting';
+import Logout from './src/components/Logout/Logout';
+import ChoseDate from './src/components/Register/ChoseDate';
+import ChoseGioiTinh from './src/components/Register/ChoseGioiTinh';
+import DoneRegister from './src/components/Register/DoneRegister';
+import SaveInfo from './src/components/Register/SaveInfo';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -46,7 +53,7 @@ export default class App extends React.Component {
     else {
       return (
         <Container>
-          <Invited/>
+          <Phone/>
         </Container>
       );
     }
