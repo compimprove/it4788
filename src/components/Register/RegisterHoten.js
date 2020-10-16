@@ -19,7 +19,7 @@ _onPressButton3(){
 <Container>
 <Appbar.Header style={{backgroundColor:'white'}}>
       <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
-      <Appbar.Content title="Tham gia" />
+      <Appbar.Content title="Họ và tên" />
      
     </Appbar.Header>
       <Content style={{margin:10,}}>
@@ -62,14 +62,16 @@ const styles = StyleSheet.create({
             borderWidth:1,
             width:150,
             borderRadius:5,
-            height:40
+            height:40,
+            paddingLeft:10
   },
   input2: {
             borderColor:'grey',
             borderWidth:1,
             width:150,  
             borderRadius:5 ,
-            height:40
+            height:40,
+            paddingLeft:10
   },
   name: {
             color:'#1877F2',

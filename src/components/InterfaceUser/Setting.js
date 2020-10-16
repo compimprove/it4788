@@ -65,11 +65,7 @@ export default class Setting extends Component {
 
 
         </Content>
-        <Footer>
-          <FooterTab>
-            
-          </FooterTab>
-        </Footer>
+        
       </Container>
     );
   }

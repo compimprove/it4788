@@ -62,7 +62,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal"></Icon>
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -73,7 +73,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal"></Icon>
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -84,7 +84,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal" ></Icon>
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -95,7 +95,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal" ></Icon>
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -106,7 +106,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal"></Icon>
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -117,16 +117,12 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Icon  type="Entypo" name="dots-three-horizontal"></Icon>
             </ListItem>
             
           </List>
         </Content>
-        <Footer>
-          <FooterTab>
-            
-          </FooterTab>
-        </Footer>
+        
       </Container>
     );
   }
@@ -143,9 +139,7 @@ const styles = StyleSheet.create({
     all: {
         
     },
-    recently: {
-       
-    },
+   
     icon: {
         fontSize:20,
         color:'grey'

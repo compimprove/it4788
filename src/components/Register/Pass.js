@@ -61,7 +61,8 @@ input: {
   borderWidth:1,
   borderColor:'grey',
   borderRadius:5 ,
-  height:40
+  height:40,
+  paddingLeft:10
 },
   text: {
     color:'#1877F2',

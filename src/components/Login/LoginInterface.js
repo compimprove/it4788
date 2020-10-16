@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import Footer from '../Footer/Footer';
+import { Entypo } from '@expo/vector-icons';
 import { Container,Icon,Item,Thumbnail, Content, Text } from 'native-base';
 
 
@@ -25,12 +26,11 @@ _onPressButton3(){
         <Content style={{margin:10,
                          paddingTop:'40%',}}>
           
-        <Thumbnail
-        style={{
-         marginLeft:'40%'
-        }}
-        source={require('../image/icon.png')} />  
-        <Item style={{paddingTop:20,paddingBottom:20}}>
+          <Entypo style={{
+         textAlign:'center',
+         color:'#1877F2',
+        }} name="facebook-with-circle" size={50} color="black" />
+        <Item style={{paddingTop:30,paddingBottom:30}}>
         <Thumbnail onPress={()=>{}} style={{width:100, height:100}} source={require('../Login/image/dog.jpg')} />  
         <Text style={{marginLeft:10,fontWeight:'bold'}}>Cỏ đắng</Text>
        <Icon type="Entypo" style={{marginLeft:'40%'}} name='dots-three-vertical'/>
@@ -42,7 +42,7 @@ _onPressButton3(){
           <Text style={{color:'#1877F2',fontWeight:'bold'}} > Đăng nhập bằng tài khoản khác</Text>
         </Item>
         <Item onPress={this._onPressButton2} style={{paddingBottom:10,paddingTop:10}}>
-          <Icon style={{color:'#1877F2',fontWeight:'bold'}} type="FontAwesome" name="search"/>
+          <Icon style={{color:'#1877F2',fontWeight:'bold'}} type="AntDesign" name="search1"/>
           <Text style={{color:'#1877F2',fontWeight:'bold'}} >Tìm tài khoản</Text>
         </Item>
         

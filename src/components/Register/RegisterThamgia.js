@@ -17,7 +17,7 @@ export default class RegisterThamgia extends Component{
     render(){      
   return(
     <Container>
-                   <Appbar.Header style={{backgroundColor:'white'}}>
+      <Appbar.Header style={{backgroundColor:'#FFFFFF'}}>
       <Appbar.BackAction icon="back" onPress={this._onPressButton3} />
       <Appbar.Content title="Tạo tài khoản" />
      

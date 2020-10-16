@@ -9,9 +9,9 @@ export default class EditPage extends Component {
     return (
     
     <Footer>
-        <FooterTab>
+        <FooterTab style={styles.footer}>
         <Button onPress={this._onPressButton1}>
-            <Text style={{color:'#1877F2'}}>Tạo tài khoản facebook mới</Text>
+            <Text style={{color:'#1877F2'}} >Tạo tài khoản facebook mới</Text>
           </Button>
 
         </FooterTab>
@@ -21,5 +21,8 @@ export default class EditPage extends Component {
   }
 }
 const styles = StyleSheet.create({
-    
+    footer: {
+      backgroundColor:'#FFFFFF',
+     
+    }
 });

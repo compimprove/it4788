@@ -17,7 +17,7 @@ export default class SaveInfo extends Component {
       const uri = "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png";  
        return (
       <Container>
-          <Appbar.Header style={{backgroundColor:'white'}}>
+          <Appbar.Header style={{backgroundColor:'#FFFFFF'}}>
       <Appbar.BackAction icon="back" onPress={this._onPressButton2} />
       <Appbar.Content title="Lưu thông tin"/>
       </Appbar.Header>

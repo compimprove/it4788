@@ -65,12 +65,12 @@ _onPressButton18(){
       <Container style={{backgroundColor:'#F0F2F5'}}>
         <Header style={{ backgroundColor:'white'}}>
         <Appbar style={styles.appbarBelow}>
-        <Appbar.Action icon="home" size={29} onPress={this._onPressButton1}/>
-        <Appbar.Action icon="youtube-tv" size={29} onPress={this._onPressButton2}/>
-        <Appbar.Action icon="account-multiple" size={29} onPress={this._onPressButton3}/>
-        <Appbar.Action icon="account-group" size={29} onPress={this._onPressButton4}/>
-        <Appbar.Action icon="bell-outline" size={29} onPress={this._onPressButton5}/>
-        <Appbar.Action icon="menu" size={29} onPress={this._onPressButton6}/>
+        <Appbar.Action icon="home" size={33} onPress={this._onPressButton1}/>
+        <Appbar.Action icon="youtube-tv" size={33} onPress={this._onPressButton2}/>
+        <Appbar.Action icon="account-multiple" size={33} onPress={this._onPressButton3}/>
+        <Appbar.Action icon="account-group" size={33} onPress={this._onPressButton4}/>
+        <Appbar.Action icon="bell-outline" size={33} onPress={this._onPressButton5}/>
+        <Appbar.Action icon="menu" size={33} onPress={this._onPressButton6}/>
         </Appbar>
         </Header>
         <Content style={{margin:10}}>
