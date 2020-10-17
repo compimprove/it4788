@@ -58,7 +58,12 @@ class VideoTab extends Component {
         
         <View>
             <View style={styles.containerHeader}>
+            <TouchableOpacity
+                    onPress={() =>  navigation.navigate('Home')}
+                    >
                     <MaterialIcons name="home" size={25} color="#575757" />
+
+                </TouchableOpacity>
                     <TouchableOpacity
                     onPress={() => navigation.navigate('Friend')}
                     >
@@ -168,7 +173,22 @@ class VideoTab extends Component {
             </View>
             <Text style={styles.title}>Dù Tình Phôi Pha | Hà Anh Tuấn - Hồ Ngọc Hà</Text>
             <View>
-            <Video
+                <TouchableOpacity
+               onPress={() => {
+                             if(this.state.playVideo==true){
+                                this.setStatusVideo(false);
+                                this.setNameIconVideo("play");
+
+ 
+                             }else{
+                                this.setStatusVideo(true);
+                                this.setNameIconVideo("pause");
+
+                             }
+                             
+                             }}
+                >
+                <Video
                     source={require('./../Images/video.mp4')}
 
                     rate={1.0}
@@ -178,8 +198,12 @@ class VideoTab extends Component {
                     shouldPlay={this.state.playVideo}
                     isLooping
                     style={{ width: "100%", height: 185 }}
+                    
        
             />
+
+                </TouchableOpacity>
+            
             <TouchableOpacity 
                             style={styles.pauseVideo}
                          onPress={() => {
@@ -707,7 +731,7 @@ const styles = StyleSheet.create({
         paddingTop: 7,
         paddingBottom: 7,
         borderBottomColor: "gray",
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
 
 
     },

@@ -11,7 +11,10 @@ import SearchVideo from './components/SearchVideo';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import MessengerUser from './components/MessengerUser';
+import MessengerMain from './components/MessengerMain';
+import MessengerMe from './components/MessengerMe';
+import Home from './components/Home';
 const Tab = createBottomTabNavigator();
 
 
@@ -20,17 +23,22 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <NavigationContainer    >
-          <Tab.Navigator  >
-                <Tab.Screen name="Home" component={Login} />
+      <NavigationContainer     >
+          <Tab.Navigator tabBar={props => (<></>)}  >
                 <Tab.Screen name="Friend" component={Friend} />
                 <Tab.Screen name="Video" component={VideoTab} />
                 <Tab.Screen name="Suggestion" component={SuggestionFriend} />
                 <Tab.Screen name="AllFriend" component={AllFriends} />
                 <Tab.Screen name="SearchVideo" component={SearchVideo} />
-                <Tab.Screen name="CreatAcc" component={CreatAcount} />
+                <Tab.Screen name="MessengerMain" component={MessengerMain} />
+                <Tab.Screen name="Home" component={Home} />
+                <Tab.Screen name="MessengerMe" component={MessengerMe} />
+                <Tab.Screen name="MessengerUser" component={MessengerUser} />
+                
         </Tab.Navigator>
     </NavigationContainer>
+
+
     </View>
   );
 }
