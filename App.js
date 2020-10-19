@@ -15,6 +15,7 @@ import MessengerUser from './components/MessengerUser';
 import MessengerMain from './components/MessengerMain';
 import MessengerMe from './components/MessengerMe';
 import Home from './components/Home';
+import Messening from './components/Messening';
 const Tab = createBottomTabNavigator();
 
 
@@ -25,18 +26,20 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer     >
           <Tab.Navigator tabBar={props => (<></>)}  >
+                <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="Friend" component={Friend} />
                 <Tab.Screen name="Video" component={VideoTab} />
                 <Tab.Screen name="Suggestion" component={SuggestionFriend} />
                 <Tab.Screen name="AllFriend" component={AllFriends} />
                 <Tab.Screen name="SearchVideo" component={SearchVideo} />
                 <Tab.Screen name="MessengerMain" component={MessengerMain} />
-                <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="MessengerMe" component={MessengerMe} />
                 <Tab.Screen name="MessengerUser" component={MessengerUser} />
+                <Tab.Screen name="Messening" component={Messening} />
                 
         </Tab.Navigator>
     </NavigationContainer>
+    
 
 
     </View>

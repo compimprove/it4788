@@ -51,16 +51,16 @@ function MessengerMain({navigation}) {
                 <Text height="20"></Text>
 
             <View style={{padding: 10}}>
-                        <View style={{flexDirection: "row", alignItems: "center"}}>
-                            <TouchableOpacity
-                    onPress={() =>  navigation.navigate('MessengerUser')}
+            <TouchableOpacity
+                    onPress={() =>  navigation.navigate('Messening')}
                     >
+                        <View style={{flexDirection: "row", alignItems: "center"}}>
+                            
                             <Image
                                     style={{width:65, height:65, borderRadius: 150, }}
                                 source={require('./../Images/user.jpg')}
                                 />
 
-                            </TouchableOpacity>
                             
 
                             <View>
@@ -69,7 +69,10 @@ function MessengerMain({navigation}) {
                             </View>
 
 
+
                         </View>
+                        </TouchableOpacity>
+
 
             </View>
             <View style={{padding: 10}}>

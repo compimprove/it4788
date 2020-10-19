@@ -17,7 +17,7 @@ function MessengerUser({navigation}) {
         <View  >
             <View style={{padding:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center",}}>
                 <TouchableOpacity
-                    onPress={() =>  navigation.navigate('MessengerMain')}
+                    onPress={() =>  navigation.navigate('Messening')}
                     >
                 <Ionicons name="ios-arrow-round-back" size={30} color="black" />
 
