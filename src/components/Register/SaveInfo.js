@@ -2,10 +2,10 @@
 import React, {Component} from 'react';
 import { Avatar,Appbar } from 'react-native-paper';
 import {StyleSheet} from 'react-native';
-import { Container, Header,Left,Icon,Title,Right,Body,Item,Thumbnail, Content, Footer, FooterTab, Button, Text } from 'native-base';
+import { Container,Item,Thumbnail, Content, Footer, FooterTab, Button, Text } from 'native-base';
 export default class SaveInfo extends Component {
     _onPressButton(){
-        alert("OK")
+        alert("Chuyển đến trang RememberInfo")
     }
     _onPressButton1(){
         alert("Lúc khác")

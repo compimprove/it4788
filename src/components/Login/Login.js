@@ -6,7 +6,7 @@ import { Container, Button, Content, Text } from 'native-base';
 
 export default class Login extends Component {
   _onPressButton() {
-    alert("Đăng nhập")
+    alert("Link vào trang RememberInfo")
   }
   _onPressButton1() {
     alert("Đã có tài khoản")

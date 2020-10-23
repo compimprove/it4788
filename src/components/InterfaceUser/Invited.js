@@ -57,9 +57,9 @@ _onPressButton11(){
        <Content style={{margin:10}}>
                   <Image style={styles.image1}
                             source={require('../image/h6.jpg')} onPress={() => {}} />
-                  <Avatar.Icon style={styles.camera1} size={50} icon="camera" onPress={this._onPressButton8} />  
+               
                   <Avatar.Image style={styles.avatar} size={200} source={require('../image/h5.jpg')} onPress={() => {}} />
-                  <Avatar.Icon style={styles.camera2} size={35} icon="camera" onPress={this._onPressButton8} />  
+                
                   <Text 
                     style={styles.text0}
                     >Nhất Cử

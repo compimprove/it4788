@@ -6,7 +6,10 @@ import {
 } from 'react-native';
 
 import {Avatar,Appbar} from 'react-native-paper';
-import { Container,Item,List, ListItem,FooterTab, Thumbnail, Text,Button, Header,Icon,Content} from 'native-base';
+import PopupCamera from './PopupCamera';
+import { Container,Item,List, ListItem, Thumbnail, Text,Button, Header,Icon,Content} from 'native-base';
+import PopupImage from './PopupImage';
+
 
 
 
@@ -52,9 +55,10 @@ _onPressButton8(){
        <Content style={{margin:10}}>
                   <Image style={styles.image1}
                             source={require('../image/h4.jpg')} onPress={() => {}} />
-                  <Avatar.Icon style={styles.camera1} size={50} icon="camera" onPress={this._onPressButton8} />  
+                  <PopupCamera />  
                   <Avatar.Image style={styles.avatar} size={200} source={require('../Login/image/dog.jpg')} onPress={() => {}} />
-                  <Avatar.Icon style={styles.camera2} size={35} icon="camera" onPress={this._onPressButton8} />  
+                  <PopupImage/>
+                   
                   <Text 
                     style={styles.text0}
                     >Cỏ đắng
@@ -249,22 +253,7 @@ const styles = StyleSheet.create({
     paddingTop:10,
     
  },
- camera1: {
-  marginTop:'50%',
-  position: 'absolute',
-  marginLeft:'80%',
-  marginRight:'5%',
-  backgroundColor:'white',
-  color:'black'
-},
-camera2: {
-  marginTop:'74%',
-  position: 'absolute',
-  marginLeft:'62%',
-  marginRight:'27%',
-  backgroundColor:'white',
-  color:'black'
-},
+
   avatar: {
     marginTop:'30%',
     marginLeft:'24%',
@@ -276,13 +265,12 @@ camera2: {
   image1: {
     maxHeight:'35%',
     width:'100%',
-    marginBottom:20,
     marginTop:20,
     position: 'relative',
     borderRadius:20
 },
 text0: {
-      paddingTop:60,
+    
       textAlign:'center',
       fontWeight:'bold',
       paddingBottom:10,

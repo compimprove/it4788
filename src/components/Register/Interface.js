@@ -45,11 +45,11 @@ _onPressButton7(){
         <View style={styles.image1}>
           <View style={{maxWidth:'30%'}} onPress={this._onPressButton8}>
         <Thumbnail style={{width:100, height:100}} source={require('../Login/image/dog.jpg')} />  
-        <Text  onPress={this._onPressButton8} style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+        <Text  onPress={this._onPressButton8} style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Thành Nam</Text>
        </View>
        <View style={{maxWidth:'30%'}} onPress={this._onPressButton8}>
         <Thumbnail style={{width:100, height:100}} source={require('../Login/image/dog.jpg')} />  
-        <Text  onPress={this._onPressButton8} style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+        <Text  onPress={this._onPressButton8} style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tuệ Minh</Text>
        </View>
        <View style={{maxWidth:'30%'}} onPress={this._onPressButton8}>
         <Thumbnail style={{width:100, height:100}} source={require('../Login/image/dog.jpg')} />  

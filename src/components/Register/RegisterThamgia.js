@@ -1,17 +1,17 @@
 
-import React, {Component} from 'react';
-import { StyleSheet, Image,} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Image, } from 'react-native';
 import Footer from '../Footer/Footer';
-import {Appbar} from 'react-native-paper';
-import {Button,Text,Content,Container} from 'native-base';
-export default class RegisterThamgia extends Component{
-    _onPressButton1(){
-        alert("Bắt đầu");
-    }
-    _onPressButton2(){
-      alert("Bạn đã có tài khoản");
+import { Appbar } from 'react-native-paper';
+import { Button, Text, Content, Container } from 'native-base';
+export default class RegisterThamgia extends Component {
+  _onPressButton1() {
+    alert("Bắt đầu");
   }
-  _onPressButton3(){
+  _onPressButton2() {
+    alert("Bạn đã có tài khoản");
+  }
+  _onPressButton3() {
     alert("Back");
 }
     render(){      
@@ -31,38 +31,39 @@ export default class RegisterThamgia extends Component{
                                 style={styles.text}>
                                 Chúng tôi giúp bạn tạo tài khoản sau vài bước dễ dàng
                               </Text>
-                              <Button onPress={this._onPressButton1} block primary>
-                                    <Text>Bắt đầu</Text>
-                              </Button>
-                   
-                    </Content>
-                  <Footer />
-      </Container>
-  );
+          <Button onPress={this._onPressButton1} block primary>
+            <Text>Bắt đầu</Text>
+          </Button>
 
-}}
+        </Content>
+        <Footer />
+      </Container>
+    );
+
+  }
+}
 const styles = StyleSheet.create({
   image: {
-    maxHeight:200,
-    width:'100%',
-    marginBottom:20,
-    borderRadius:5
+    maxHeight: 200,
+    width: '100%',
+    marginBottom: 20,
+    borderRadius: 5
   },
   tham_gia: {
-    color:'#1877F2',
-    fontWeight:'bold',
-    fontSize:20,
-    textAlign:'center'
+    color: '#1877F2',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center'
   },
   text: {
-        textAlign:'center',
-        color:'grey',
-        paddingTop:10,
-        paddingBottom:20
+    textAlign: 'center',
+    color: 'grey',
+    paddingTop: 10,
+    paddingBottom: 20
   },
   iconHeader: {
-    fontSize:20,
-    color:'black'
+    fontSize: 20,
+    color: 'black'
   },
 });
 
