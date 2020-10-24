@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
-import SkeletonContent from 'react-native-skeleton-content';
-
 
 const MyTextInput = () => {
   const [text, setText] = React.useState('');
@@ -30,137 +28,94 @@ export default class Loader extends React.Component {
 
           <Card.Actions style={styles.justifySpaceBetween}>
             <Text>
-              <Button icon="thumb-up">2</Button>
+              <Button icon="thumb-up" color='#1877F2'>2</Button>
             </Text>
           </Card.Actions>
           <View style={styles.separator} />
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <SkeletonContent
-            containerStyle={{ flex: 1, width: 300 }}
-            isLoading={this.state.isLoading}
-            layout={[
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 250, height: 50, borderRadius: 20, marginLeft: 20 },
-                ]
-              },
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 150, height: 100, borderRadius: 20, marginLeft: 20 },
-                ]
-              },
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 170, height: 70, borderRadius: 20, marginLeft: 20 },
-                ]
-              },
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 170, height: 70, borderRadius: 20, marginLeft: 20 },
-                ]
-              },
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 150, height: 70, borderRadius: 20, marginLeft: 20 },
-                ]
-              },
-              {
-                flexDirection: "row", marginTop: 20, children: [
-                  { width: 50, height: 50, borderRadius: 50 },
-                  { width: 150, height: 70, borderRadius: 20, marginLeft: 20 },
-                ]
-              }
-            ]}
-          >
-            <View>
-              <Button style={{ marginTop: 10, alignSelf: 'flex-start' }} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
-                Xem các bình luận trước...
-              </Button>
+          <View>
+            <Button style={{ marginTop: 10, alignSelf: 'flex-start' }} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
+              Xem các bình luận trước...
+            </Button>
 
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van B</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderumLorem ipsum dolor sit amet, in quo dolorum ponderum</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van B</Text>
+                  <Text style={styles.commentContent}>Mỹ Tâm trao 700 phần quà gồm tiền, mì tôm và bánh kẹo cho người gặp khó khăn vì bão lũ, trưa 16/10</Text>
                 </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
-              </View>
-
-              <View style={styles.comment}>
-                <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-                <View style={styles.commentBody}>
-                  <View style={styles.commentBackground}>
-                    <Text style={styles.userName}>Van C</Text>
-                    <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                  </View>
-                  <Text style={styles.timeComment}>1 day</Text>
-                </View>
+                <Text style={styles.timeComment}>1 day</Text>
               </View>
             </View>
-          </SkeletonContent>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Giải F1 hủy chặng đua Việt Nam</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+
+            <View style={styles.comment}>
+              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
+              <View style={styles.commentBody}>
+                <View style={styles.commentBackground}>
+                  <Text style={styles.userName}>Van C</Text>
+                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
+                </View>
+                <Text style={styles.timeComment}>1 day</Text>
+              </View>
+            </View>
+          </View>
 
 
 
@@ -177,6 +132,7 @@ export default class Loader extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 15,
     flex: 1,
     backgroundColor: "#ffffff",
   },
@@ -196,7 +152,7 @@ const styles = StyleSheet.create({
   },
 
   separator: {
-    borderBottomColor: '#000000',
+    borderBottomColor: '#dddddd',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
@@ -229,7 +185,7 @@ const styles = StyleSheet.create({
   },
   commentBackground: {
     padding: 10,
-    backgroundColor: '#e6e6fa',
+    backgroundColor: '#F0F2F5',
     borderRadius: 20,
     alignSelf: 'baseline'
   },
@@ -240,10 +196,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   myTextInput: {
+    paddingLeft: 15,
     fontSize: 16,
     height: 45,
     margin: 10,
-    backgroundColor: '#e6e6fa',
+    backgroundColor: '#F0F2F5',
     borderRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,

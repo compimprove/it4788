@@ -22,7 +22,7 @@ const MyComponent = () => (
     <View style={styles.appbar}>
       <Card.Actions style={styles.justifySpaceBetween}>
           <Text>
-            <Button icon="thumb-up">2</Button>
+            <Button icon="thumb-up" color='#1877F2'>2</Button>
           </Text>
       </Card.Actions>
       <View style={styles.separator}/>
@@ -49,6 +49,7 @@ export default MyComponent
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 15,
     flex: 1,
     backgroundColor: "#ffffff",
   },
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   },
 
   separator:{
-    borderBottomColor: '#000000',
+    borderBottomColor: '#dddddd',
     borderBottomWidth: 0.5,
     elevation: 0,
   },
@@ -70,10 +71,11 @@ const styles = StyleSheet.create({
   },
 
   myTextInput: {
+    paddingLeft: 15,
     fontSize:16,
     height: 45,
     margin: 10,
-    backgroundColor: '#e6e6fa',
+    backgroundColor: '#F0F2F5',
     borderRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
