@@ -3,10 +3,7 @@ import { AppLoading } from 'expo';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import CreatePost from './CreatePost';
-import MainPage from './mainPage';
-import NoteTab from './NotificationTab'
-
+import Notification from './Component/Notification'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -33,7 +30,7 @@ export default class App extends React.Component {
       return (
         <Container>
           <Header/>
-          <NoteTab/>
+          <Notification/>
         </Container>
       );
     }
