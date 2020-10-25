@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
 import {Avatar,Appbar} from 'react-native-paper';
-import Infor_Fri from '../Actionsheet/Infor_Fri';
-import { Container,Form,Item,Input, Label,List,ListItem, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container,Form,Item,Input, Label,List,ListItem, Content, Button, Left,  Body, Icon, Text } from 'native-base';
+import Pop from '../Popup/Pop';
+
 
 export default class Setting extends Component {
   _onPressButton1(){
@@ -61,8 +62,20 @@ export default class Setting extends Component {
                 <Text>{this.state.name}</Text>
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
+
               </Body>
-              <Infor_Fri />
+              <Pop />
+            </ListItem>
+            <ListItem avatar style={styles.listAva}>
+              <Left>
+              <Avatar.Image size={70} source={require('../Login/image/dog.jpg')} />
+              </Left>
+              <Body>
+                <Text>{this.state.name}</Text>
+                <Text note> {this.state.friends} bạn chung</Text>
+                <Text></Text>
+              </Body>
+              <Pop />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -73,7 +86,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Pop />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -84,7 +97,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Pop />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -95,7 +108,7 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
+              <Pop />
             </ListItem>
             <ListItem avatar style={styles.listAva}>
               <Left>
@@ -106,32 +119,18 @@ export default class Setting extends Component {
                 <Text note> {this.state.friends} bạn chung</Text>
                 <Text></Text>
               </Body>
-              <Infor_Fri />
-            </ListItem>
-            <ListItem avatar style={styles.listAva}>
-              <Left>
-              <Avatar.Image size={70} source={require('../Login/image/dog.jpg')} onPress={() => {}} />
-              </Left>
-              <Body>
-                <Text>{this.state.name}</Text>
-                <Text note> {this.state.friends} bạn chung</Text>
-                <Text></Text>
-              </Body>
-              <Infor_Fri />
+              <Pop />
             </ListItem>
             
           </List>
         </Content>
-        <Footer>
-          <FooterTab>
-            
-          </FooterTab>
-        </Footer>
+        
       </Container>
     );
   }
 }
 const styles = StyleSheet.create({
+  
   listAva: {
   flexDirection:'row',
   alignItems:'center'
@@ -143,9 +142,7 @@ const styles = StyleSheet.create({
     all: {
         
     },
-    recently: {
-       
-    },
+   
     icon: {
         fontSize:20,
         color:'grey'

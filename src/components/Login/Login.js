@@ -33,7 +33,7 @@ export default class Login extends Component {
   }
 
   _onPressButton() {
-    alert("Đăng nhập")
+    alert("Link vào trang RememberInfo")
   }
   _onPressButton1() {
     alert("Đã có tài khoản")
@@ -41,7 +41,7 @@ export default class Login extends Component {
   render() {
     return (
       <Container>
-        <Content style={{ margin: 10 }}>
+        <Content style={styles.content}>
           <Image
             style={styles.image}
             source={require('./image/face.jpg')} />
@@ -84,7 +84,14 @@ export default class Login extends Component {
   }
 }
 const styles = StyleSheet.create({
+  content:
+  {
+    marginTop:40,
+    marginLeft:10,
+    marginRight:10 
+  },
   image: {
+    paddingTop:20,
     maxHeight: '40%',
     width: '100%',
     marginBottom: 20,
@@ -104,7 +111,8 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 5,
     marginBottom: 15,
-    height: 40
+    height: 40,
+    paddingLeft:10
   },
   button: {
     height: 35,

@@ -76,21 +76,22 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   text1: {
-    color: 'grey',
-    textAlign: 'center',
-    paddingTop: 15,
-    paddingBottom: 15
-  },
-  button: {
-    height: 35,
-    borderRadius: 5
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 5,
-    height: 40
-  },
+    color:'grey',
+    textAlign:'center',
+    paddingTop:15,
+    paddingBottom:15
+}, 
+button: {
+  height:35,
+  borderRadius:5
+},
+input: {
+  borderWidth:1,
+  borderColor:'grey',
+  borderRadius:5 ,
+  height:40,
+  paddingLeft:10
+},
   text: {
     color: '#1877F2',
     fontWeight: 'bold',

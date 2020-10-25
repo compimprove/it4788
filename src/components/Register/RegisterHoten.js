@@ -96,18 +96,20 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   input1: {
-    borderColor: 'grey',
-    borderWidth: 1,
-    width: 150,
-    borderRadius: 5,
-    height: 40
+            borderColor:'grey',
+            borderWidth:1,
+            width:150,
+            borderRadius:5,
+            height:40,
+            paddingLeft:10
   },
   input2: {
-    borderColor: 'grey',
-    borderWidth: 1,
-    width: 150,
-    borderRadius: 5,
-    height: 40
+            borderColor:'grey',
+            borderWidth:1,
+            width:150,  
+            borderRadius:5 ,
+            height:40,
+            paddingLeft:10
   },
   name: {
     color: '#1877F2',

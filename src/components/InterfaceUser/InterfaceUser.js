@@ -6,9 +6,11 @@ import {
 } from 'react-native';
 
 import {Avatar,Appbar} from 'react-native-paper';
-import { Container,Item,List, ListItem,FooterTab, Thumbnail, Text,Button, Header,Icon,Content} from 'native-base';
-import Cover_image from '../Actionsheet/Cover_image';
-import Infor_Fri from '../Actionsheet/Infor_Fri';
+import PopupCamera from './PopupCamera';
+import { Container,Item,List, ListItem, Thumbnail, Text,Button, Header,Icon,Content} from 'native-base';
+import PopupImage from './PopupImage';
+
+
 
 
 export default class InterfaceUser extends Component {
@@ -42,20 +44,21 @@ _onPressButton8(){
       <Container>
         <Header style={{ backgroundColor:'white'}}>
         <Appbar style={styles.appbarBelow}>
-        <Appbar.Action icon="home" size={29} onPress={this._onPressButton1}/>
-        <Appbar.Action icon="youtube-tv" size={29} onPress={this._onPressButton2}/>
-        <Appbar.Action icon="account-multiple" size={29} onPress={this._onPressButton3}/>
-        <Appbar.Action icon="account-group" size={29} onPress={this._onPressButton4}/>
-        <Appbar.Action icon="bell-outline" size={29} onPress={this._onPressButton5}/>
-        <Appbar.Action icon="menu" size={29} onPress={this._onPressButton6}/>
+        <Appbar.Action icon="home" size={33} onPress={this._onPressButton1}/>
+        <Appbar.Action icon="youtube-tv" size={33} onPress={this._onPressButton2}/>
+        <Appbar.Action icon="account-multiple" size={33} onPress={this._onPressButton3}/>
+        <Appbar.Action icon="account-group" size={33} onPress={this._onPressButton4}/>
+        <Appbar.Action icon="bell-outline" size={33} onPress={this._onPressButton5}/>
+        <Appbar.Action icon="menu" size={33} onPress={this._onPressButton6}/>
         </Appbar>
         </Header>
        <Content style={{margin:10}}>
                   <Image style={styles.image1}
-                            source={require('../Login/image/face.jpg')} onPress={() => {}} />
-                            <Icon style={styles.camera1} ><Cover_image /></Icon>
+                            source={require('../image/h4.jpg')} onPress={() => {}} />
+                  <PopupCamera />  
                   <Avatar.Image style={styles.avatar} size={200} source={require('../Login/image/dog.jpg')} onPress={() => {}} />
-                  <Avatar.Icon style={styles.camera2} size={35} icon="camera" onPress={this._onPressButton8} />  
+                  <PopupImage/>
+                   
                   <Text 
                     style={styles.text0}
                     >Cỏ đắng
@@ -89,16 +92,16 @@ _onPressButton8(){
                         <ListItem thumbnail>
                               <View style={styles.view0}>
                                 <View style={{maxWidth:'33%'}}>
-                                <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Thumbnail style={styles.image} square source={require('../image/h4.jpg')} onPress={() => {}}/>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Anna</Text>
                                 </View>   
                                 <View style={{maxWidth:'33%'}}>
-                                <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Thumbnail style={styles.image} square source={require('../image/h2.jpg')} onPress={() => {}}/>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>An Nhiên</Text>
                                 </View>  
                                 <View style={{maxWidth:'33%'}}>
                                 <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Nhất cử</Text>
                                 </View>  
                               </View>
                         </ListItem>
@@ -107,16 +110,16 @@ _onPressButton8(){
                         <ListItem thumbnail>
                               <View style={styles.view1}>
                               <View style={{maxWidth:'33%'}}>
-                                <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Thumbnail style={styles.image} square source={require('../image/h2.jpg')} onPress={() => {}}/>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Việt Nam</Text>
                                 </View>   
                                 <View style={{maxWidth:'33%'}}>
-                                <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Thumbnail style={styles.image} square source={require('../image/h5.jpg')} onPress={() => {}}/>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Hoa dã quỳ</Text>
                                 </View>  
                                 <View style={{maxWidth:'33%'}}>
-                                <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => {}}/>
-                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tôi yêu Việt Nam</Text>
+                                <Thumbnail style={styles.image} square source={require('../image/h6.jpg')} onPress={() => {}}/>
+                                <Text style={{textAlign:'center',paddingTop:5,fontWeight:'bold'}}>Tuệ Minh</Text>
                                 </View>
                               </View>
                         </ListItem>
@@ -135,20 +138,20 @@ _onPressButton8(){
                                  <Text style={{color:'grey'}}>  Bạn đang suy nghĩ gì ?</Text>
                             </Item>
                             <Item style={{paddingBottom:10}}>
-                            <FooterTab>
-                                           <Button vertical>
+                            
+                                           <Button vertical style={{backgroundColor:'#FFFFFF',marginRight:10}}>
                                                   <Icon type="FontAwesome" style={{color:'purple'}} name="edit" />
                                                   <Text style={{color:'black'}}>Tình trạng</Text>
                                           </Button>
-                                          <Button vertical>
+                                          <Button vertical style={{backgroundColor:'#FFFFFF',marginRight:10}}>
                                                   <Icon style={{color:'green'}} type="Entypo" name="images" />
                                                   <Text style={{color:'black'}}>Ảnh</Text>
                                          </Button>
-                                        <Button vertical>
+                                        <Button vertical style={{backgroundColor:'#FFFFFF'}}>
                                                   <Icon type="MaterialIcons" name="event" style={{color:'purple'}} />
                                                   <Text style={{color:'black'}}>Sự kiện trong đời</Text>
                                          </Button>
-                            </FooterTab>
+                            
                             
                             </Item>
                             <Button style={styles.manage} block onPress={() => {}}>
@@ -250,39 +253,24 @@ const styles = StyleSheet.create({
     paddingTop:10,
     
  },
- camera1: {
-  marginTop:'45%',
-  position: 'absolute',
-  marginLeft:'80%',
-  marginRight:'5%',
-  backgroundColor:'white',
-  color:'black'
-},
-camera2: {
-  marginTop:'78%',
-  position: 'absolute',
-  marginLeft:'62%',
-  marginRight:'27%',
-  backgroundColor:'white',
-  color:'black'
-},
+
   avatar: {
-    marginTop:'37%',
-    marginLeft:'20%',
-    marginRight:'24%',
+    marginTop:'30%',
+    marginLeft:'24%',
+    marginRight:'23%',
     position: 'absolute',
    
   },
   
   image1: {
-    maxHeight:'40%',
+    maxHeight:'35%',
     width:'100%',
-    marginBottom:20,
     marginTop:20,
     position: 'relative',
+    borderRadius:20
 },
 text0: {
-      paddingTop:60,
+    
       textAlign:'center',
       fontWeight:'bold',
       paddingBottom:10,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet,Image,View} from 'react-native';
 import {Avatar,Appbar} from 'react-native-paper';
-import { Container, List,Item, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, List,Item, Content,ListItem, Left, Body, Right, Switch, Button, Icon, Text } from 'native-base';
 
 
 export default class EditPage extends Component {
@@ -35,7 +35,7 @@ export default class EditPage extends Component {
                               <Text style={styles.edit_text}>Chỉnh sửa</Text>
                  </View>
             <Image style={styles.image1}
-            source={require('../Login/image/face.jpg')} onPress={() => {}} />
+            source={require('../image/h4.jpg')} onPress={() => {}} />
             </View>
             <Item style={{paddingTop:20}}></Item>
             <View>
@@ -55,13 +55,73 @@ export default class EditPage extends Component {
                               <Text style={styles.edit_text}>Chỉnh sửa</Text>
                  </View>
             <View style={{marginRight:10,marginLeft:10}}>
-                  <Text><Icon style={styles.text_} type="FontAwesome" name='graduation-cap' />   Đã học tại <Text style={styles.text}>Trường THPT Nghi Lộc 5</Text></Text>
-                  <Text><Icon style={styles.text_} type="Ionicons" name='md-time' />    Tham gia vào<Text style={styles.text}>Tháng 8 năm 2016</Text></Text>
-                  <Text><Icon style={styles.text_} type="FontAwesome" name='home' />   Tỉnh thành phố hiện tại <Text style={styles.text}>Đà Nẵng</Text></Text>
-                  <Text><Icon style={styles.text_} type="Entypo"name='briefcase' />    Nơi làm việc</Text>
-                  <Text><Icon style={styles.text_} type="FontAwesome" name='map-marker' />     Quê quán</Text>
-                  <Text><Icon style={styles.text_} type="MaterialCommunityIcons" name='account-heart' />   Tình trạng mối quan hệ</Text>
-           </View>
+            <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="FontAwesome" name='graduation-cap' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Đã học tại <Text style={styles.text}>Trường THPT Nghi Lộc 5</Text></Text> 
+            </Body>
+            
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="Ionicons" name='md-time' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Tham gia vào<Text style={styles.text}>Tháng 8 năm 2016</Text></Text>
+            </Body>
+            
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="FontAwesome" name='home' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Tỉnh thành phố hiện tại <Text style={styles.text}>Đà Nẵng</Text></Text>
+            </Body>
+            
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="Entypo"name='briefcase' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Nơi làm việc</Text>
+            </Body>
+            
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="MaterialCommunityIcons" name='account-heart' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Tình trạng mối quan hệ</Text>
+            </Body>
+            
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FFFFFF" }}>
+              <Icon style={styles.text_} type="FontAwesome" name='map-marker' />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Quê quán</Text>
+            </Body>
+            
+          </ListItem>
+                    </View>
            </View>
            <Item style={{paddingTop:20}}></Item>
             <View>
@@ -98,17 +158,12 @@ export default class EditPage extends Component {
             <Item></Item>
             <Button style={styles.editIntroduce} block onPress={() => {}}>
                 <Text style={styles.textIntroduce}>
-                    <Icon style={styles.iconIntroduce} type="FontAwesome5" name='user-edit' /> 
-                    Chỉnh sửa thông tin giới thiệu
+                    <Icon style={styles.iconIntroduce} type="FontAwesome5" name='user-edit' />  Chỉnh sửa thông tin giới thiệu
                     </Text>
             </Button>
            </List>
         </Content>
-        <Footer>
-          <FooterTab>
-            
-          </FooterTab>
-        </Footer>
+        
       </Container>
     );
   }
@@ -121,11 +176,11 @@ const styles = StyleSheet.create({
         paddingBottom:10
     },
     iconIntroduce: {
-        color:'blue',
+        color:'#F4F9FE',
         fontSize:20
     },
     textIntroduce: {
-        color:'#1877F2',
+        color:'#F4F9FE',
         fontWeight:'bold'
     },
     iconHeader: {
@@ -135,8 +190,8 @@ const styles = StyleSheet.create({
     editIntroduce: {
         borderRadius:5,
         margin:10,
-        height:50,
-        backgroundColor:'#83E0D3'
+        height:40,
+        backgroundColor:'#1877F2'
     },
     image_trial: {
         height:100,

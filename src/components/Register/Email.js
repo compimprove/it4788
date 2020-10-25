@@ -81,10 +81,11 @@ const styles = StyleSheet.create({
     paddingBottom: 15
   },
   address: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 5,
-    height: 40
+    borderWidth:1,  
+    borderColor:'grey',
+    borderRadius:5,
+    height:40,
+    paddingLeft:10
   },
   button: {
     height: 35,
