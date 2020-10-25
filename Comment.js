@@ -15,7 +15,7 @@ const MyTextInput = () => {
   );
 };
 
-export default class Loader extends React.Component {
+export default class Comment extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true };
@@ -24,15 +24,14 @@ export default class Loader extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.appbar}>
-
+        <TouchableHighlight onPress={() => { this.props.navigation.goBack() }} style={styles.appbar}>
           <Card.Actions style={styles.justifySpaceBetween}>
             <Text>
               <Button icon="thumb-up" color='#1877F2'>2</Button>
             </Text>
           </Card.Actions>
-          <View style={styles.separator} />
-        </View>
+        </TouchableHighlight>
+        <View style={styles.separator} />
         <ScrollView showsVerticalScrollIndicator={false}>
           <View>
             <Button style={{ marginTop: 10, alignSelf: 'flex-start' }} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>

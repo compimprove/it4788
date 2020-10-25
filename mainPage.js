@@ -3,6 +3,7 @@ import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
 import Article from './src/components/MainPage/Article';
+import { Tab, Tabs } from 'native-base';
 const articleSample = require("./src/components/MainPage/article_sample.json");
 
 export default class MainPage extends React.Component {
@@ -12,7 +13,6 @@ export default class MainPage extends React.Component {
 
     }
   }
-
   render() {
     return (
       <View style={styles.container}>
@@ -42,45 +42,17 @@ export default class MainPage extends React.Component {
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Article
+            navigation={this.props.navigation}
             selfLoading={false}
             data={articleSample[0]} />
 
           <View style={styles.dividerPost}></View>
 
-          <Card>
-            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
-            <Card.Content>
-              <ViewMoreText numberOfLines={10}>
-                <Paragraph selectable>
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  </Paragraph>
-              </ViewMoreText>
-
-            </Card.Content>
-            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <Text>
-                <Button icon="thumb-up" color="#1877F2">2</Button>
-              </Text>
-              <Text>23 Comments</Text>
-            </Card.Actions>
-            <View style={styles.postSeparator}></View>
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="thumb-up-outline" color="#444444" >Like</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
-              </TouchableHighlight>
-
-            </Card.Actions>
-          </Card>
+          <Article
+            navigation={this.props.navigation}
+            selfLoading={false}
+            data={articleSample[1]}
+          />
         </ScrollView>
       </View>
     );

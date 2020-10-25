@@ -43,7 +43,7 @@ class SearchHistory extends React.Component {
       <View style={styles.container}>
         <View style={styles.appbar}>
           <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => { }} />
+            <Appbar.BackAction onPress={() => { this.props.navigation.goBack() }} />
             <Appbar.Content title='Nhật ký hoạt động' />
           </Appbar>
           <View style={styles.separator} />

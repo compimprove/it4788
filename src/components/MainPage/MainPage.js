@@ -13,6 +13,7 @@ import SuggestionFriend from '../../../components/SuggestionFriend';
 import AllFriends from '../../../components/AllFriends';
 import SearchVideo from '../../../components/SearchVideo';
 import CreatAcount from '../../../components/CreatAcount';
+import Comment from '../../../Comment';
 const Tab = createBottomTabNavigator();
 
 

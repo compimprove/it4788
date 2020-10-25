@@ -30,7 +30,7 @@ class SearchResult extends React.Component {
       <View style={styles.container}>
         <View style={styles.appbar}>
           <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => { }} />
+            <Appbar.BackAction onPress={() => { this.props.navigation.goBack() }} />
             <MySearchBar />
           </Appbar>
           <View>

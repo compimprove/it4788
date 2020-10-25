@@ -3,7 +3,6 @@ import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
 
-
 class Article extends React.Component {
   NUMBER_OF_LINE = 10;
 
@@ -17,8 +16,6 @@ class Article extends React.Component {
       }
     }
   }
-
-
 
   render() {
     return (
@@ -41,7 +38,7 @@ class Article extends React.Component {
           <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
             <Button uppercase={false} icon="thumb-up-outline" color="#444444">Like</Button>
           </TouchableHighlight>
-          <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
+          <TouchableHighlight underlayColor="#dddddd" onPress={() => { this.props.navigation.navigate("Comment") }}>
             <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
           </TouchableHighlight>
           <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
@@ -55,6 +52,7 @@ class Article extends React.Component {
 }
 
 export default Article;
+
 
 const styles = StyleSheet.create({
   justifySpaceBetween: {

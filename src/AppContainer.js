@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import RegisterThamgia from './components/Register/RegisterThamgia';
 import Register from './components/Register/Register';
 import MainPage from './components/MainPage/MainPage';
+import Comment from '../Comment';
 const Stack = createStackNavigator();
 
 export default class AppContainer extends React.Component {
@@ -35,7 +36,10 @@ export default class AppContainer extends React.Component {
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
           {this.state.logIn &&
-            <Stack.Screen name="MainPage" component={MainPage} />
+            <>
+              <Stack.Screen name="MainPage" component={MainPage} />
+              <Stack.Screen name="Comment" component={Comment} />
+            </>
           }
           {!this.state.logIn &&
             <>
