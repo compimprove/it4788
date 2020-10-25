@@ -14,6 +14,16 @@ import AllFriends from '../../../components/AllFriends';
 import SearchVideo from '../../../components/SearchVideo';
 import CreatAcount from '../../../components/CreatAcount';
 import Comment from '../../../Comment';
+import AddFriend from '../InterfaceUser/AddFriend';
+import EditPage from '../Footer/Footer';
+import AfterAddFri from '../InterfaceUser/AfterAddFri';
+import Setting from '../InterfaceUser/Friends';
+import InterfaceUser from '../InterfaceUser/InterfaceUser';
+import PopupCamera from '../InterfaceUser/PopupCamera';
+import PopupImage from '../InterfaceUser/PopupImage';
+import SettingFriend from '../InterfaceUser/SettingFriend';
+import Invited from '../InterfaceUser/Invited';
+import UserPage from '../InterfaceUser/UserPage';
 const Tab = createBottomTabNavigator();
 
 
@@ -25,7 +35,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={mainPage} />
+        <Tab.Screen name="mainPage" component={UserPage} />
         <Tab.Screen name="SearchPage" component={SearchPage} />
         <Tab.Screen name="MainPost" component={MainPost} />
         <Tab.Screen name="SearchResult" component={SearchResult} />
@@ -35,6 +45,7 @@ class MainPage extends React.Component {
         <Tab.Screen name="Suggestion" component={SuggestionFriend} />
         <Tab.Screen name="AllFriend" component={AllFriends} />
         <Tab.Screen name="SearchVideo" component={SearchVideo} />
+        <Tab.Screen name="UserPage" component={UserPage} />
       </Tab.Navigator>
     );
   }
