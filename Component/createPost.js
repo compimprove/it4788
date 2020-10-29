@@ -8,7 +8,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 
-export default class CreatePost extends React.Component {
+
+ export default  class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,6 +20,7 @@ export default class CreatePost extends React.Component {
     setContent(content) {
         this.setState({ content });
     }
+    
 
     render() {
         return (
@@ -33,9 +35,10 @@ export default class CreatePost extends React.Component {
                         <Title>Tạo bài viết</Title>
                     </Body>
                     <Right>
-                        <Button onPress={() => { alert('Đăng bài') }}>
+                        <TouchableOpacity style={styles.createBtn}
+                            onPress={()=>{alert('Đăng bài')}}>
                             <MaterialCommunityIcons name="post-outline" size={40} color="white" />
-                        </Button>
+                        </TouchableOpacity>
                     </Right>
                 </Header>
                 <Container style={{ marginTop: 10, marginLeft: 15, marginRight: 15 }}>
@@ -66,27 +69,29 @@ export default class CreatePost extends React.Component {
                             defaultValue={this.state.content} />
                     </View>
                     <View style={styles.postOption}>
-                        <TouchableOpacity style={styles.postOptionItem} onPress={()=>{alert('Đăng ảnh')}}>
-                        <FontAwesome name="image" size={25} color="black" />
-                        <Text style={{marginLeft:15,fontSize:20,justifyContent:'center'}}>Ảnh</Text>
+                        <TouchableOpacity style={styles.postOptionItem} onPress={() => { alert('Đăng ảnh') }}>
+                            <FontAwesome name="image" size={25} color="black" />
+                            <Text style={{ marginLeft: 15, fontSize: 20, justifyContent: 'center' }}>Ảnh</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.postOptionItem} onPress={()=>{alert('Đăng video')}}>
-                        <FontAwesome name="video-camera" size={25} color="black" />
-                        <Text style={{marginLeft:10,fontSize:20,justifyContent:'center'}}>Video</Text>
+                        <TouchableOpacity style={styles.postOptionItem} onPress={() => { alert('Đăng video') }}>
+                            <FontAwesome name="video-camera" size={25} color="black" />
+                            <Text style={{ marginLeft: 10, fontSize: 20, justifyContent: 'center' }}>Video</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.postOptionItem} onPress={()=>{alert('Cảm xúc/ Hoạt động')}}>
-                        <MaterialCommunityIcons name="sticker-emoji" size={30} color="black" />
-                        <Text style={{marginLeft:10,fontSize:20,justifyContent:'center'}}>Cảm xúc/ Hoạt động</Text>
+                        <TouchableOpacity style={styles.postOptionItem} onPress={() => { alert('Cảm xúc/ Hoạt động') }}>
+                            <MaterialCommunityIcons name="sticker-emoji" size={30} color="black" />
+                            <Text style={{ marginLeft: 10, fontSize: 20, justifyContent: 'center' }}>Cảm xúc/ Hoạt động</Text>
                         </TouchableOpacity>
                     </View>
 
                 </Container>
             </>
+
         )
 
 
     }
 }
+
 const styles = StyleSheet.create({
     postHeader: {
         flexDirection: "row",
@@ -111,11 +116,11 @@ const styles = StyleSheet.create({
     postOption: {
 
     },
-    postOptionItem:{
-        flexDirection:'row',
-        borderTopWidth:1,
-        height:45,
-        alignItems:'center'
+    postOptionItem: {
+        flexDirection: 'row',
+        borderTopWidth: 1,
+        height: 45,
+        alignItems: 'center'
     }
 
 })

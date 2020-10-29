@@ -3,7 +3,8 @@ import { AppLoading } from 'expo';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import Notification from './Component/Notification'
+import CreatePost from './Component/createPost';
+import AddEmoji from './Component/addEmoji';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -28,10 +29,7 @@ export default class App extends React.Component {
     }
     else {
       return (
-        <Container>
-          <Header/>
-          <Notification/>
-        </Container>
+          <AddEmoji/>
       );
     }
   }
