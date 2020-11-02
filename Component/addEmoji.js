@@ -11,8 +11,10 @@ import {
     StyleSheet
 } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-
-
+import { Octicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const { width } = Dimensions.get("window");
@@ -186,48 +188,76 @@ export default class AddEmoji extends React.Component {
                                 </View>
                                 <View style={styles.menuEmoji}>
                                     <View style={styles.leftmenuEmoji}>
+                                        <Button style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-happy" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Vui vẻ</Text>
+                                            </View>
+                                        </Button>
                                         <TouchableOpacity style={styles.itemEmoji}>
                                             <View style={styles.leftItemEmoji}>
-                                            <Ionicons name="md-happy" size={60} color="black" />
+                                                <Ionicons name="md-sad" size={60} color="black" />
                                             </View>
-                                        <View style={styles.rightItemEmoji}>
-                                            <Text style={{fontSize:20, marginLeft:10}}>Vui vẻ</Text>
-                                        </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.itemEmoji}>
-                                        <View style={styles.leftItemEmoji}>
-                                        <Ionicons name="md-sad" size={60} color="black" />
-                                        </View>
-                                        <View style={styles.rightItemEmoji}>
-                                        <Text style={{fontSize:20, marginLeft:10}}>Buồn</Text>
-                                        </View>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
+                                        </TouchableOpacity>
 
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
 
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
 
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
-
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
-
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
-
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.itemEmoji}>
-
-                                        </TouchableOpacity>
-                                        
 
                                     </View>
                                     <View style={styles.rightmenuEmoji}>
-
+                                        <TouchableOpacity style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={styles.itemEmoji}>
+                                            <View style={styles.leftItemEmoji}>
+                                                <Ionicons name="md-sad" size={60} color="black" />
+                                            </View>
+                                            <View style={styles.rightItemEmoji}>
+                                                <Text style={{ fontSize: 20, marginLeft: 10 }}>Buồn</Text>
+                                            </View>
+                                        </TouchableOpacity>
                                     </View>
 
                                 </View>
@@ -250,6 +280,40 @@ export default class AddEmoji extends React.Component {
                                         <Icon name="ios-search" />
                                         <Input placeholder="Search" />
                                     </Item>
+                                </View>
+                                <View style={styles.menuAction}>
+                                    <TouchableOpacity style={styles.itemAction}>
+                                        <View style={styles.leftItemAction}>
+                                            <Octicons name="smiley" size={40} color="black" style={{marginLeft:10}} />
+                                        </View>
+                                        <View style={styles.rightItemAction}>
+                                        <Text style={{ fontSize: 20, marginLeft: 10 }}>Đang cảm thấy...</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.itemAction}>
+                                        <View style={styles.leftItemAction}>
+                                        <Entypo name="drink" size={40} color="black" style={{marginLeft:10}}/>
+                                        </View>
+                                        <View style={styles.rightItemAction}>
+                                        <Text style={{ fontSize: 20, marginLeft: 10 }}>Đang uống...</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.itemAction}>
+                                        <View style={styles.leftItemAction}>
+                                        <FontAwesome5 name="headphones-alt" size={40} color="black" style={{marginLeft:10}} />
+                                        </View>
+                                        <View style={styles.rightItemAction}>
+                                        <Text style={{ fontSize: 20, marginLeft: 10 }}>Đang nghe...</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.itemAction}>
+                                        <View style={styles.leftItemAction}>
+                                        <MaterialCommunityIcons name="thought-bubble-outline" size={40} color="black" style={{marginLeft:10}} />
+                                        </View>
+                                        <View style={styles.rightItemAction}>
+                                        <Text style={{ fontSize: 20, marginLeft: 10 }}>Đang nghĩ về...</Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
 
                             </Animated.View>
@@ -292,7 +356,11 @@ const styles = StyleSheet.create({
     menuEmoji: {
 
         flexDirection: 'row',
-    
+
+    },
+    menuAction:{
+        flexDirection:'column',
+        height:500,
     },
     leftmenuEmoji: {
         flex: 5,
@@ -304,21 +372,35 @@ const styles = StyleSheet.create({
         flex: 5,
         flexDirection: 'column',
     },
-    itemEmoji:{
-        borderWidth:1,
-        flexDirection:'row',
-        height:100,
-        backgroundColor:'green',
+    itemEmoji: {
+        borderWidth: 1,
+        flexDirection: 'row',
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white'
+
+    },
+    itemAction:{
+        borderBottomWidth:1,
+        height:60,
+        justifyContent:'center',
         alignItems:'center',
-        justifyContent:'center'
-        
+       flexDirection:'row' 
     },
-    leftItemEmoji:{
-        flex:4,
-    alignItems:'center'
+    leftItemEmoji: {
+        flex: 4,
+        alignItems: 'center'
     },
-    rightItemEmoji:{
-flex:6,
-alignItems:'flex-start'
+    leftItemAction:{
+        flex:2
     },
+    rightItemEmoji: {
+        flex: 6,
+        alignItems: 'flex-start'
+    },
+    rightItemAction:{
+        flex:8
+    },
+
 })
