@@ -53,14 +53,14 @@ class VideoTab extends Component {
     const { modalVisible } = this.state;
     const { navigation } = this.props;
     return (
-        
-        
-        <View>
-            <View style={styles.containerHeader}>
-            <TouchableOpacity
-                    onPress={() =>  navigation.navigate('Home')}
-                    >
-                    <MaterialIcons name="home" size={25} color="#575757" />
+
+
+      <View>
+        <View style={styles.containerHeader}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Home')}
+          >
+            <MaterialIcons name="home" size={25} color="#575757" />
 
           </TouchableOpacity>
           <FontAwesome name="group" size={25} color="#575757" />
@@ -166,16 +166,18 @@ class VideoTab extends Component {
             </View>
             <Text style={styles.title}>Dù Tình Phôi Pha | Hà Anh Tuấn - Hồ Ngọc Hà</Text>
             <View>
-                <TouchableOpacity
-               onPress={() => {
-                             if(this.state.playVideo==true){
-                                this.setStatusVideo(false);
-                                this.setNameIconVideo("play");
+              <TouchableOpacity
+                onPress={() => {
+                  if (this.state.playVideo == true) {
+                    this.setStatusVideo(false);
+                    this.setNameIconVideo("play");
 
- 
-                             }else{
-                                this.setStatusVideo(true);
-                                this.setNameIconVideo("pause");
+
+                  } else {
+                    this.setStatusVideo(true);
+                    this.setNameIconVideo("pause")
+                  }
+                }}
 
               />
               <TouchableOpacity
@@ -610,8 +612,6 @@ class VideoTab extends Component {
 
 const styles = StyleSheet.create({
   video: {
-
-
   },
   head: {
     padding: 10,
@@ -648,7 +648,6 @@ const styles = StyleSheet.create({
 
   },
   modalView: {
-
     //margin: 20,
     //marginBottom: 0,
     width: "100%",
@@ -657,25 +656,21 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     //padding: 65,
     paddingTop: 10,
-
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    containerHeader:{
-        width: "100%",
-        backgroundColor: "white",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        paddingTop: 7,
-        paddingBottom: 7,
-        borderBottomColor: "gray",
-        borderBottomWidth: 1,
-
-    justifyContent: "space-between",
-    alignItems: "center",
-
+  },
+  shadowOffset: {
+    width: 0,
+    height: 2
+  },
+  containerHeader: {
+    width: "100$",
+    backgroundColor: "white",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingTop: 7,
+    paddingBottom: 7,
+    borderBottomColor: "gray",
+    borderBottomWidth: 1
   },
   left: {
     flexDirection: "row",
@@ -684,18 +679,6 @@ const styles = StyleSheet.create({
   },
   right: {
     marginRight: 5
-
-  },
-  containerHeader: {
-    width: "100%",
-    backgroundColor: "white",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingTop: 7,
-    paddingBottom: 7,
-    borderBottomColor: "gray",
-    borderBottomWidth: 1
-
 
   },
   pauseVideo: {
@@ -711,6 +694,7 @@ const styles = StyleSheet.create({
 
   },
 
-});
+}
+);
 
 export default VideoTab;

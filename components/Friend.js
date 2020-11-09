@@ -29,19 +29,18 @@ function Friend({ navigation }) {
         <Ionicons name="ios-notifications-outline" size={25} color="#575757" />
         <Feather name="menu" size={25} color="#575757" />
       </View>
+      <View>
+        <FontAwesome5 name="user-friends" size={25} color="#1776f5" />
+        <FontAwesome name="group" size={25} color="#575757" />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Video')}
+        >
+          <MaterialCommunityIcons name="television-play" size={25} color="#575757" />
+        </TouchableOpacity>
+        <Ionicons name="ios-notifications-outline" size={25} color="#575757" />
+        <Feather name="menu" size={25} color="#575757" />
+      </View>
 
-                </TouchableOpacity>
-                    <FontAwesome5 name="user-friends" size={25} color="#1776f5"  />
-                    <FontAwesome name="group" size={25} color="#575757" />
-                    <TouchableOpacity
-                    onPress={() =>  navigation.navigate('Video')}
-                    >
-                            <MaterialCommunityIcons name="television-play" size={25} color="#575757" />
-                    </TouchableOpacity>
-                    <Ionicons name="ios-notifications-outline" size={25} color="#575757" />
-                    <Feather name="menu" size={25} color="#575757" />
-            </View>
-      
       <ScrollView>
         <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
           <Text style={{ fontSize: 25, fontWeight: "bold" }}>Bạn bè</Text>
@@ -413,11 +412,11 @@ function Friend({ navigation }) {
       </ScrollView>
 
 
-  </View>
-  
-      
-    );
-  }
+    </View>
+
+
+  );
+}
 
 
 const styles = StyleSheet.create({
