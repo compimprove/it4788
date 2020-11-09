@@ -53,14 +53,14 @@ class VideoTab extends Component {
     const { modalVisible } = this.state;
     const { navigation } = this.props;
     return (
-        
-        
-        <View>
-            <View style={styles.containerHeader}>
-            <TouchableOpacity
-                    onPress={() =>  navigation.navigate('Home')}
-                    >
-                    <MaterialIcons name="home" size={25} color="#575757" />
+<<<<<<< HEAD
+      <View>
+        <View style={styles.containerHeader}>
+          <MaterialIcons name="home" size={25} color="#575757" />
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Friend')}
+          >
+            <FontAwesome5 name="user-friends" size={25} color="#575757" />
 
           </TouchableOpacity>
           <FontAwesome name="group" size={25} color="#575757" />
@@ -73,6 +73,22 @@ class VideoTab extends Component {
           <Feather name="menu" size={25} color="#575757" />
         </View>
 
+=======
+        
+        
+        <View>
+            <View style={styles.containerHeader}>
+            <TouchableOpacity
+                    onPress={() =>  navigation.navigate('Home')}
+                    >
+                    <MaterialIcons name="home" size={25} color="#575757" />
+
+                </TouchableOpacity>
+                    <TouchableOpacity
+                    onPress={() => navigation.navigate('Friend')}
+                    >
+                    <FontAwesome5 name="user-friends" size={25} color="#575757"  />
+>>>>>>> kien
 
         <ScrollView>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", padding: 10 }}>
@@ -166,6 +182,22 @@ class VideoTab extends Component {
             </View>
             <Text style={styles.title}>Dù Tình Phôi Pha | Hà Anh Tuấn - Hồ Ngọc Hà</Text>
             <View>
+<<<<<<< HEAD
+              <Video
+                source={require('./../Images/video.mp4')}
+
+                rate={1.0}
+                volume={1.0}
+                isMuted={this.state.muteVideo}
+                resizeMode="cover"
+                shouldPlay={this.state.playVideo}
+                isLooping
+                style={{ width: "100%", height: 185 }}
+
+              />
+              <TouchableOpacity
+                style={styles.pauseVideo}
+=======
                 <TouchableOpacity
                onPress={() => {
                              if(this.state.playVideo==true){
@@ -177,9 +209,47 @@ class VideoTab extends Component {
                                 this.setStatusVideo(true);
                                 this.setNameIconVideo("pause");
 
-              />
-              <TouchableOpacity
-                style={styles.pauseVideo}
+                             }
+                             
+                             }}
+                >
+                <Video
+                    source={require('./../Images/video.mp4')}
+
+                    rate={1.0}
+                    volume={1.0}
+                    isMuted={this.state.muteVideo}
+                    resizeMode="cover"
+                    shouldPlay={this.state.playVideo}
+                    isLooping
+                    style={{ width: "100%", height: 185 }}
+                    
+       
+            />
+
+                </TouchableOpacity>
+            
+            <TouchableOpacity 
+                            style={styles.pauseVideo}
+                         onPress={() => {
+                             if(this.state.playVideo==true){
+                                this.setStatusVideo(false);
+                                this.setNameIconVideo("play");
+
+ 
+                             }else{
+                                this.setStatusVideo(true);
+                                this.setNameIconVideo("pause");
+
+                             }
+                             
+                             }}
+                >
+                    <Foundation style={{paddingLeft: 8}} name={this.state.iconVideo} size={26} color="white" />
+                                
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.muteVideo}
+>>>>>>> kien
                 onPress={() => {
                   if (this.state.playVideo == true) {
                     this.setStatusVideo(false);
@@ -594,6 +664,19 @@ class VideoTab extends Component {
 
 
 
+<<<<<<< HEAD
+=======
+    },
+    containerHeader:{
+        width: "100%",
+        backgroundColor: "white",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        paddingTop: 7,
+        paddingBottom: 7,
+        borderBottomColor: "gray",
+        borderBottomWidth: 1,
+>>>>>>> kien
 
 
               </View>
@@ -663,15 +746,26 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2
     },
-    containerHeader:{
-        width: "100%",
-        backgroundColor: "white",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        paddingTop: 7,
-        paddingBottom: 7,
-        borderBottomColor: "gray",
-        borderBottomWidth: 1,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5
+  },
+  openButton: {
+    backgroundColor: "#F194FF",
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  textStyle: {
+    color: "black",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  userModal: {
 
     justifyContent: "space-between",
     alignItems: "center",

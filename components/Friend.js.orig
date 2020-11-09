@@ -14,6 +14,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 const width100 = "100%";
 
+<<<<<<< HEAD
 function Friend({ navigation }) {
   return (
     <View>
@@ -30,6 +31,16 @@ function Friend({ navigation }) {
         <Feather name="menu" size={25} color="#575757" />
       </View>
 
+=======
+function Friend({navigation}) {
+    return (
+        <View >
+            <View style={styles.containerHeader}>
+                <TouchableOpacity
+                    onPress={() =>  navigation.navigate('Home')}
+                    >
+                    <MaterialIcons name="home" size={25} color="#575757" />
+
                 </TouchableOpacity>
                     <FontAwesome5 name="user-friends" size={25} color="#1776f5"  />
                     <FontAwesome name="group" size={25} color="#575757" />
@@ -42,6 +53,7 @@ function Friend({ navigation }) {
                     <Feather name="menu" size={25} color="#575757" />
             </View>
       
+>>>>>>> kien
       <ScrollView>
         <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
           <Text style={{ fontSize: 25, fontWeight: "bold" }}>Bạn bè</Text>
@@ -413,11 +425,399 @@ function Friend({ navigation }) {
       </ScrollView>
 
 
+<<<<<<< HEAD
+
+
+    </View>
+
+  );
+}
+// const Friend = () => (
+//   <View>
+
+//       <ScrollView>
+//       <View style={{flexDirection: "row",justifyContent: "space-between",padding: 10}}>
+//           <Text style={{fontSize: 25, fontWeight: "bold"}}>Bạn bè</Text>
+//           <TouchableOpacity 
+//             style={{backgroundColor: "#d6d7db", paddingTop: 5, paddingBottom: 5, paddingLeft: 8, paddingRight: 8, borderRadius: 30}}
+//             onPress={() => {
+//                 alert('Đến trang Đăng nhập')
+//             }}
+//        >
+//            <FontAwesome name="search" size={20} color="black" />
+//         </TouchableOpacity>
+//       </View>
+//       <View style={{flexDirection: "row",paddingBottom: 10}}>
+
+//           <TouchableOpacity 
+//             style={{marginLeft: 10,backgroundColor: "#d6d7db", paddingTop: 7, paddingBottom: 7, paddingLeft: 10, paddingRight: 10, borderRadius: 30}}
+//             onPress={() => {
+//                 alert('Đến trang Đăng nhập')
+//             }}
+//        >
+//            <Text style={{fontWeight: "bold", }}>Gợi ý</Text>
+//         </TouchableOpacity>
+//           <TouchableOpacity 
+//             style={{marginLeft: 10,backgroundColor: "#d6d7db", paddingTop: 7, paddingBottom: 7, paddingLeft: 10, paddingRight: 10, borderRadius: 30}}
+//             onPress={() => {
+//                 alert('Đến trang Đăng nhập')
+//             }}
+//        >
+//             <Text style={{fontWeight: "bold"}}>Tất cả bạn bè</Text>
+
+//         </TouchableOpacity>
+//       </View>
+//       <Text style={styles.line}></Text>
+//       <View style={styles.list}>
+
+
+//           <View style={{flexDirection: "row",justifyContent: "space-between",padding: 10}}>
+//               <Text style={{fontWeight: "bold"}}>Lời mời kết bạn <Text style={{color: "red"}}>42</Text></Text>
+//               <Text style={{color: "#1776f5"}}>Xem tất cả</Text>
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập');
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+//           <View style={styles.user}>
+//              <Image
+//                 style={styles.imgUser}
+//                 source={require('./../Images/user.jpg')}
+//             />
+
+//             <View style={styles.box}>
+//                 <View style={styles.name}>
+//                     <Text style={{fontWeight: "bold", fontSize:17}}>Hàn Trung Kiên</Text>
+//                     <Text style={{color: "gray"}}>2 năm</Text>
+//                 </View>
+//                 <View style={styles.btn}>
+//                 <TouchableOpacity 
+//                      style={[styles.singleButton,styles.btnAcept]}
+//                       onPress={() => {
+//                         alert('Đến trang Đăng nhập')
+//                      }}
+//                  >
+//                  <Text style={{color: "white", textAlign: "center", padding: 7, fontWeight: "bold"}}> Chấp nhận</Text>
+//                 </TouchableOpacity>
+//                  <TouchableOpacity 
+//                          style={[styles.singleButton, styles.btnDelete]}
+//                          onPress={() => {
+//                               alert('Đến trang Đăng nhập')
+//                         }}
+//                      >
+//                     <Text style={{textAlign: "center", padding: 7, fontWeight: "bold"}}> Xóa</Text>
+//                  </TouchableOpacity>
+
+//                 </View>
+//             </View>
+
+//           </View>
+
+//       </View>
+//       </ScrollView>
+
+
+
+=======
   </View>
   
       
     );
   }
+>>>>>>> kien
 
 
 const styles = StyleSheet.create({
