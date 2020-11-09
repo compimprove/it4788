@@ -24,6 +24,12 @@ export default class AppContainer extends React.Component {
     })
   }
 
+  logout() {
+    this.setState({
+      logIn: false
+    })
+  }
+
   register(data) {
     console.log("Register Data: " + JSON.stringify(data));
     this.setState({

@@ -23,7 +23,9 @@ import PopupCamera from '../InterfaceUser/PopupCamera';
 import PopupImage from '../InterfaceUser/PopupImage';
 import SettingFriend from '../InterfaceUser/SettingFriend';
 import Invited from '../InterfaceUser/Invited';
-import UserPage from '../InterfaceUser/UserPage';
+import UserSetting from '../InterfaceUser/UserSetting';
+import UserFriends from '../InterfaceUser/Friends';
+import Logout from '../Logout/Logout';
 const Tab = createBottomTabNavigator();
 
 
@@ -32,10 +34,13 @@ class MainPage extends React.Component {
     super(props);
   }
 
+
   render() {
     return (
       <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={UserPage} />
+        <Tab.Screen name="mainPage" component={mainPage} />
+        <Tab.Screen name="Invited" component={Invited} />
+        <Tab.Screen name="SettingFriend" component={SettingFriend} />
         <Tab.Screen name="SearchPage" component={SearchPage} />
         <Tab.Screen name="MainPost" component={MainPost} />
         <Tab.Screen name="SearchResult" component={SearchResult} />
@@ -45,7 +50,10 @@ class MainPage extends React.Component {
         <Tab.Screen name="Suggestion" component={SuggestionFriend} />
         <Tab.Screen name="AllFriend" component={AllFriends} />
         <Tab.Screen name="SearchVideo" component={SearchVideo} />
-        <Tab.Screen name="UserPage" component={UserPage} />
+        <Tab.Screen name="InterfaceUser" component={InterfaceUser} />
+        <Tab.Screen name="UserSetting" component={UserSetting} />
+        <Tab.Screen name="UserFriends" component={UserFriends} />
+        <Tab.Screen name="Logout" component={Logout} />
       </Tab.Navigator>
     );
   }

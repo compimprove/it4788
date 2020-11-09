@@ -9,9 +9,10 @@ import { Avatar, Appbar } from 'react-native-paper';
 import PopupCamera from './PopupCamera';
 import { Container, Item, List, ListItem, Thumbnail, Text, Button, Header, Icon, Content } from 'native-base';
 import PopupImage from './PopupImage';
-
-
-
+import { TouchableHighlight } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
+import Article from '../MainPage/Article';
+import AppHeaderBar from '../MainPage/AppHeaderBar';
 
 export default class InterfaceUser extends Component {
   _onPressButton1() {
@@ -39,35 +40,38 @@ export default class InterfaceUser extends Component {
     alert("Thay đổi ảnh đại diện")
   }
   render() {
+    let _this = this;
+    let articles = [];
 
+    let user = this.props.route.params.user;
+    let posts = user.posts;
+    for (let i = 0; i < posts.length; i++) {
+      articles.push(
+        <View key={posts[i].id}>
+          <Article
+            navigation={_this.props.navigation}
+            selfLoading={false}
+            data={posts[i]}
+            hasCommentBtn={true} />
+          <View style={styles.dividerPost}></View>
+        </View>
+      )
+    }
     return (
       <Container>
-        <Header style={{ backgroundColor: 'white' }}>
-          <Appbar style={styles.appbarBelow}>
-            <Appbar.Action icon="home" size={33} onPress={this._onPressButton1} />
-            <Appbar.Action icon="youtube-tv" size={33} onPress={this._onPressButton2} />
-            <Appbar.Action icon="account-multiple" size={33} onPress={this._onPressButton3} />
-            <Appbar.Action icon="account-group" size={33} onPress={this._onPressButton4} />
-            <Appbar.Action icon="bell-outline" size={33} onPress={this._onPressButton5} />
-            <Appbar.Action icon="menu" size={33} onPress={this._onPressButton6} />
-          </Appbar>
-        </Header>
-        <Content style={{ margin: 10 }}>
+        <AppHeaderBar navigation={this.props.navigation} />
+        <ScrollView style={{ margin: 10 }} showsVerticalScrollIndicator={false}>
           <Image style={styles.image1}
             source={require('../image/h4.jpg')} onPress={() => { }} />
           <PopupCamera />
-          <Avatar.Image style={styles.avatar} size={200} source={require('../Login/image/dog.jpg')} onPress={() => { }} />
+          <Avatar.Image style={styles.avatar} size={200} source={{ uri: user.image_url }} onPress={() => { }} />
           <PopupImage />
-
-          <Text
-            style={styles.text0}
-          >Cỏ đắng
-                  </Text>
+          <Text style={styles.text0}>Cỏ đắng</Text>
           <Item style={styles.item}>
             <Button style={styles.button1} onPress={() => { }} >
               <Text style={{ marginLeft: '20%' }}><Icon style={{ color: 'white' }} type="Ionicons" name='ios-add-circle-outline' />  Thêm vào tin</Text>
             </Button>
-            <Button light style={styles.button2} onPress={() => { }}>
+            <Button light style={styles.button2} onPress={() => { this.props.navigation.navigate("UserSetting") }}>
               <Icon style={{ marginLeft: '30%' }} type="Entypo" style={{ color: "grey", fontSize: 20 }} name='dots-three-horizontal' />
             </Button>
           </Item>
@@ -85,43 +89,29 @@ export default class InterfaceUser extends Component {
             {styles.findFri}
           >
             <Text style={styles.friend}>Bạn bè</Text>
-            <Text onPress={() => { }} style={styles.boloc}>Tìm bạn bè</Text>
+            <TouchableHighlight onPress={() => {
+              this.props.navigation.navigate("UserFriends", {
+                userData: user
+              })
+            }}>
+              <Text style={styles.boloc}>Tìm bạn bè</Text>
+            </TouchableHighlight>
           </View>
           <Text>1000 người bạn</Text>
           <List style={styles.list}>
             <ListItem thumbnail>
               <View style={styles.view0}>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../image/h4.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>Anna</Text>
-                </View>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../image/h2.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>An Nhiên</Text>
-                </View>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../Login/image/dog.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>Nhất cử</Text>
-                </View>
+                <FriendComponent userData={user.friends[0]} />
+                <FriendComponent userData={user.friends[1]} />
+                <FriendComponent userData={user.friends[2]} />
               </View>
             </ListItem>
           </List>
           <List style={styles.list1}>
             <ListItem thumbnail>
-              <View style={styles.view1}>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../image/h2.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>Việt Nam</Text>
-                </View>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../image/h5.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>Hoa dã quỳ</Text>
-                </View>
-                <View style={{ maxWidth: '33%' }}>
-                  <Thumbnail style={styles.image} square source={require('../image/h6.jpg')} onPress={() => { }} />
-                  <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>Tuệ Minh</Text>
-                </View>
-              </View>
+              <FriendComponent userData={user.friends[3]} />
+              <FriendComponent userData={user.friends[4]} />
+              <FriendComponent userData={user.friends[5]} />
             </ListItem>
           </List>
           <Button style={styles.moreview} block light onPress={() => { }}>
@@ -134,7 +124,7 @@ export default class InterfaceUser extends Component {
               <Text style={styles.boloc}>Bộ lọc</Text>
             </View>
             <Item style={styles.item} onPress={() => { }}>
-              <Avatar.Image style={styles.avatar1} size={60} source={require('../Login/image/dog.jpg')} />
+              <Avatar.Image style={styles.avatar1} size={60} source={{ uri: user.image_url }} />
               <Text style={{ color: 'grey' }}>  Bạn đang suy nghĩ gì ?</Text>
             </Item>
             <Item style={{ paddingBottom: 10 }}>
@@ -157,11 +147,22 @@ export default class InterfaceUser extends Component {
               <Button style={{ border: 5, backgroundColor: 'grey' }} />
             </Button>
           </View>
-        </Content>
+          {articles}
+        </ScrollView>
       </Container>
     );
   }
 }
+
+function FriendComponent({ userData }) {
+  return (
+    <View style={{ width: '33%' }}>
+      <Thumbnail style={styles.image} square source={{ uri: userData.image_url }} onPress={() => { }} />
+      <Text style={{ textAlign: 'center', paddingTop: 5, fontWeight: 'bold' }}>{userData.userName}</Text>
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
   findFri: {
     flexDirection: "row",

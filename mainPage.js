@@ -4,6 +4,7 @@ import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-n
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
 import Article from './src/components/MainPage/Article';
 import { Tab, Tabs } from 'native-base';
+import AppHeaderBar from './src/components/MainPage/AppHeaderBar';
 const articleSample = require("./src/components/MainPage/article_sample.json");
 
 export default class MainPage extends React.Component {
@@ -14,45 +15,25 @@ export default class MainPage extends React.Component {
     }
   }
   render() {
+    let _this = this;
+    let articles = [];
+    for (let i = 0; i < articleSample.length; i++) {
+      articles.push(
+        <View key={articleSample[i].id}>
+          <Article
+            navigation={_this.props.navigation}
+            selfLoading={false}
+            data={articleSample[i]}
+            hasCommentBtn={true} />
+          <View style={styles.dividerPost}></View>
+        </View>
+      )
+    }
     return (
       <View style={styles.container}>
-        <View style={styles.appbar}>
-          <Appbar style={styles.appbarHead}>
-            <Appbar.Content title="facebook" titleStyle={styles.appbarTitle} color={'#007AFF'} />
-            <Appbar.Action
-              icon="magnify"
-              size={28}
-              style={styles.setBackgroundGray}
-              onPress={() => {
-                this.props.navigation.navigate("SearchPage");
-              }}
-            />
-            <Appbar.Action icon="facebook-messenger" size={28} style={styles.setBackgroundGray} onPress={() => { }} />
-          </Appbar>
-
-          <Appbar style={styles.appbarBelow}>
-            <Appbar.Action color="#555555" icon="home" size={29} onPress={() => { }} />
-            <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => { }} />
-            <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => { }} />
-            <Appbar.Action color="#555555" icon="bell-outline" size={29} onPress={() => { }} />
-            <Appbar.Action color="#555555" icon="menu" size={29} onPress={() => { }} />
-          </Appbar>
-          <View style={styles.separator} />
-        </View>
-
+        <AppHeaderBar navigation={this.props.navigation} />
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Article
-            navigation={this.props.navigation}
-            selfLoading={false}
-            data={articleSample[0]} />
-
-          <View style={styles.dividerPost}></View>
-
-          <Article
-            navigation={this.props.navigation}
-            selfLoading={false}
-            data={articleSample[1]}
-          />
+          {articles}
         </ScrollView>
       </View>
     );
@@ -61,7 +42,7 @@ export default class MainPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 15,
+    marginTop: 0,
     flex: 1,
     backgroundColor: "#ffffff",
   },

@@ -1,0 +1,99 @@
+{
+    "id": 1,
+    "userName": "Cỏ Đắng",
+    "friend": 500,
+    "image_url": "https://picsum.photos/seed/picsum/360",
+    "friends": [
+        {
+            "id": 2,
+            "userName": "Anna",
+            "image_url": "https://picsum.photos/seed/picsum/200"
+        },
+        {
+            "id": 3,
+            "userName": "An Nhiên",
+            "image_url": "https://picsum.photos/id/237/200/300"
+        },
+        {
+            "id": 4,
+            "userName": "Nhất Cử",
+            "image_url": "https://picsum.photos/200"
+        },
+        {
+            "id": 5,
+            "userName": "Việt Nam",
+            "image_url": "https://picsum.photos/250"
+        },
+        {
+            "id": 6,
+            "userName": "Hoa dã quỳnh",
+            "image_url": "https://picsum.photos/300"
+        },
+        {
+            "id": 7,
+            "userName": "Tuệ Minh",
+            "image_url": "https://picsum.photos/350"
+        }
+    ],
+    "posts": [
+        {
+            "id": 2,
+            "userName": "Cỏ Đắng",
+            "content": "Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. \nErrem populo qui ne, ea ipsum antiopam definitionem eos.Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.\nLorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.\nLorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.",
+            "timePosted": 60,
+            "user_image_url": "https://picsum.photos/seed/picsum/360",
+            "likes": 2,
+            "comment": 23,
+            "image_url": "https://picsum.photos/700",
+            "comments": [
+                {
+                    "id": 1,
+                    "userName": "NTD",
+                    "content": "Content Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum",
+                    "timePosted": 60,
+                    "image_url": "https://picsum.photos/370"
+                },
+                {
+                    "id": 2,
+                    "userName": "Văn A",
+                    "content": "Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. \nErrem popul",
+                    "timePosted": 60,
+                    "image_url": "https://picsum.photos/380"
+                },
+                {
+                    "id": 3,
+                    "userName": "Beautiful",
+                    "content": "Beautifully right",
+                    "timePosted": 60,
+                    "image_url": "https://picsum.photos/350"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "userName": "Cỏ Đắng",
+            "content": "Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. \nErrem populo qui ne, ea ipsum antiopam definitionem eos.Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.",
+            "timePosted": 60,
+            "user_image_url": "https://picsum.photos/seed/picsum/360",
+            "likes": 2,
+            "comment": 23,
+            "image_url": "https://picsum.photos/700",
+            "comments": [
+                {
+                    "id": 1,
+                    "userName": "NTD",
+                    "content": "Content Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum",
+                    "timePosted": 60,
+                    "image_url": "https://picsum.photos/370"
+                },
+                {
+                    "id": 2,
+                    "userName": "Văn A",
+                    "content": "Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. \nErrem popul",
+                    "timePosted": 60,
+                    "image_url": "https://picsum.photos/380"
+                }
+            ]
+        }
+    ]
+}

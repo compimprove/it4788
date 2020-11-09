@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
+import CommentComponent from "./src/components/MainPage/CommentComponent";
 
 const MyTextInput = () => {
   const [text, setText] = React.useState('');
@@ -22,9 +23,14 @@ export default class Comment extends React.Component {
   }
 
   render() {
+    let comments = this.props.route.params.data;
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => { this.props.navigation.goBack() }} style={styles.appbar}>
+        <TouchableHighlight onPress={() => {
+          setTimeout(() => {
+            this.props.navigation.goBack()
+          }, 200);
+        }} style={styles.appbar}>
           <Card.Actions style={styles.justifySpaceBetween}>
             <Text>
               <Button icon="thumb-up" color='#1877F2'>2</Button>
@@ -34,90 +40,13 @@ export default class Comment extends React.Component {
         <View style={styles.separator} />
         <ScrollView showsVerticalScrollIndicator={false}>
           <View>
-            <Button style={{ marginTop: 10, alignSelf: 'flex-start' }} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
-              Xem các bình luận trước...
-            </Button>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van B</Text>
-                  <Text style={styles.commentContent}>Mỹ Tâm trao 700 phần quà gồm tiền, mì tôm và bánh kẹo cho người gặp khó khăn vì bão lũ, trưa 16/10</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Giải F1 hủy chặng đua Việt Nam</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Image size={50} source={require('./assets/favicon.png')} style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View style={styles.commentBackground}>
-                  <Text style={styles.userName}>Van C</Text>
-                  <Text style={styles.commentContent}>Lorem ipsum dolor sit amet</Text>
-                </View>
-                <Text style={styles.timeComment}>1 day</Text>
-              </View>
-            </View>
+            {(comments.length > 10) &&
+              <Button style={{ marginTop: 10, alignSelf: 'flex-start' }} mode="text" color="#000000" uppercase={false} onPress={() => console.log('Pressed')}>
+                Xem các bình luận trước...
+              </Button>
+            }
+            {comments.map(data => <CommentComponent key={data.id} data={data} />)}
           </View>
-
-
-
         </ScrollView>
         <View style={styles.separator}></View>
         <View>
