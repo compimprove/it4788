@@ -1,11 +1,19 @@
 import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  TouchableHighlight,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity
+} from 'react-native';
 import Article from './src/components/MainPage/Article';
 import { Tab, Tabs } from 'native-base';
 import AppHeaderBar from './src/components/MainPage/AppHeaderBar';
 const articleSample = require("./src/components/MainPage/article_sample.json");
+const userSample = require("./src/components/MainPage/user_sample.json");
 
 export default class MainPage extends React.Component {
   constructor(props) {
@@ -13,6 +21,12 @@ export default class MainPage extends React.Component {
     this.state = {
 
     }
+  }
+
+  navigate(route) {
+    setTimeout(() => {
+      this.props.navigation.navigate(route)
+    }, 300);
   }
 
   render() {
@@ -34,6 +48,12 @@ export default class MainPage extends React.Component {
       <View style={styles.container}>
         <AppHeaderBar navigation={this.props.navigation} />
         <ScrollView showsVerticalScrollIndicator={false}>
+          <TouchableOpacity onPress={() => {this.navigate("CreatePost")}}>
+            <View>
+              <Card.Title title={"Bạn đang nghĩ gì"}  left={(props) => <Avatar.Image size={50} source={{ uri: userSample.image_url }} />} />
+            </View>
+          </TouchableOpacity>
+          <View style={styles.dividerPost}></View>
           {articles}
         </ScrollView>
       </View>
@@ -84,8 +104,8 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   dividerPost: {
-    borderBottomColor: '#a9a9a9',
-    borderBottomWidth: 10,
+    borderBottomColor: '#d7d7d7',
+    borderBottomWidth: 5,
     elevation: 0,
   },
   appbar: {
