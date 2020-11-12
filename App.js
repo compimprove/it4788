@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import AppContainer from './src/AppContainer';
 
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);

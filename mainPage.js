@@ -14,6 +14,7 @@ export default class MainPage extends React.Component {
 
     }
   }
+
   render() {
     let _this = this;
     let articles = [];

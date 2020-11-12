@@ -38,7 +38,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={mainPage} />
+        <Tab.Screen name="mainPage" component={VideoTab} />
         <Tab.Screen name="Invited" component={Invited} />
         <Tab.Screen name="SettingFriend" component={SettingFriend} />
         <Tab.Screen name="SearchPage" component={SearchPage} />

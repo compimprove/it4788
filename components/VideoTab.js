@@ -25,8 +25,6 @@ class VideoTab extends Component {
     muteVideo: false,
     iconMute: "unmute",
     colorLike: "black",
-
-
   };
   setColorLike = (a) => {
     this.setState({ colorLike: a })
@@ -53,8 +51,6 @@ class VideoTab extends Component {
     const { modalVisible } = this.state;
     const { navigation } = this.props;
     return (
-
-
       <View>
         <View style={styles.containerHeader}>
           <TouchableOpacity
@@ -322,7 +318,6 @@ class VideoTab extends Component {
             <Text style={{ backgroundColor: "#d6d7db", width: "100%", height: 1 }}></Text>
             <View style={{ paddingTop: 3, paddingBottom: 5, paddingLeft: 10, paddingRight: 10, flexDirection: "row", justifyContent: "space-between" }}>
               <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>
-
                 <Text style={{ marginLeft: 5, marginTop: 5, fontSize: 11, color: "gray" }}>1.005 thích</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>

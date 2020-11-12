@@ -32,7 +32,9 @@ class AppHeaderBar extends React.Component {
             this.navigate("mainPage");
           }} />
           <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => { }} />
-          <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => { }} />
+          <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => {
+            this.navigate("Video")
+          }} />
           <Appbar.Action color="#555555" icon="bell-outline" size={29} onPress={() => { }} />
           <Appbar.Action color="#555555" icon="menu" size={29} onPress={() => {
             this.navigate("Logout");
@@ -40,8 +42,6 @@ class AppHeaderBar extends React.Component {
         </Appbar>
         <View style={styles.separator} />
       </View>
-
-
     );
   }
 }
