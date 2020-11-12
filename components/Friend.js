@@ -12,44 +12,19 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import AppHeaderBar from "../src/components/MainPage/AppHeaderBar";
 const width100 = "100%";
 
 function Friend({ navigation }) {
   return (
     <View>
-      <View style={styles.containerHeader}>
-        <MaterialIcons name="home" size={25} color="#575757" />
-        <FontAwesome5 name="user-friends" size={25} color="#1776f5" />
-        <FontAwesome name="group" size={25} color="#575757" />
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Video')}
-        >
-          <MaterialCommunityIcons name="television-play" size={25} color="#575757" />
-        </TouchableOpacity>
-        <Ionicons name="ios-notifications-outline" size={25} color="#575757" />
-        <Feather name="menu" size={25} color="#575757" />
-      </View>
-      <View>
-        <FontAwesome5 name="user-friends" size={25} color="#1776f5" />
-        <FontAwesome name="group" size={25} color="#575757" />
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Video')}
-        >
-          <MaterialCommunityIcons name="television-play" size={25} color="#575757" />
-        </TouchableOpacity>
-        <Ionicons name="ios-notifications-outline" size={25} color="#575757" />
-        <Feather name="menu" size={25} color="#575757" />
-      </View>
-
+      <AppHeaderBar navigation={navigation} />
       <ScrollView>
         <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
           <Text style={{ fontSize: 25, fontWeight: "bold" }}>Bạn bè</Text>
           <TouchableOpacity
             style={{ backgroundColor: "#d6d7db", paddingTop: 5, paddingBottom: 5, paddingLeft: 8, paddingRight: 8, borderRadius: 30 }}
-            onPress={() => {
-              alert('Đến trang Đăng nhập')
-            }}
-          >
+            onPress={() => {alert('Đến trang Đăng nhập')}}>
             <FontAwesome name="search" size={20} color="black" />
           </TouchableOpacity>
         </View>

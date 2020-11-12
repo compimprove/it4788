@@ -26,6 +26,10 @@ import Invited from '../InterfaceUser/Invited';
 import UserSetting from '../InterfaceUser/UserSetting';
 import UserFriends from '../InterfaceUser/Friends';
 import Logout from '../Logout/Logout';
+import Messening from "../../../components/Messengering";
+import MessengerMe from "../../../components/MessengerMe";
+import MessengerUser from "../../../components/MessengerUser";
+import MessengerMain from "../../../components/MessengerMain";
 const Tab = createBottomTabNavigator();
 
 
@@ -34,11 +38,10 @@ class MainPage extends React.Component {
     super(props);
   }
 
-
   render() {
     return (
       <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={VideoTab} />
+        <Tab.Screen name="mainPage" component={Messening} />
         <Tab.Screen name="Invited" component={Invited} />
         <Tab.Screen name="SettingFriend" component={SettingFriend} />
         <Tab.Screen name="SearchPage" component={SearchPage} />
@@ -54,6 +57,10 @@ class MainPage extends React.Component {
         <Tab.Screen name="UserSetting" component={UserSetting} />
         <Tab.Screen name="UserFriends" component={UserFriends} />
         <Tab.Screen name="Logout" component={Logout} />
+        <Tab.Screen name="Messening" component={Messening} />
+        <Tab.Screen name="MessengerMe" component={MessengerMe} />
+        <Tab.Screen name="MessengerUser" component={MessengerUser} />
+        <Tab.Screen name="MessengerMain" component={MessengerMain} />
       </Tab.Navigator>
     );
   }

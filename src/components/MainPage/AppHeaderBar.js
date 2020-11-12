@@ -31,7 +31,9 @@ class AppHeaderBar extends React.Component {
           <Appbar.Action color="#555555" icon="home" size={29} onPress={() => {
             this.navigate("mainPage");
           }} />
-          <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => { }} />
+          <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => {
+            this.navigate("Friend");
+          }} />
           <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => {
             this.navigate("Video")
           }} />
