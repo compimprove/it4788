@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import mainPage from '../../../mainPage';
 import SearchPage from '../../../SearchPage';
 import MainPost from '../../../MainPost';
@@ -34,6 +34,7 @@ import Create from "../../../Component/createPost";
 import Notification from "../../../Component/Notification";
 import AddEmoji from "../../../Component/addEmoji";
 import example from "../../../Component/example";
+
 const Tab = createBottomTabNavigator();
 
 
@@ -43,32 +44,37 @@ class MainPage extends React.Component {
   }
 
   render() {
+    let getToken = this.props.route.params.getToken;
     return (
-      <Tab.Navigator tabBar={props => (<></>)}>
-        <Tab.Screen name="mainPage" component={mainPage} />
-        <Tab.Screen name="Invited" component={Invited} />
-        <Tab.Screen name="SettingFriend" component={SettingFriend} />
-        <Tab.Screen name="SearchPage" component={SearchPage} />
-        <Tab.Screen name="MainPost" component={MainPost} />
-        <Tab.Screen name="SearchResult" component={SearchResult} />
-        <Tab.Screen name="SearchHistory" component={SearchHistory} />
-        <Tab.Screen name="Friend" component={Friend} />
-        <Tab.Screen name="Video" component={VideoTab} />
-        <Tab.Screen name="Suggestion" component={SuggestionFriend} />
-        <Tab.Screen name="AllFriend" component={AllFriends} />
-        <Tab.Screen name="SearchVideo" component={SearchVideo} />
-        <Tab.Screen name="InterfaceUser" component={InterfaceUser} />
-        <Tab.Screen name="UserSetting" component={UserSetting} />
-        <Tab.Screen name="UserFriends" component={UserFriends} />
-        <Tab.Screen name="Logout" component={Logout} />
-        <Tab.Screen name="Messening" component={Messening} />
-        <Tab.Screen name="MessengerMe" component={MessengerMe} />
-        <Tab.Screen name="MessengerUser" component={MessengerUser} />
-        <Tab.Screen name="MessengerMain" component={MessengerMain} />
-        <Tab.Screen name="CreatePost" component={Create} />
-        <Tab.Screen name="Notification" component={Notification} />
-        <Tab.Screen name="AddEmoji" component={AddEmoji} />
-      </Tab.Navigator>
+        <Tab.Navigator tabBar={props => (<></>)}>
+          <Tab.Screen
+              name="mainPage"
+              component={mainPage}
+              initialParams={{getToken: getToken}}
+          />
+          <Tab.Screen name="Invited" component={Invited}/>
+          <Tab.Screen name="SettingFriend" component={SettingFriend}/>
+          <Tab.Screen name="SearchPage" component={SearchPage}/>
+          <Tab.Screen name="MainPost" component={MainPost}/>
+          <Tab.Screen name="SearchResult" component={SearchResult}/>
+          <Tab.Screen name="SearchHistory" component={SearchHistory}/>
+          <Tab.Screen name="Friend" component={Friend} initialParams={{getToken: getToken}}/>
+          <Tab.Screen name="Video" component={VideoTab}/>
+          <Tab.Screen name="Suggestion" component={SuggestionFriend} initialParams={{getToken: getToken}}/>
+          <Tab.Screen name="AllFriend" component={AllFriends}/>
+          <Tab.Screen name="SearchVideo" component={SearchVideo}/>
+          <Tab.Screen name="InterfaceUser" component={InterfaceUser}/>
+          <Tab.Screen name="UserSetting" component={UserSetting}/>
+          <Tab.Screen name="UserFriends" component={UserFriends}/>
+          <Tab.Screen name="Logout" component={Logout}/>
+          <Tab.Screen name="Messening" component={Messening}/>
+          <Tab.Screen name="MessengerMe" component={MessengerMe}/>
+          <Tab.Screen name="MessengerUser" component={MessengerUser}/>
+          <Tab.Screen name="MessengerMain" component={MessengerMain}/>
+          <Tab.Screen name="CreatePost" component={Create}/>
+          <Tab.Screen name="Notification" component={Notification}/>
+          <Tab.Screen name="AddEmoji" component={AddEmoji}/>
+        </Tab.Navigator>
     );
   }
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
-import { Appbar, Searchbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
-import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
+import {Appbar, Searchbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading} from 'react-native-paper';
+import {StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput} from 'react-native';
 
 const MySearchBar = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -9,13 +9,13 @@ const MySearchBar = () => {
   const onChangeSearch = query => setSearchQuery(query);
 
   return (
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-      clearIcon='close'
-      style={styles.searchbar}
-    />
+      <Searchbar
+          placeholder="Search"
+          onChangeText={onChangeSearch}
+          value={searchQuery}
+          clearIcon='close'
+          style={styles.searchbar}
+      />
   );
 };
 
@@ -23,100 +23,102 @@ const MyTextInput = () => {
   const [text, setText] = React.useState('');
 
   return (
-    <TextInput
-      style={styles.myTextInput}
-      placeholder="Tìm kiếm"
-      value={text}
-      onChangeText={text => setText(text)}
-    />
+      <TextInput
+          style={styles.myTextInput}
+          placeholder="Tìm kiếm"
+          value={text}
+          onChangeText={text => setText(text)}
+      />
   );
 };
 
 class SearchHistory extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      history: [
+        {
+          time: "7 tháng 8 2020",
+          data: ["Sửa chữa nhà", "Vân Anh", "Dog"]
+        },
+        {
+          time: "6 tháng 8 2020",
+          data: ["Gym Online", "Copy Writing"]
+        },
+        {
+          time: "1 tháng 8 2020",
+          data: ["Copy Writing"]
+        },
+      ]
+    }
   }
+
+  navigate(route) {
+    setTimeout(() => {
+      this.props.navigation.navigate(route)
+    }, 200);
+  }
+
+  goBack() {
+    setTimeout(() => {
+      this.props.navigation.goBack();
+    }, 200);
+  }
+
+  deleteHistory(index1,index2) {
+    let data =  this.state.history[index1].data;
+    this.state.history[index1].data = data.filter((value, index) => {
+      return index !== index2;
+    })
+    if (this.state.history[index1].data.length === 0){
+      delete this.state.history[index1];
+    }
+    this.setState({});
+  }
+
   render() {
     return (
-
-      <View style={styles.container}>
-        <View style={styles.appbar}>
-          <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => { this.props.navigation.goBack() }} />
-            <Appbar.Content title='Nhật ký hoạt động' />
-          </Appbar>
-          <View style={styles.separator} />
-        </View>
-
-        <View style={styles.recentFind}>
-          <Button style={styles.searchKey} uppercase={false} color='#216fdb'>
-            Xóa các tìm kiếm
-        </Button>
-        </View>
-        <View style={styles.separator} />
-
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.searchsContent}>
-            <Text style={styles.time}>7 tháng 8 2020</Text>
-            <View style={styles.comment}>
-              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View>
-                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-                </View>
-              </View>
-              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View>
-                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-                </View>
-              </View>
-              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View>
-                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-                </View>
-              </View>
-              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
-            </View>
-
-            <Text style={styles.time}>6 tháng 8 2020</Text>
-            <View style={styles.comment}>
-              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View>
-                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-                </View>
-              </View>
-              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
-            </View>
-
-            <View style={styles.comment}>
-              <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment} />
-              <View style={styles.commentBody}>
-                <View>
-                  <Text style={styles.userName}>Bạn đã tìm kiếm trên facebook</Text>
-                  <Text style={styles.commentContent}>"sửa chữa nhà"</Text>
-                </View>
-              </View>
-              <Button icon='close' color='#a9a9a9' labelStyle={{ fontSize: 25 }}></Button>
-            </View>
+        <View style={styles.container}>
+          <View style={styles.appbar}>
+            <Appbar style={styles.appbarHead}>
+              <Appbar.BackAction onPress={() => {
+                this.goBack()
+              }}/>
+              <Appbar.Content title='Nhật ký hoạt động'/>
+            </Appbar>
+            <View style={styles.separator}/>
           </View>
-        </ScrollView>
-      </View>
+
+          <View style={styles.recentFind}>
+            <Button style={styles.searchKey} uppercase={false} color='#216fdb'>
+              Xóa các tìm kiếm
+            </Button>
+          </View>
+          <View style={styles.separator}/>
+
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.searchsContent}>
+              {this.state.history.map((day, id1) => {
+                return (
+                    <>
+                      <Text key={id1} style={styles.time}>{day.time}</Text>
+                      {day.data.map((content, id2) =>
+                          <View key={id2} style={styles.comment}>
+                            <Avatar.Icon size={50} icon='magnify' style={styles.avatarComment}/>
+                            <View style={styles.commentBody}>
+                              <View>
+                                <Text style={styles.userName}>{content}</Text>
+                              </View>
+                            </View>
+                            <Button onPress={this.deleteHistory.bind(this,id1,id2)} icon='close' color='#a9a9a9' labelStyle={{fontSize: 25}}/>
+                          </View>
+                      )}
+                    </>
+                )
+              })}
+            </View>
+          </ScrollView>
+        </View>
 
 
     );
@@ -164,10 +166,12 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   userName: {
+    marginTop:10,
     marginLeft: 10,
     fontWeight: 'bold',
   },
   comment: {
+    marginLeft:15,
     marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -223,7 +227,7 @@ const styles = StyleSheet.create({
   time: {
     fontWeight: 'bold',
     fontSize: 16,
-    marginLeft: 15,
+    marginLeft: 25,
     marginTop: 15,
   }
 });

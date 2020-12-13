@@ -2,6 +2,8 @@ import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Searchbar } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView } from 'react-native';
+import Article from "./src/components/MainPage/Article";
+const articleSample = require("./src/components/MainPage/article_sample.json");
 
 const MySearchBar = () => {
   const [searchQuery, setSearchQuery] = React.useState('Sửa chữa nhà');
@@ -24,13 +26,38 @@ class SearchResult extends React.Component {
     super(props);
     this.state = {}
   }
+  navigate(route) {
+    setTimeout(() => {
+      this.props.navigation.navigate(route)
+    },200);
+  }
+
+  goBack() {
+    setTimeout(() => {
+      this.props.navigation.goBack();
+    },200);
+  }
   render() {
+    const _this = this;
+    let articles = [];
+    for (let i = 0; i < articleSample.length; i++) {
+      articles.push(
+          <View key={articleSample[i].id}>
+            <Article
+                navigation={_this.props.navigation}
+                selfLoading={false}
+                data={articleSample[i]}
+                hasCommentBtn={true} />
+            <View style={styles.dividerPost}></View>
+          </View>
+      )
+    }
     return (
 
       <View style={styles.container}>
         <View style={styles.appbar}>
           <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => { this.props.navigation.goBack() }} />
+            <Appbar.BackAction onPress={() => { this.goBack() }} />
             <MySearchBar />
           </Appbar>
           <View>
@@ -39,68 +66,7 @@ class SearchResult extends React.Component {
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: "#F0F2F5" }}>
-
-          <Card style={styles.cardSearch}>
-            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
-            <Card.Content>
-              <Paragraph selectable>Card content</Paragraph>
-            </Card.Content>
-            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <Text>
-                <Button icon="thumb-up" color="#1877F2">2</Button>
-              </Text>
-              <Text>23 Comments</Text>
-            </Card.Actions>
-            <View style={styles.postSeparator}></View>
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="thumb-up-outline" color="#444444">Like</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
-              </TouchableHighlight>
-
-            </Card.Actions>
-          </Card>
-
-          <Card style={styles.cardSearch}>
-            <Card.Title title="Văn A" subtitle="1m" left={(props) => <Avatar.Image size={50} source={require('./assets/favicon.png')} />} />
-            <Card.Content>
-              <ViewMoreText numberOfLines={10}>
-                <Paragraph selectable>
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  Lorem ipsum dolor sit amet, in quo dolorum ponderum, nam veri molestie constituto eu. Eum enim tantas sadipscing ne, ut omnes malorum nostrum cum. Errem populo qui ne, ea ipsum antiopam definitionem eos.
-                  </Paragraph>
-              </ViewMoreText>
-
-            </Card.Content>
-            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <Text>
-                <Button icon="thumb-up" color="#1877F2">2</Button>
-              </Text>
-              <Text>23 Comments</Text>
-            </Card.Actions>
-            <View style={styles.postSeparator}></View>
-            <Card.Actions style={styles.justifySpaceBetween}>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="thumb-up-outline" color="#444444" >Like</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="comment-outline" color="#444444" >Comment</Button>
-              </TouchableHighlight>
-              <TouchableHighlight underlayColor="#dddddd" onPress={() => { }}>
-                <Button uppercase={false} icon="share-outline" color="#444444" >Share</Button>
-              </TouchableHighlight>
-
-            </Card.Actions>
-          </Card>
+          {articles}
         </ScrollView>
 
 

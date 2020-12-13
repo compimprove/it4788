@@ -21,6 +21,9 @@ export default class SaveInfo extends Component {
 
   register() {
     this.props.route.params.register(UserRegisterData.getInstance())
+    setTimeout(function () {
+      this.props.navigation.navigate("Login");
+    }.bind(this),200);
   }
 
 

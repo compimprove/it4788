@@ -42,7 +42,19 @@ class SearchPage extends React.Component {
 
   onSubmitSearch(query) {
     console.log('onSubmitSearch: ' + query);
-    this.props.navigation.navigate("SearchResult")
+    this.navigate("SearchResult")
+  }
+
+  navigate(route) {
+    setTimeout(() => {
+      this.props.navigation.navigate(route)
+    },200);
+  }
+
+  goBack() {
+    setTimeout(() => {
+      this.props.navigation.goBack();
+    },200);
   }
 
   render() {
@@ -50,14 +62,14 @@ class SearchPage extends React.Component {
       <View style={styles.container}>
         <View style={styles.appbar}>
           <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => { this.props.navigation.goBack() }} />
+            <Appbar.BackAction onPress={() => { this.goBack() }} />
             <MySearchBar
               onSubmit={this.onSubmitSearch.bind(this)} />
           </Appbar>
           <View style={styles.separator} />
         </View>
 
-        <TouchableHighlight onPress={() => { this.props.navigation.navigate("SearchHistory") }}>
+        <TouchableHighlight onPress={() => { this.navigate("SearchHistory") }}>
           <View style={styles.recentFind}>
             <Text style={{ fontWeight: 'bold' }}>Tìm kiếm gần đây</Text>
             <Text>CHỈNH SỬA</Text>

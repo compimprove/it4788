@@ -50,6 +50,11 @@ export default class UserRegisterData {
         this._sex = value;
     };
 
+    _uuid = "d4546f48-27c1-4b30-8b65-e8d07626d52e";
+    get uuid() {
+        return this._uuid;
+    }
+
     log() {
         console.log(JSON.stringify(this));
     }

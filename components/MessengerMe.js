@@ -30,8 +30,7 @@ function MessengerMe({navigation}) {
         padding: 10
       }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('MessengerMain')}
-
+          onPress={() => setTimeout(navigation.goBack,200)}
         >
           <MaterialIcons style={{marginLeft: 5}} name="keyboard-backspace" size={26} color="black"/>
 

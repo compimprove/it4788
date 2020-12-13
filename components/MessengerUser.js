@@ -34,7 +34,7 @@ function MessengerUser({navigation}) {
         alignItems: "center",
       }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Messening')}
+          onPress={() => navigation.goBack()}
         >
           <Ionicons name="ios-arrow-round-back" size={30} color="black"/>
 

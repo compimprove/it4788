@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
 import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
 import CommentComponent from "./src/components/MainPage/CommentComponent";
+import Utility from "./Utility";
 
-const MyTextInput = () => {
+const MyTextInput = ({callBack}) => {
   const [text, setText] = React.useState('');
 
   return (
@@ -11,7 +12,13 @@ const MyTextInput = () => {
       style={styles.myTextInput}
       placeholder="Write a comment..."
       value={text}
-      onChangeText={text => setText(text)}
+      onChangeText={text => {
+        setText(Utility.createContent(text))
+      }}
+      onEndEditing={() => {
+        setText("");
+        callBack(text)
+      }}
     />
   );
 };
@@ -19,11 +26,33 @@ const MyTextInput = () => {
 export default class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.getToken = this.props.route.params.getToken;
+    this.state = {
+      comments: this.props.route.params.data
+    };
+    this.updateCommentInterval = setInterval(function () {
+      this.setState({
+        comments: this.props.route.params.data,
+      })
+    }.bind(this),500)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateCommentInterval);
+  }
+
+  addComment(text) {
+    this.props.route.params.addComment(text);
+    // this.state.comments.push({
+    //   userName: this.props.route.params.userName,
+    //   content: text,
+    //   id: this.state.comments.length
+    // })
+    // this.setState({});
   }
 
   render() {
-    let comments = this.props.route.params.data;
+    let comments = this.state.comments;
     return (
       <View style={styles.container}>
         <TouchableHighlight onPress={() => {
@@ -50,7 +79,8 @@ export default class Comment extends React.Component {
         </ScrollView>
         <View style={styles.separator}></View>
         <View>
-          <MyTextInput></MyTextInput>
+          <MyTextInput
+          callBack={this.addComment.bind(this)} />
         </View>
       </View>
 

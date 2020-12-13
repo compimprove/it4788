@@ -24,21 +24,15 @@ function AllFriends({ navigation }) {
       <View style={styles.container1}>
         <View style={{ flexDirection: "row" }}>
           <TouchableOpacity
-
-            onPress={() => navigation.navigate('Friend')}
+            onPress={() => setTimeout(navigation.goBack,200)}
           >
             <MaterialIcons name="keyboard-backspace" size={24} color="black" />
-
           </TouchableOpacity>
           <Text style={{ marginLeft: 10 }}> Tất cả bạn bè</Text>
-
         </View>
         <Text style={{ marginRight: 10 }}>
           <FontAwesome5 name="search" size={20} color="black" />
-
         </Text>
-
-
       </View>
       <Text style={{ backgroundColor: "gray", height: 1 }}></Text>
       <ScrollView>
@@ -54,7 +48,6 @@ function AllFriends({ navigation }) {
                 source={require('./../Images/user.jpg')}
               />
               <Text style={{ fontWeight: "bold", marginLeft: 10 }}>Hàn Trung Kiên</Text>
-
             </View>
             <View style={styles.right}>
               <TouchableOpacity

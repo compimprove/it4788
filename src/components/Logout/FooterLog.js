@@ -11,8 +11,6 @@ const FooterLog = () => {
       <List.Accordion style={{ height: 40 }}
         title="Xem thêm"
         left={props => <List.Icon {...props} icon="view-grid-plus" />}>
-        <List.Item title="First item" />
-        <List.Item title="Second item" />
       </List.Accordion>
       <List.Accordion style={{ height: 40 }}
         title="Trợ giúp và hỗ trợ"

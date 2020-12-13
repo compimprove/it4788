@@ -32,7 +32,7 @@ function MessengerMain({navigation}) {
       }}>
         <View style={{flexDirection: "row", alignItems: "center"}}>
           <TouchableOpacity style={{paddingRight: 10}}
-                            onPress={() => navigation.navigate('Home')}>
+                            onPress={() => setTimeout(navigation.goBack,200)}>
             <Ionicons name="md-arrow-back" size={24} color="black"/>
           </TouchableOpacity>
           <TouchableOpacity

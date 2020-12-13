@@ -1,49 +1,54 @@
 import React from 'react';
-import { Appbar } from 'react-native-paper';
-import { View, StyleSheet } from 'react-native';
+import {Appbar} from 'react-native-paper';
+import {View, StyleSheet} from 'react-native';
 
 class AppHeaderBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {}
   }
+
   navigate(route) {
     setTimeout(() => {
       this.props.navigation.navigate(route)
     }, 200);
   }
+
   render() {
     return (
-      <View style={styles.appbar}>
-        <Appbar style={styles.appbarHead}>
-          <Appbar.Content title="facebook" titleStyle={styles.appbarTitle} color={'#007AFF'} />
-          <Appbar.Action
-            icon="magnify"
-            size={28}
-            style={styles.setBackgroundGray}
-            onPress={() => {
-              this.navigate("SearchPage");
-            }}
-          />
-          <Appbar.Action icon="facebook-messenger" size={28} style={styles.setBackgroundGray} onPress={() => { }} />
-        </Appbar>
-        <Appbar style={styles.appbarBelow}>
-          <Appbar.Action color="#555555" icon="home" size={29} onPress={() => {
-            this.navigate("mainPage");
-          }} />
-          <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => {
-            this.navigate("Friend");
-          }} />
-          <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => {
-            this.navigate("Video")
-          }} />
-          <Appbar.Action color="#555555" icon="bell-outline" size={29} onPress={() => { }} />
-          <Appbar.Action color="#555555" icon="menu" size={29} onPress={() => {
-            this.navigate("Logout");
-          }} />
-        </Appbar>
-        <View style={styles.separator} />
-      </View>
+        <View style={styles.appbar}>
+          <Appbar style={styles.appbarHead}>
+            <Appbar.Content title="facebook" titleStyle={styles.appbarTitle} color={'#007AFF'}/>
+            <Appbar.Action
+                icon="magnify"
+                size={28}
+                style={styles.setBackgroundGray}
+                onPress={() => {
+                  this.navigate("SearchPage");
+                }}
+            />
+            <Appbar.Action icon="facebook-messenger" size={28} style={styles.setBackgroundGray} onPress={() => {
+                this.navigate("MessengerMain");
+            }}/>
+          </Appbar>
+          <Appbar style={styles.appbarBelow}>
+            <Appbar.Action color="#555555" icon="home" size={29} onPress={() => {
+              this.navigate("mainPage");
+            }}/>
+            <Appbar.Action color="#555555" icon="account-multiple" size={29} onPress={() => {
+              this.navigate("Friend");
+            }}/>
+            <Appbar.Action color="#555555" icon="youtube-tv" size={29} onPress={() => {
+              this.navigate("Video")
+            }}/>
+            <Appbar.Action color="#555555" icon="bell-outline" size={29} onPress={() => {
+            }}/>
+            <Appbar.Action color="#555555" icon="menu" size={29} onPress={() => {
+              this.navigate("Logout");
+            }}/>
+          </Appbar>
+          <View style={styles.separator}/>
+        </View>
     );
   }
 }
@@ -97,7 +102,7 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   appbar: {
-    paddingTop: 30
+    paddingTop: 20
   }
 });
 

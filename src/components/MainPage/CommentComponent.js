@@ -3,6 +3,7 @@ import React from 'react';
 import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
 import { StyleSheet, Image, View, Text, ScrollView, TextInput } from 'react-native';
 import { timeToString } from '../Helper';
+import Utility from "../../../Utility";
 
 class CommentComponent extends React.Component {
   constructor(props) {
@@ -10,16 +11,16 @@ class CommentComponent extends React.Component {
     this.state = {}
   }
   render() {
-
+    let timePosted = timeToString(this.props.data.timePosted);
     return (
       <View style={styles.comment}>
         <Avatar.Image size={50} source={{ uri: this.props.data.image_url }} />
         <View style={styles.commentBody}>
           <View style={styles.commentBackground}>
             <Text style={styles.userName}>{this.props.data.userName}</Text>
-            <Text style={styles.commentContent}>{this.props.data.content}</Text>
+            <Text style={styles.commentContent}>{Utility.createContent(this.props.data.content)}</Text>
           </View>
-          <Text style={styles.timeComment}>{timeToString(this.props.data.timePosted)}</Text>
+          <Text style={styles.timeComment}>{timePosted}</Text>
         </View>
       </View>
     );

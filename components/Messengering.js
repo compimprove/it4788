@@ -31,9 +31,8 @@ function Messengering({navigation}) {
         alignItems: "center"
       }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('MessengerMain')}>
+          onPress={() => navigation.goBack()}>
           <MaterialIcons name="arrow-back" size={28} color="#0079ff"/>
-
         </TouchableOpacity>
         <AntDesign name="infocirlce" size={24} color="#0079ff"/>
       </View>
