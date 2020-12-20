@@ -31,7 +31,7 @@ class Friend extends Component {
   }
 
   componentDidMount() {
-    axios.get(config.host + "/it4895/user/get_requested_friends", {
+    axios.get(config.host + "/it4895/get_requested_friends", {
       params: {
         token: this.getToken(),
         count: 10,
@@ -45,6 +45,23 @@ class Friend extends Component {
           requested: data.requested
         })
       } else {
+      }
+    }.bind(this))
+  }
+
+  setAcceptFriend(id) {
+    axios.post(config.host + "/it4895/set_request_friend", null,{
+      params: {
+        token: this.getToken(),
+        user_id: id,
+        is_accept: 1
+      }
+    }).then(function (response) {
+      if (Utility.isSuccessResponse(response)) {
+        let requested = this.state.requested.filter(e => e.id !== id);
+        this.setState({requested});
+      } else {
+        console.log(response.data)
       }
     }.bind(this))
   }
@@ -134,7 +151,7 @@ class Friend extends Component {
                             style={[styles.singleButton, styles.btnAcept]}
                             onPress={() => {
                               setTimeout(() => {
-                                deleteFriends(index)
+                                this.setAcceptFriend(friend.id)
                               }, 1900)
                             }}
                         >

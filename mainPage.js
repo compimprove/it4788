@@ -26,6 +26,7 @@ export default class MainPage extends React.Component {
     console.log("token:" + this.getToken());
     this.state = {
       userName: "",
+      userAvatar: "",
       articles: [],
       load: false,
     }
@@ -39,7 +40,7 @@ export default class MainPage extends React.Component {
   }
 
   updateUser() {
-    axios.get(config.host + "/it4895/user", {
+    axios.get(config.host + "/it4895/get_user_info", {
       params: {
         token: this.getToken()
       }
@@ -48,7 +49,8 @@ export default class MainPage extends React.Component {
       let data = response.data.data;
       if (Utility.isSuccessResponse(response)) {
         this.setState({
-          userName: data.username
+          userName: data.username,
+          userAvatar: data.avatar,
         })
       } else {
         console.log(response.data);
@@ -84,7 +86,6 @@ export default class MainPage extends React.Component {
         })
         this.updateComment();
       }
-
     }.bind(this))
   }
 
@@ -110,7 +111,7 @@ export default class MainPage extends React.Component {
   }
 
   updatePostComment(id, index) {
-    axios.get(config.host + "/it4895/comment", {
+    axios.get(config.host + "/it4895/get_comment", {
       params: {
         token: this.getToken(),
         id: id
@@ -134,7 +135,7 @@ export default class MainPage extends React.Component {
   }
 
   addComment(postId, content) {
-    axios.post(config.host + "/it4895/comment/add", null, {
+    axios.post(config.host + "/it4895/set_comment", null, {
       params: {
         token: this.getToken(),
         id: postId,
@@ -175,6 +176,7 @@ export default class MainPage extends React.Component {
                 selfLoading={false}
                 addComment={this.addComment}
                 userName={this.state.userName}
+                userAvatar={this.state.userAvatar}
                 data={this.state.articles[i]}
                 hasCommentBtn={true}/>
             <View style={styles.dividerPost}/>
@@ -198,7 +200,7 @@ export default class MainPage extends React.Component {
             }}>
               <View>
                 <Card.Title title={"Bạn đang nghĩ gì"}
-                            left={(props) => <Avatar.Image size={50} source={{uri: userSample.image_url}}/>}/>
+                            left={(props) => <Avatar.Image size={50} source={{uri: this.state.userAvatar}}/>}/>
               </View>
             </TouchableOpacity>
             <View style={styles.dividerPost}/>

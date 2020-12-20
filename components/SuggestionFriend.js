@@ -28,7 +28,7 @@ class SuggestionFriend extends Component {
   }
 
   componentDidMount() {
-    axios.get(config.host + "/it4895/user/get_list_suggested_friends", {
+    axios.get(config.host + "/it4895/get_list_suggested_friends", {
       params: {
         token: this.getToken(),
         count: 20,

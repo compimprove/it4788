@@ -80,7 +80,10 @@ export default class AppContainer extends React.Component {
               <Stack.Screen
                   name="MainPage"
                   component={MainPage}
-                  initialParams={{getToken: this.getToken.bind((this))}}
+                  initialParams={{
+                    getToken: this.getToken.bind((this)),
+                    logout: this.logout.bind(this)
+                  }}
               />
               <Stack.Screen
                   name="Comment"

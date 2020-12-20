@@ -34,13 +34,14 @@ class Article extends React.Component {
   render() {
     let articleData = this.props.data;
     let userName = this.props.userName;
+    let userAvatar = this.props.userAvatar;
     let dateTime = new Date(articleData.timePosted);
     let addComment = this.addComment.bind(this);
     return (
         <Card>
           <TouchableOpacity onPress={this.navigateToUserPage.bind(this)}>
             <Card.Title title={userName} subtitle={timeToString(dateTime)}
-                        left={(props) => <Avatar.Image size={50} source={{uri: articleData.user_image_url}}/>}/>
+                        left={(props) => <Avatar.Image size={50} source={{uri: userAvatar}}/>}/>
           </TouchableOpacity>
           <Card.Content>
             <ViewMoreText numberOfLines={this.NUMBER_OF_LINE}>
@@ -49,7 +50,10 @@ class Article extends React.Component {
           </Card.Content>
           <TouchableOpacity onPress={() => {
             this.navigate("MainPost", {
-              data: this.props.data
+              data: this.props.data,
+              addComment: addComment,
+              userName: userName,
+              userAvatar: userAvatar,
             })
           }}>
             <Card.Cover source={{uri: articleData.image_url}}/>

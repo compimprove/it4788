@@ -11,6 +11,11 @@ export default class Logout extends Component {
       this.props.navigation.navigate(route)
     }, 200);
   }
+  //
+  // constructor(props) {
+  //   super(props);
+  //   this.getToken = this.props.route.params.getToken;
+  // }
 
   _onPressButton1() {
     alert("Home")
@@ -84,11 +89,15 @@ export default class Logout extends Component {
     alert("Việc làm")
   }
 
+  logout() {
+    this.props.route.params.logout();
+  }
+
   render() {
     return (
         <Container style={{backgroundColor: '#F0F2F5'}}>
           <AppHeaderBar navigation={this.props.navigation}/>
-          <ScrollView style={{margin: 10}}>
+          <ScrollView style={{margin: 10}} showsVerticalScrollIndicator={false}>
             <View style={styles.box}>
               <Card style={{width: '47%', borderRadius: 5}} onTouchStart={this._onPressButton9.bind(this)}>
                 <CardItem>
@@ -113,7 +122,7 @@ export default class Logout extends Component {
               <Card style={{width: '47%', borderRadius: 5}} onTouchEnd={this._onPressButton7.bind(this)}>
                 <CardItem>
                   <Body>
-                    <Icon  style={{color: '#2089E8'}} name="ondemand-video"
+                    <Icon style={{color: '#2089E8'}} name="ondemand-video"
                           type="MaterialIcons"/>
                     <Text style={{marginLeft: 10}}>Video trên Watch</Text>
                   </Body>
@@ -211,8 +220,10 @@ export default class Logout extends Component {
                 </CardItem>
               </Card>
             </View>
+            <FooterLog
+                logout={this.props.route.params.logout}/>
           </ScrollView>
-          <FooterLog/>
+
         </Container>
     );
   }

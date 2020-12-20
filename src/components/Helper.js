@@ -11,7 +11,11 @@ export function timeToString(time) {
       return Math.floor(deltaSecond / 60).toString() + " m";
     } else if (deltaSecond < 86400) {
       return Math.floor(deltaSecond / 3600).toString() + " h";
-    } else return time.toLocaleString();
+    } else if (deltaSecond < 86400 * 11) {
+      let day = Math.floor(deltaSecond / 86400);
+      return day.toString() + (day === 1 ? " day" : " days");
+    }
+    return time.toLocaleString();
   }
   return '';
 }

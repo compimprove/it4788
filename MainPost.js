@@ -1,20 +1,25 @@
 import * as React from 'react';
 import ViewMoreText from 'react-native-view-more-text';
-import { Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading } from 'react-native-paper';
-import { StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput } from 'react-native';
+import {Appbar, Divider, Avatar, Button, Card, Title, Paragraph, Subheading} from 'react-native-paper';
+import {StyleSheet, TouchableHighlight, View, Text, ScrollView, TextInput} from 'react-native';
 import Article from './src/components/MainPage/Article';
 import CommentComponent from './src/components/MainPage/CommentComponent';
+import Utility from "./Utility";
 
-const MyTextInput = () => {
+const MyTextInput = ({addComment}) => {
   const [text, setText] = React.useState('');
 
   return (
-    <TextInput
-      style={styles.myTextInput}
-      placeholder="Write a comment..."
-      value={text}
-      onChangeText={text => setText(text)}
-    />
+      <TextInput
+          style={styles.myTextInput}
+          placeholder="Write a comment..."
+          value={text}
+          onSubmitEditing={() => {
+            addComment(text);
+            setText("");
+          }}
+          onChangeText={text => setText(Utility.createContent(text))}
+      />
   );
 };
 
@@ -24,43 +29,49 @@ export default class MainPost extends React.Component {
   }
 
   render() {
-    let data = this.props.route.params.data
+    let data = this.props.route.params.data;
+    let userName = this.props.route.params.userName;
+    let userAvatar = this.props.route.params.userAvatar;
+    let addComment = this.props.route.params.addComment
     return (
-      <View style={styles.container}>
-        <View style={styles.appbar}>
-          <Appbar style={styles.appbarHead}>
-            <Appbar.BackAction onPress={() => {
-              setTimeout(() => {
-                this.props.navigation.goBack()
-              }, 200);
-            }} />
-            <Appbar.Content title="" titleStyle={styles.appbarTitle} />
-            <Appbar.Action
-              icon="magnify"
-              size={28}
-              onPress={() => {
+        <View style={styles.container}>
+          <View style={styles.appbar}>
+            <Appbar style={styles.appbarHead}>
+              <Appbar.BackAction onPress={() => {
+                setTimeout(() => {
+                  this.props.navigation.goBack()
+                }, 200);
+              }}/>
+              <Appbar.Content title="" titleStyle={styles.appbarTitle}/>
+              <Appbar.Action
+                  icon="magnify"
+                  size={28}
+                  onPress={() => {
 
-              }}
-            />
-          </Appbar>
+                  }}
+              />
+            </Appbar>
 
-          <View style={styles.separator} />
+            <View style={styles.separator}/>
+          </View>
+
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.dividerPost}/>
+            <Article
+                userName={userName}
+                userAvatar={userAvatar}
+                navigation={this.props.navigation}
+                selfLoading={false}
+                data={data}
+                hasCommentBtn={false}/>
+            {data.comments.map(data => <CommentComponent key={data.id} data={data}/>)}
+          </ScrollView>
+          <View style={styles.separator}></View>
+          <View>
+            <MyTextInput
+                addComment={addComment}></MyTextInput>
+          </View>
         </View>
-
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.dividerPost} />
-          <Article
-            navigation={this.props.navigation}
-            selfLoading={false}
-            data={data}
-            hasCommentBtn={false} />
-          {data.comments.map(data => <CommentComponent key={data.id} data={data} />)}
-        </ScrollView>
-        <View style={styles.separator}></View>
-        <View>
-          <MyTextInput></MyTextInput>
-        </View>
-      </View>
 
 
     );

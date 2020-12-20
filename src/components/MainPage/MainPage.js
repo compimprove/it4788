@@ -45,6 +45,7 @@ class MainPage extends React.Component {
 
   render() {
     let getToken = this.props.route.params.getToken;
+    let logout = this.props.route.params.logout
     return (
         <Tab.Navigator tabBar={props => (<></>)}>
           <Tab.Screen
@@ -58,15 +59,22 @@ class MainPage extends React.Component {
           <Tab.Screen name="MainPost" component={MainPost}/>
           <Tab.Screen name="SearchResult" component={SearchResult}/>
           <Tab.Screen name="SearchHistory" component={SearchHistory}/>
-          <Tab.Screen name="Friend" component={Friend} initialParams={{getToken: getToken}}/>
+          <Tab.Screen
+              name="Friend"
+              component={Friend}
+              initialParams={{getToken: getToken}}/>
           <Tab.Screen name="Video" component={VideoTab}/>
           <Tab.Screen name="Suggestion" component={SuggestionFriend} initialParams={{getToken: getToken}}/>
-          <Tab.Screen name="AllFriend" component={AllFriends}/>
+          <Tab.Screen
+              name="AllFriend"
+              component={AllFriends}
+              initialParams={{getToken: getToken}}/>
           <Tab.Screen name="SearchVideo" component={SearchVideo}/>
-          <Tab.Screen name="InterfaceUser" component={InterfaceUser}/>
+          <Tab.Screen name="InterfaceUser" component={InterfaceUser} initialParams={{getToken: getToken}}/>
           <Tab.Screen name="UserSetting" component={UserSetting}/>
           <Tab.Screen name="UserFriends" component={UserFriends}/>
-          <Tab.Screen name="Logout" component={Logout}/>
+          <Tab.Screen name="Logout" component={Logout}
+                      initialParams={{logout: logout}}/>
           <Tab.Screen name="Messening" component={Messening}/>
           <Tab.Screen name="MessengerMe" component={MessengerMe}/>
           <Tab.Screen name="MessengerUser" component={MessengerUser}/>
